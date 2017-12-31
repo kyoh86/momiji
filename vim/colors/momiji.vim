@@ -283,13 +283,13 @@ call s:HL('Error', s:bright_red, s:black, s:bold . s:inverse)
 call s:HL('String',  s:green)
 
 " Generic statement
-hi! link Statement MomijiBrightYellow
+hi! link Statement MomijiYellow
 " if, then, else, endif, swicth, etc.
-hi! link Conditional MomijiBrightYellow
+hi! link Conditional MomijiYellow
 " for, do, while, etc.
-hi! link Repeat MomijiBrightYellow
+hi! link Repeat MomijiYellow
 " case, default, etc.
-hi! link Label MomijiBrightYellow
+hi! link Label MomijiYellow
 " try, catch, throw
 hi! link Exception MomijiRed
 " sizeof, "+", "*", etc.
