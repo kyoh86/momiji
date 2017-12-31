@@ -29,7 +29,7 @@ let s:white          = ["#7e868e", 7]
 let s:bright_black   = ["#454545", 8]
 let s:bright_red     = ["#ed784a", 9]
 let s:bright_green   = ["#9abe86", 10]
-let s:bright_yellow  = ["#e6cb90", 11]
+let s:bright_yellow  = ["#ebe386", 11]
 let s:bright_blue    = ["#89b7e1", 12]
 let s:bright_magenta = ["#eea1d1", 13]
 let s:bright_cyan    = ["#69b2ac", 14]
@@ -164,6 +164,11 @@ call s:HL('MomijiBrightWhite', s:bright_white)
 
 " special
 call s:HL('MomijiBrightRedBold', s:bright_red, s:none, s:bold)
+call s:HL('MomijiXgray1',        s:xgray1,     s:none)
+call s:HL('MomijiXgray2',        s:xgray2,     s:none)
+call s:HL('MomijiXgray3',        s:xgray3,     s:none)
+call s:HL('MomijiXgray4',        s:xgray4,     s:none)
+call s:HL('MomijiXgray5',        s:xgray5,     s:none)
 
 " }}}
 
@@ -201,9 +206,9 @@ if version >= 703
   call s:HL('CursorLineNr', s:yellow, s:black)
 endif
 
-hi! link NonText MomijiWhiteAlt
-hi! link SpecialKey MomijiWhiteAlt
-hi! link Whitespace MomijiWhiteAlt
+hi! link NonText MomijiBrightBlack
+hi! link SpecialKey MomijiBrightBlack
+hi! link Whitespace MomijiBrightBlack
 
 call s:HL('Visual',    s:none,  s:black, s:inverse)
 hi! link VisualNOS Visual
@@ -268,34 +273,34 @@ hi! link lCursor Cursor
 " }}}
 " Syntax Highlighting: {{{
 
-hi! link Special MomijiBrightRed
+hi! link Special MomijiBrightYellow
 
 call s:HL('Comment', s:white, s:none, s:italic)
 call s:HL('Todo', s:bright_white, s:black, s:bold . s:italic)
 call s:HL('Error', s:bright_red, s:black, s:bold . s:inverse)
 
 " String constant: "this is a string"
-call s:HL('String',  s:bright_green)
+call s:HL('String',  s:green)
 
 " Generic statement
-hi! link Statement MomijiBlue
+hi! link Statement MomijiBrightYellow
 " if, then, else, endif, swicth, etc.
-hi! link Conditional MomijiBlue
+hi! link Conditional MomijiBrightYellow
 " for, do, while, etc.
-hi! link Repeat MomijiBlue
+hi! link Repeat MomijiBrightYellow
 " case, default, etc.
-hi! link Label MomijiBlue
+hi! link Label MomijiBrightYellow
 " try, catch, throw
 hi! link Exception MomijiRed
 " sizeof, "+", "*", etc.
 hi! link Operator Normal
 " Any other keyword
-hi! link Keyword MomijiBlue
+hi! link Keyword MomijiRed
 
 " Variable name
-hi! link Identifier MomijiBlue
+hi! link Identifier MomijiBrightBlue
 " Function name
-hi! link Function MomijiGreenBold
+hi! link Function MomijiBlue
 
 " Generic preprocessor
 hi! link PreProc MomijiCyan
@@ -320,7 +325,7 @@ hi! link Number MomijiBrightMagenta
 hi! link Float MomijiBrightMagenta
 
 " Generic type
-hi! link Type MomijiBrightBrightMagenta
+hi! link Type MomijiBrightRed
 " static, register, volatile, etc
 hi! link StorageClass MomijiBrightRed
 " struct, union, enum, etc.
@@ -355,7 +360,7 @@ call s:HL('DiffText',   s:bright_yellow, s:black)
 
 if has("spell")
   " Not capitalised word, or compile warnings
-  call s:HL('SpellCap',   s:green, s:none, s:bold . s:italic)
+  call s:HL('SpellCap',   s:none, s:none, s:underline . s:italic)
   " Not recognized word
   call s:HL('SpellBad',   s:none, s:none, s:undercurl, s:blue)
   " Wrong spelling for selected region
@@ -530,19 +535,20 @@ hi! link cStructure MomijiYellow
 " }}}
 " Python: {{{
 
-hi! link pythonBuiltin MomijiYellow
-hi! link pythonBuiltinObj MomijiYellow
-hi! link pythonBuiltinFunc MomijiYellow
-hi! link pythonFunction MomijiCyan
+hi! link pythonBuiltin Type
+hi! link pythonBuiltinObj Type
+hi! link pythonBuiltinFunc MomijiBrightGreen
+hi! link pythonFunction Function
 hi! link pythonDecorator MomijiRed
-hi! link pythonInclude MomijiBlue
-hi! link pythonImport MomijiBlue
+hi! link pythonInclude Include
+hi! link pythonImport Include
 hi! link pythonRun MomijiBlue
 hi! link pythonCoding MomijiBlue
 hi! link pythonOperator MomijiRed
-hi! link pythonExceptions MomijiMagenta
+hi! link pythonExceptions MomijiBrightRed
 hi! link pythonBoolean MomijiMagenta
-hi! link pythonDot MomijiBrightWhite
+hi! link pythonDot Text
+hi! link pythonStatement Statement
 
 " }}}
 " CSS: {{{
@@ -670,10 +676,15 @@ hi! link objcDirective MomijiBlue
 " }}}
 " Go: {{{
 
-hi! link goConstants MomijiMagenta
-hi! link goDeclaration MomijiBrightRed
-hi! link goDeclType MomijiBlue
-hi! link goBuiltins MomijiYellow
+" hi! link goLabel MomijiBrightRed
+" hi! link goConditional MomijiBrightRed
+" hi! link goRepeat MomijiBrightRed
+" hi! link goDeclType MomijiBrightBlue
+" hi! link goDeclaration MomijiBrightBlue
+" hi! link goBuiltins MomijiYellow
+hi! link goPackage Keyword
+hi! link goImport Include
+hi! link goFunctionCall MomijiBrightGreen
 
 " }}}
 " Lua: {{{
