@@ -36,11 +36,11 @@ let s:bright_cyan    = ["#69b2ac", 14]
 let s:bright_white   = ["#e6e3e3", 15]
 
 let s:hard_black    = ['#080808', 232]
-let s:xgray1        = ['#372a2a', 235]
-let s:xgray2        = ['#5a4e4e', 236]
-let s:xgray3        = ['#7d7373', 237]
-let s:xgray4        = ['#a09999', 238]
-let s:xgray5        = ['#c3bebe', 239]
+let s:grayscale1        = ['#372a2a', 235]
+let s:grayscale2        = ['#5a4e4e', 236]
+let s:grayscale3        = ['#7d7373', 237]
+let s:grayscale4        = ['#a09999', 238]
+let s:grayscale5        = ['#c3bebe', 239]
 "}}}
 " Setup Variables: {{{
 
@@ -164,11 +164,11 @@ call s:HL('MomijiBrightWhite', s:bright_white)
 
 " special
 call s:HL('MomijiBrightRedBold', s:bright_red, s:none, s:bold)
-call s:HL('MomijiXgray1',        s:xgray1,     s:none)
-call s:HL('MomijiXgray2',        s:xgray2,     s:none)
-call s:HL('MomijiXgray3',        s:xgray3,     s:none)
-call s:HL('MomijiXgray4',        s:xgray4,     s:none)
-call s:HL('MomijiXgray5',        s:xgray5,     s:none)
+call s:HL('MomijiGrayscale1',        s:grayscale1,     s:none)
+call s:HL('MomijiGrayscale2',        s:grayscale2,     s:none)
+call s:HL('MomijiGrayscale3',        s:grayscale3,     s:none)
+call s:HL('MomijiGrayscale4',        s:grayscale4,     s:none)
+call s:HL('MomijiGrayscale5',        s:grayscale5,     s:none)
 
 " }}}
 
@@ -551,9 +551,9 @@ hi! link markdownH4 MomijiYellowBold
 hi! link markdownH5 MomijiYellow
 hi! link markdownH6 MomijiYellow
 
-call s:HL('markdownCode', s:none, s:xgray1)
-call s:HL('markdownCodeBlock', s:none, s:xgray1)
-call s:HL('markdownCodeDelimiter', s:none, s:xgray1)
+call s:HL('markdownCode', s:none, s:grayscale1)
+call s:HL('markdownCodeBlock', s:none, s:grayscale1)
+call s:HL('markdownCodeDelimiter', s:none, s:grayscale1)
 
 hi! link markdownBlockquote MomijiWhite
 hi! link markdownListMarker MomijiBlue
