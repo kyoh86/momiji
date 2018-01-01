@@ -2,4 +2,4 @@
 
 My color scheme for vim/iTerm2, "momiji" that means Japanese "autumn leaves".
 
-![ANSI Colors](./momiji-colors.png?raw=true)
+<img alt="ANSI Colors" src="./momiji-colors.png?raw=true" width="675" height="526">
