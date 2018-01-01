@@ -11,3 +11,9 @@ By [vim-plug](https://github.com/junegunn/vim-plug):
 ```
 Plug 'kyoh86/momiji', { 'rtp': 'vim' }
 ```
+
+`momiji` supports [lightline](https://github.com/itchyny/lightline.vim) colors.
+
+```
+let g:lightline.colorscheme = 'momiji'
+```
