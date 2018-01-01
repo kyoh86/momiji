@@ -18,29 +18,29 @@ endif
 
 " Palette {{{
 
-let s:black          = ["#140b0b", 0]
+let s:black          = ["#140c0c", 0]
 let s:red            = ["#da5774", 1]
 let s:green          = ["#348c4e", 2]
-let s:yellow         = ["#e7a430", 3]
+let s:yellow         = ["#e7a22b", 3]
 let s:blue           = ["#4884d2", 4]
-let s:magenta        = ["#a45aaa", 5]
+let s:magenta        = ["#a55aaa", 5]
 let s:cyan           = ["#1f90a8", 6]
-let s:white          = ["#7e868e", 7]
-let s:bright_black   = ["#454545", 8]
+let s:white          = ["#a09999", 7]
+let s:bright_black   = ["#5a4e4e", 8]
 let s:bright_red     = ["#ed784a", 9]
 let s:bright_green   = ["#9abe86", 10]
-let s:bright_yellow  = ["#e6da88", 11]
+let s:bright_yellow  = ["#ffd791", 11]
 let s:bright_blue    = ["#89b7e1", 12]
 let s:bright_magenta = ["#eea1d1", 13]
 let s:bright_cyan    = ["#69b2ac", 14]
-let s:bright_white   = ["#e6e6e6", 15]
+let s:bright_white   = ["#e6e3e3", 15]
 
 let s:hard_black    = ['#080808', 232]
-let s:xgray1        = ['#262626', 235]
-let s:xgray2        = ['#303030', 236]
-let s:xgray3        = ['#3A3A3A', 237]
-let s:xgray4        = ['#444444', 238]
-let s:xgray5        = ['#4E4E4E', 239]
+let s:xgray1        = ['#372a2a', 235]
+let s:xgray2        = ['#5a4e4e', 236]
+let s:xgray3        = ['#7d7373', 237]
+let s:xgray4        = ['#a09999', 238]
+let s:xgray5        = ['#c3bebe', 239]
 "}}}
 " Setup Variables: {{{
 
@@ -372,41 +372,6 @@ endif
 " }}}
 
 " Plugin specific -------------------------------------------------------------
-" Sneak: {{{
-
-hi! link SneakPluginTarget Search
-hi! link SneakStreakTarget Search
-call s:HL('SneakStreakMask', s:yellow, s:yellow)
-hi! link SneakStreakStatusLine Search
-
-" }}}
-" Rainbow Parentheses: {{{
-
-if !exists('g:rbpt_colorpairs')
-  let g:rbpt_colorpairs =
-    \ [
-      \ ['blue', s:blue], ['magenta', s:magenta],
-      \ ['red',  s:red], ['yellow',     s:yellow]
-    \ ]
-endif
-
-let g:rainbow_guifgs = [ s:blue, s:magenta, s:red, s:yellow ]
-let g:rainbow_ctermfgs = [ 'yellow', 'red', 'magenta', 'blue' ]
-
-if !exists('g:rainbow_conf')
-   let g:rainbow_conf = {}
-endif
-if !has_key(g:rainbow_conf, 'guifgs')
-   let g:rainbow_conf['guifgs'] = g:rainbow_guifgs
-endif
-if !has_key(g:rainbow_conf, 'ctermfgs')
-   let g:rainbow_conf['ctermfgs'] = g:rainbow_ctermfgs
-endif
-
-let g:niji_dark_colours = g:rbpt_colorpairs
-let g:niji_light_colours = g:rbpt_colorpairs
-
-"}}}
 " GitGutter: {{{
 
 hi! link GitGutterAdd MomijiGreen
@@ -425,14 +390,14 @@ hi! link gitcommitDiscardedFile MomijiBrightRed
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
 
-hi! link diffAdded MomijiGreen
-hi! link diffRemoved MomijiRed
+hi! link diffAdded MomijiBrightGreen
+hi! link diffRemoved MomijiBrightRed
 hi! link diffChanged MomijiCyan
 
-hi! link diffFile MomijiBrightRed
-hi! link diffNewFile MomijiYellow
+hi! link diffFile MomijiRed
+hi! link diffNewFile MomijiBlue
 
-hi! link diffLine MomijiBlue
+hi! link diffLine MomijiBrightBlack
 
 " }}}
 " Html: {{{
@@ -444,7 +409,6 @@ hi! link htmlTagName MomijiCyanBold
 hi! link htmlArg MomijiCyan
 
 hi! link htmlScriptTag MomijiMagenta
-hi! link htmlTagN MomijiFg1
 hi! link htmlSpecialTagName MomijiCyanBold
 
 call s:HL('htmlLink', s:bright_white, s:none, s:underline)
@@ -498,35 +462,6 @@ hi! link vimSep MomijiBrightWhite
 hi! link vimContinue MomijiBrightWhite
 
 " }}}
-" Clojure: {{{
-
-hi! link clojureKeyword MomijiBlue
-hi! link clojureCond MomijiBrightRed
-hi! link clojureSpecial MomijiBrightRed
-hi! link clojureDefine MomijiBrightRed
-
-hi! link clojureFunc MomijiYellow
-hi! link clojureRepeat MomijiYellow
-hi! link clojureCharacter MomijiCyan
-hi! link clojureStringEscape MomijiCyan
-hi! link clojureException MomijiRed
-
-hi! link clojureRegexp MomijiCyan
-hi! link clojureRegexpEscape MomijiCyan
-call s:HL('clojureRegexpCharClass', s:bright_white, s:none, s:bold)
-hi! link clojureRegexpMod clojureRegexpCharClass
-hi! link clojureRegexpQuantifier clojureRegexpCharClass
-
-hi! link clojureParen MomijiFg3
-hi! link clojureAnonArg MomijiYellow
-hi! link clojureVariable MomijiBlue
-hi! link clojureMacro MomijiBrightRed
-
-hi! link clojureMeta MomijiYellow
-hi! link clojureDeref MomijiYellow
-hi! link clojureQuote MomijiYellow
-hi! link clojureUnquote MomijiYellow
-" }}}
 " C: {{{
 
 hi! link cOperator MomijiMagenta
@@ -561,7 +496,6 @@ hi! link cssColor MomijiBlue
 hi! link cssSelectorOp MomijiBlue
 hi! link cssSelectorOp2 MomijiBlue
 hi! link cssImportant MomijiGreen
-hi! link cssVendor MomijiFg1
 
 hi! link cssTextProp MomijiCyan
 hi! link cssAnimationProp MomijiCyan
@@ -588,78 +522,9 @@ hi! link cssGeneratedContentProp MomijiCyan
 " }}}
 " JavaScript: {{{
 
-hi! link javaScriptBraces MomijiFg1
-hi! link javaScriptFunction MomijiCyan
-hi! link javaScriptIdentifier MomijiRed
-hi! link javaScriptMember MomijiBlue
-hi! link javaScriptNumber MomijiMagenta
-hi! link javaScriptNull MomijiMagenta
-hi! link javaScriptParens MomijiBrightWhite
-
-" }}}
-" YAJS: {{{
-
-hi! link javascriptImport MomijiCyan
-hi! link javascriptExport MomijiCyan
-hi! link javascriptClassKeyword MomijiCyan
-hi! link javascriptClassExtends MomijiCyan
-hi! link javascriptDefault MomijiCyan
-
-hi! link javascriptClassName MomijiYellow
-hi! link javascriptClassSuperName MomijiYellow
-hi! link javascriptGlobal MomijiYellow
-
-hi! link javascriptEndColons MomijiFg1
-hi! link javascriptFuncArg MomijiFg1
-hi! link javascriptGlobalMethod MomijiFg1
-hi! link javascriptNodeGlobal MomijiFg1
-
-" hi! link javascriptVariable MomijiYellow
-hi! link javascriptVariable MomijiRed
-" hi! link javascriptIdentifier MomijiYellow
-" hi! link javascriptClassSuper MomijiYellow
-hi! link javascriptIdentifier MomijiYellow
-hi! link javascriptClassSuper MomijiYellow
-
-" hi! link javascriptFuncKeyword MomijiYellow
-" hi! link javascriptAsyncFunc MomijiYellow
-hi! link javascriptFuncKeyword MomijiCyan
-hi! link javascriptAsyncFunc MomijiCyan
-hi! link javascriptClassStatic MomijiYellow
-
-hi! link javascriptOperator MomijiRed
-hi! link javascriptForOperator MomijiRed
-hi! link javascriptYield MomijiRed
-hi! link javascriptExceptions MomijiRed
-hi! link javascriptMessage MomijiRed
-
-hi! link javascriptTemplateSB MomijiCyan
-hi! link javascriptTemplateSubstitution MomijiFg1
-
-" hi! link javascriptLabel MomijiBlue
-" hi! link javascriptObjectLabel MomijiBlue
-" hi! link javascriptPropertyName MomijiBlue
-hi! link javascriptLabel MomijiFg1
-hi! link javascriptObjectLabel MomijiFg1
-hi! link javascriptPropertyName MomijiFg1
-
-hi! link javascriptLogicSymbols MomijiFg1
-hi! link javascriptArrowFunc MomijiFg1
-
-hi! link javascriptDocParamName MomijiFg4
-hi! link javascriptDocTags MomijiFg4
-hi! link javascriptDocNotation MomijiFg4
-hi! link javascriptDocParamType MomijiFg4
-hi! link javascriptDocNamedParamType MomijiFg4
-
-" }}}
-" CoffeeScript: {{{
-
-hi! link coffeeExtendedOp MomijiBrightWhite
-hi! link coffeeSpecialOp MomijiBrightWhite
-hi! link coffeeCurly MomijiYellow
-hi! link coffeeParen MomijiBrightWhite
-hi! link coffeeBracket MomijiYellow
+hi! link jsRegexpString MomijiMagenta
+hi! link jsArrowFunction Function
+hi! link jsFunction Function
 
 " }}}
 " Ruby: {{{
@@ -668,83 +533,11 @@ hi! link rubyStringDelimiter MomijiGreen
 hi! link rubyInterpolationDelimiter MomijiCyan
 
 " }}}
-" ObjectiveC: {{{
-
-hi! link objcTypeModifier MomijiRed
-hi! link objcDirective MomijiBlue
-
-" }}}
 " Go: {{{
 
-" hi! link goLabel MomijiBrightRed
-" hi! link goConditional MomijiBrightRed
-" hi! link goRepeat MomijiBrightRed
-" hi! link goDeclType MomijiBrightBlue
-" hi! link goDeclaration MomijiBrightBlue
-" hi! link goBuiltins MomijiYellow
 hi! link goPackage Keyword
 hi! link goImport Include
 hi! link goFunctionCall MomijiBrightGreen
-
-" }}}
-" Lua: {{{
-
-hi! link luaIn MomijiRed
-hi! link luaFunction MomijiCyan
-hi! link luaTable MomijiYellow
-
-" }}}
-" MoonScript: {{{
-
-hi! link moonSpecialOp MomijiBrightWhite
-hi! link moonExtendedOp MomijiBrightWhite
-hi! link moonFunction MomijiBrightWhite
-hi! link moonObject MomijiYellow
-
-" }}}
-" Java: {{{
-
-hi! link javaAnnotation MomijiBlue
-hi! link javaDocTags MomijiCyan
-hi! link javaCommentTitle vimCommentTitle
-hi! link javaParen MomijiBrightWhite
-hi! link javaParen1 MomijiBrightWhite
-hi! link javaParen2 MomijiBrightWhite
-hi! link javaParen3 MomijiBrightWhite
-hi! link javaParen4 MomijiBrightWhite
-hi! link javaParen5 MomijiBrightWhite
-hi! link javaOperator MomijiYellow
-
-hi! link javaVarArg MomijiGreen
-
-" }}}
-" Elixir: {{{
-
-hi! link elixirDocString Comment
-
-hi! link elixirStringDelimiter MomijiGreen
-hi! link elixirInterpolationDelimiter MomijiCyan
-
-" }}}
-" Scala: {{{
-
-" NB: scala vim syntax file is kinda horrible
-hi! link scalaNameDefinition MomijiFg1
-hi! link scalaCaseFollowing MomijiFg1
-hi! link scalaCapitalWord MomijiFg1
-hi! link scalaTypeExtension MomijiFg1
-
-hi! link scalaKeyword MomijiRed
-hi! link scalaKeywordModifier MomijiRed
-
-hi! link scalaSpecial MomijiCyan
-hi! link scalaOperator MomijiFg1
-
-hi! link scalaTypeDeclaration MomijiYellow
-hi! link scalaTypeTypePostDeclaration MomijiYellow
-
-hi! link scalaInstanceDeclaration MomijiFg1
-hi! link scalaInterpolation MomijiCyan
 
 " }}}
 " Markdown: {{{
@@ -758,13 +551,13 @@ hi! link markdownH4 MomijiYellowBold
 hi! link markdownH5 MomijiYellow
 hi! link markdownH6 MomijiYellow
 
-hi! link markdownCode MomijiCyan
-hi! link markdownCodeBlock MomijiCyan
-hi! link markdownCodeDelimiter MomijiCyan
+call s:HL('markdownCode', s:none, s:xgray1)
+call s:HL('markdownCodeBlock', s:none, s:xgray1)
+call s:HL('markdownCodeDelimiter', s:none, s:xgray1)
 
 hi! link markdownBlockquote MomijiWhite
-hi! link markdownListMarker MomijiWhite
-hi! link markdownOrderedListMarker MomijiWhite
+hi! link markdownListMarker MomijiBlue
+hi! link markdownOrderedListMarker MomijiBlue
 hi! link markdownRule MomijiWhite
 hi! link markdownHeadingRule MomijiWhite
 
@@ -773,53 +566,19 @@ hi! link markdownLinkDelimiter MomijiBrightWhite
 hi! link markdownLinkTextDelimiter MomijiBrightWhite
 
 hi! link markdownHeadingDelimiter MomijiYellow
-hi! link markdownUrl MomijiMagenta
+hi! link markdownUrl MomijiCyan
 hi! link markdownUrlTitleDelimiter MomijiGreen
 
 call s:HL('markdownLinkText', s:white, s:none, s:underline)
 hi! link markdownIdDeclaration markdownLinkText
 
 " }}}
-" Haskell: {{{
-
-" hi! link haskellType MomijiYellow
-" hi! link haskellOperators MomijiYellow
-" hi! link haskellConditional MomijiCyan
-" hi! link haskellLet MomijiYellow
-"
-hi! link haskellType MomijiFg1
-hi! link haskellIdentifier MomijiFg1
-hi! link haskellSeparator MomijiFg1
-hi! link haskellDelimiter MomijiFg4
-hi! link haskellOperators MomijiBlue
-"
-hi! link haskellBacktick MomijiYellow
-hi! link haskellStatement MomijiYellow
-hi! link haskellConditional MomijiYellow
-
-hi! link haskellLet MomijiCyan
-hi! link haskellDefault MomijiCyan
-hi! link haskellWhere MomijiCyan
-hi! link haskellBottom MomijiCyan
-hi! link haskellBlockKeywords MomijiCyan
-hi! link haskellImportKeywords MomijiCyan
-hi! link haskellDeclKeyword MomijiCyan
-hi! link haskellDeriving MomijiCyan
-hi! link haskellAssocType MomijiCyan
-
-hi! link haskellNumber MomijiMagenta
-hi! link haskellPragma MomijiMagenta
-
-hi! link haskellString MomijiGreen
-hi! link haskellChar MomijiGreen
-
-" }}}
 " Json: {{{
 
-hi! link jsonKeyword MomijiGreen
-hi! link jsonQuote MomijiGreen
-hi! link jsonBraces MomijiFg1
-hi! link jsonString MomijiFg1
+hi! link jsonBraces Text
+hi! link jsonKeyword Type
+hi! link jsonString MomijiBrightGreen
+hi! link jsonQuote MomijiBlue
 
 " }}}
 
