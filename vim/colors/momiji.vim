@@ -172,6 +172,27 @@ call s:HL('MomijiGrayscale5',        s:grayscale5,     s:none)
 
 " }}}
 
+" Terminal Ansi Colors: {{{
+let g:terminal_ansi_colors = [
+  s:black,
+  s:red,
+  s:green,
+  s:yellow,
+  s:blue,
+  s:magenta,
+  s:cyan,
+  s:white,
+  s:bright_black,
+  s:bright_red,
+  s:bright_green,
+  s:bright_yellow,
+  s:bright_blue,
+  s:bright_magenta,
+  s:bright_cyan,
+  s:bright_white,
+]
+" }}}
+
 " Vanilla colorscheme ---------------------------------------------------------
 " General UI: {{{
 
