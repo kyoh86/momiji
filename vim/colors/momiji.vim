@@ -174,23 +174,23 @@ call s:HL('MomijiGrayscale5',        s:grayscale5,     s:none)
 
 " Terminal Ansi Colors: {{{
 let g:terminal_ansi_colors = [
-  s:black,
-  s:red,
-  s:green,
-  s:yellow,
-  s:blue,
-  s:magenta,
-  s:cyan,
-  s:white,
-  s:bright_black,
-  s:bright_red,
-  s:bright_green,
-  s:bright_yellow,
-  s:bright_blue,
-  s:bright_magenta,
-  s:bright_cyan,
-  s:bright_white,
-]
+      \ s:black[0],
+      \ s:red[0],
+      \ s:green[0],
+      \ s:yellow[0],
+      \ s:blue[0],
+      \ s:magenta[0],
+      \ s:cyan[0],
+      \ s:white[0],
+      \ s:bright_black[0],
+      \ s:bright_red[0],
+      \ s:bright_green[0],
+      \ s:bright_yellow[0],
+      \ s:bright_blue[0],
+      \ s:bright_magenta[0],
+      \ s:bright_cyan[0],
+      \ s:bright_white[0],
+      \ ]
 " }}}
 
 " Vanilla colorscheme ---------------------------------------------------------
