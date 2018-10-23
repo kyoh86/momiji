@@ -1,7 +1,7 @@
 " 'momiji.vim' -- Vim color scheme.
-" Maintainer:   Roosta (mail@roosta.sh)
+" Maintainer:   kyoh86 (chili.pepper86@gmail.com)
 " Description:  Colorscheme that focus ease of use and clearly defined contrasting colors with a slightly earthy tone.
-" Original Source: https://github.com/morhetz/gruvbox
+" Original Source: https://github.com/kyoh86/momiji
 
 if version > 580
   hi clear
