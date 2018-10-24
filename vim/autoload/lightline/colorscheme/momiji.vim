@@ -37,9 +37,9 @@ if exists('g:lightline')
   let s:grayscale5    = s:getSrcColor('MomijiGrayscale5')
 
   let s:p                 = {'normal':{}, 'inactive':{}, 'insert':{}, 'replace':{}, 'visual':{}, 'tabline':{}}
-  let s:p.normal.left     = [ [ s:bright_white, s:grayscale3 ], [ s:bright_white, s:grayscale2 ] ]
-  let s:p.normal.right    = [ [ s:bright_white, s:grayscale3 ], [ s:bright_white, s:grayscale2 ] ]
-  let s:p.normal.middle   = [ [ s:bright_white, s:bright_black ] ]
+  let s:p.normal.left     = [ [ s:black, s:green ], [ s:black, s:bright_green ] ]
+  let s:p.normal.right    = [ [ s:black, s:green ], [ s:black, s:bright_green ] ]
+  let s:p.normal.middle   = [ [ s:bright_green, s:bright_black ] ]
 
   let s:p.inactive.right  = [ [ s:white, s:bright_black ], [ s:white, s:bright_black ] ]
   let s:p.inactive.left   = [ [ s:white, s:bright_black ], [ s:white, s:bright_black ] ]
