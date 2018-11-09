@@ -63,7 +63,7 @@ if exists('g:lightline')
   let s:p.tabline.right   = [ [ s:black, s:bright_white ] ]
 
   let s:p.normal.error    = [ [ s:bright_white, s:red ] ]
-  let s:p.normal.warning  = [ [ s:black, s:bright_red ] ]
+  let s:p.normal.warning  = [ [ s:black, s:yellow ] ]
 
   let g:lightline#colorscheme#momiji#palette = lightline#colorscheme#flatten(s:p)
 endif
