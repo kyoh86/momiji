@@ -1,5 +1,5 @@
 " 'momiji.vim' -- Vim color scheme.
-" Maintainer:   kyoh86 (chili.pepper86@gmail.com)
+" Maintainer:   kyoh86 (master@kyoh86.dev)
 " Description:  Colorscheme that focus ease of use and clearly defined contrasting colors with a slightly earthy tone.
 " Original Source: https://github.com/kyoh86/momiji
 
