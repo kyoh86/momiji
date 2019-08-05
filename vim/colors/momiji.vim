@@ -201,7 +201,8 @@ call s:HL('Normal', s:bright_white, s:black)
 
 if version >= 700
   " Screen line that the cursor is
-  call s:HL('CursorLine', s:none, s:black, s:underline)
+  highlight CursorLine NONE
+  highlight CursorLine term=underline cterm=underline gui=underline
   " Screen column that the cursor is
   call s:HL('CursorColumn', s:none, s:bright_black)
 
