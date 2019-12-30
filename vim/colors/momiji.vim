@@ -201,8 +201,8 @@ call s:HL('Normal', s:bright_white, s:black)
 
 if version >= 700
   " Screen line that the cursor is
-  highlight CursorLine NONE
-  highlight CursorLine term=underline cterm=underline gui=underline
+  highlight! CursorLine NONE
+  highlight! CursorLine term=underline cterm=underline gui=underline
   " Screen column that the cursor is
   call s:HL('CursorColumn', s:none, s:bright_black)
 
@@ -211,7 +211,7 @@ if version >= 700
   " Active tab page label
   call s:HL('TabLineSel', s:red, s:black, s:bold)
   " Not active tab page label
-  hi! link TabLine TabLineFill
+  highlight! link TabLine TabLineFill
 
   " Match paired bracket under the cursor
   call s:HL('MatchParen', s:yellow, s:bright_black, s:bold)
@@ -228,12 +228,12 @@ if version >= 703
   call s:HL('CursorLineNr', s:yellow, s:black)
 endif
 
-hi! link NonText MomijiBrightBlack
-hi! link SpecialKey MomijiBrightBlack
-hi! link Whitespace MomijiBrightBlack
+highlight! link NonText MomijiBrightBlack
+highlight! link SpecialKey MomijiBrightBlack
+highlight! link Whitespace MomijiBrightBlack
 
 call s:HL('Visual',    s:black, s:yellow)
-hi! link VisualNOS Visual
+highlight! link VisualNOS Visual
 
 call s:HL('Search',    s:black, s:bright_blue)
 call s:HL('IncSearch', s:black, s:bright_blue)
@@ -250,21 +250,21 @@ call s:HL('VertSplit', s:bright_white, s:black)
 call s:HL('WildMenu', s:blue, s:black, s:bold)
 
 " Directory names, special names in listing
-hi! link Directory MomijiGreenBold
+highlight! link Directory MomijiGreenBold
 
 " Titles for output from :set all, :autocmd, etc.
-hi! link Title MomijiGreenBold
+highlight! link Title MomijiGreenBold
 
 " Error messages on the command line
 call s:HL('ErrorMsg',   s:bright_white, s:red)
 " More prompt: -- More --
-hi! link MoreMsg MomijiYellowBold
+highlight! link MoreMsg MomijiYellowBold
 " Current mode message: -- INSERT --
-hi! link ModeMsg MomijiYellowBold
+highlight! link ModeMsg MomijiYellowBold
 " 'Press enter' prompt and yes/no questions
-hi! link Question MomijiBrightRedBold
+highlight! link Question MomijiBrightRedBold
 " Warning messages
-hi! link WarningMsg MomijiRedBold
+highlight! link WarningMsg MomijiRedBold
 
 " }}}
 " Gutter: {{{
@@ -288,14 +288,14 @@ call s:HL('Cursor', s:none, s:none, s:inverse)
 " Visual mode cursor, selection
 call s:HL('vCursor',    s:black, s:bright_yellow)
 " Input moder cursor
-hi! link iCursor Cursor
+highlight! link iCursor Cursor
 " Language mapping cursor
-hi! link lCursor Cursor
+highlight! link lCursor Cursor
 
 " }}}
 " Syntax Highlighting: {{{
 
-hi! link Special MomijiBrightYellow
+highlight! link Special MomijiBrightYellow
 
 call s:HL('Comment', s:white, s:none, s:italic)
 call s:HL('Todo', s:bright_white, s:black, s:bold . s:italic)
@@ -305,55 +305,55 @@ call s:HL('Error', s:bright_red, s:black, s:bold . s:inverse)
 call s:HL('String',  s:green)
 
 " Generic statement
-hi! link Statement MomijiYellow
+highlight! link Statement MomijiYellow
 " if, then, else, endif, swicth, etc.
-hi! link Conditional MomijiYellow
+highlight! link Conditional MomijiYellow
 " for, do, while, etc.
-hi! link Repeat MomijiYellow
+highlight! link Repeat MomijiYellow
 " case, default, etc.
-hi! link Label MomijiYellow
+highlight! link Label MomijiYellow
 " try, catch, throw
-hi! link Exception MomijiRed
+highlight! link Exception MomijiRed
 " sizeof, "+", "*", etc.
-hi! link Operator Normal
+highlight! link Operator Normal
 " Any other keyword
-hi! link Keyword MomijiRed
+highlight! link Keyword MomijiRed
 
 " Variable name
-hi! link Identifier MomijiBrightBlue
+highlight! link Identifier MomijiBrightBlue
 " Function name
-hi! link Function MomijiBlue
+highlight! link Function MomijiBlue
 
 " Generic preprocessor
-hi! link PreProc MomijiCyan
+highlight! link PreProc MomijiCyan
 " Preprocessor #include
-hi! link Include MomijiCyan
+highlight! link Include MomijiCyan
 " Preprocessor #define
-hi! link Define MomijiCyan
+highlight! link Define MomijiCyan
 " Same as Define
-hi! link Macro MomijiCyan
+highlight! link Macro MomijiCyan
 " Preprocessor #if, #else, #endif, etc.
-hi! link PreCondit MomijiCyan
+highlight! link PreCondit MomijiCyan
 
 " Generic constant
-hi! link Constant MomijiBrightMagenta
+highlight! link Constant MomijiBrightMagenta
 " Character constant: 'c', '/n'
-hi! link Character MomijiBrightMagenta
+highlight! link Character MomijiBrightMagenta
 " Boolean constant: TRUE, false
-hi! link Boolean MomijiBrightMagenta
+highlight! link Boolean MomijiBrightMagenta
 " Number constant: 234, 0xff
-hi! link Number MomijiBrightMagenta
+highlight! link Number MomijiBrightMagenta
 " Floating point constant: 2.3e10
-hi! link Float MomijiBrightMagenta
+highlight! link Float MomijiBrightMagenta
 
 " Generic type
-hi! link Type MomijiBrightRed
+highlight! link Type MomijiBrightRed
 " static, register, volatile, etc
-hi! link StorageClass MomijiBrightRed
+highlight! link StorageClass MomijiBrightRed
 " struct, union, enum, etc.
-hi! link Structure MomijiCyan
+highlight! link Structure MomijiCyan
 " typedef
-hi! link Typedef MomijiYellow
+highlight! link Typedef MomijiYellow
 
 " }}}
 " Completion Menu: {{{
@@ -396,46 +396,46 @@ endif
 " Plugin specific -------------------------------------------------------------
 " GitGutter: {{{
 
-hi! link GitGutterAdd MomijiGreen
-hi! link GitGutterChange MomijiCyan
-hi! link GitGutterDelete MomijiBrightRed
-hi! link GitGutterChangeDelete MomijiCyan
+highlight! link GitGutterAdd MomijiGreen
+highlight! link GitGutterChange MomijiCyan
+highlight! link GitGutterDelete MomijiBrightRed
+highlight! link GitGutterChangeDelete MomijiCyan
 
 " }}}
 " GitCommit: "{{{
 
-hi! link gitcommitSelectedFile MomijiGreen
-hi! link gitcommitDiscardedFile MomijiBrightRed
+highlight! link gitcommitSelectedFile MomijiGreen
+highlight! link gitcommitDiscardedFile MomijiBrightRed
 
 " }}}
 
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
 
-hi! link diffAdded MomijiBrightGreen
-hi! link diffRemoved MomijiBrightRed
-hi! link diffChanged MomijiCyan
+highlight! link diffAdded MomijiBrightGreen
+highlight! link diffRemoved MomijiBrightRed
+highlight! link diffChanged MomijiCyan
 
-hi! link diffFile MomijiRed
-hi! link diffNewFile MomijiBlue
+highlight! link diffFile MomijiRed
+highlight! link diffNewFile MomijiBlue
 
-hi! link diffLine MomijiBrightBlack
+highlight! link diffLine MomijiBrightBlack
 
 " }}}
 " Html: {{{
 
-hi! link htmlTag MomijiBlue
-hi! link htmlEndTag MomijiBlue
+highlight! link htmlTag MomijiBlue
+highlight! link htmlEndTag MomijiBlue
 
-hi! link htmlTagName MomijiCyanBold
-hi! link htmlArg MomijiCyan
+highlight! link htmlTagName MomijiCyanBold
+highlight! link htmlArg MomijiCyan
 
-hi! link htmlScriptTag MomijiMagenta
-hi! link htmlSpecialTagName MomijiCyanBold
+highlight! link htmlScriptTag MomijiMagenta
+highlight! link htmlSpecialTagName MomijiCyanBold
 
 call s:HL('htmlLink', s:bright_white, s:none, s:underline)
 
-hi! link htmlSpecialChar MomijiYellow
+highlight! link htmlSpecialChar MomijiYellow
 
 call s:HL('htmlBold', s:bright_white, s:black, s:bold)
 call s:HL('htmlBoldUnderline', s:bright_white, s:black, s:bold . s:underline)
@@ -449,158 +449,158 @@ call s:HL('htmlItalic', s:bright_white, s:black, s:italic)
 " }}}
 " Xml: {{{
 
-hi! link xmlTag MomijiBlue
-hi! link xmlEndTag MomijiBlue
-hi! link xmlTagName MomijiBlue
-hi! link xmlEqual MomijiBlue
-hi! link docbkKeyword MomijiCyanBold
+highlight! link xmlTag MomijiBlue
+highlight! link xmlEndTag MomijiBlue
+highlight! link xmlTagName MomijiBlue
+highlight! link xmlEqual MomijiBlue
+highlight! link docbkKeyword MomijiCyanBold
 
-hi! link xmlDocTypeDecl MomijiWhite
-hi! link xmlDocTypeKeyword MomijiMagenta
-hi! link xmlCdataStart MomijiWhite
-hi! link xmlCdataCdata MomijiMagenta
-hi! link dtdFunction MomijiWhite
-hi! link dtdTagName MomijiMagenta
+highlight! link xmlDocTypeDecl MomijiWhite
+highlight! link xmlDocTypeKeyword MomijiMagenta
+highlight! link xmlCdataStart MomijiWhite
+highlight! link xmlCdataCdata MomijiMagenta
+highlight! link dtdFunction MomijiWhite
+highlight! link dtdTagName MomijiMagenta
 
-hi! link xmlAttrib MomijiCyan
-hi! link xmlProcessingDelim MomijiWhite
-hi! link dtdParamEntityPunct MomijiWhite
-hi! link dtdParamEntityDPunct MomijiWhite
-hi! link xmlAttribPunct MomijiWhite
+highlight! link xmlAttrib MomijiCyan
+highlight! link xmlProcessingDelim MomijiWhite
+highlight! link dtdParamEntityPunct MomijiWhite
+highlight! link dtdParamEntityDPunct MomijiWhite
+highlight! link xmlAttribPunct MomijiWhite
 
-hi! link xmlEntity MomijiYellow
-hi! link xmlEntityPunct MomijiYellow
+highlight! link xmlEntity MomijiYellow
+highlight! link xmlEntityPunct MomijiYellow
 " }}}
 " Vim: {{{
 
 call s:HL('vimCommentTitle', s:bright_white, s:none, s:bold . s:italic)
 
-hi! link vimNotation MomijiYellow
-hi! link vimBracket MomijiYellow
-hi! link vimMapModKey MomijiYellow
-hi! link vimFuncSID MomijiBrightWhite
-hi! link vimSetSep MomijiBrightWhite
-hi! link vimSep MomijiBrightWhite
-hi! link vimContinue MomijiBrightWhite
+highlight! link vimNotation MomijiYellow
+highlight! link vimBracket MomijiYellow
+highlight! link vimMapModKey MomijiYellow
+highlight! link vimFuncSID MomijiBrightWhite
+highlight! link vimSetSep MomijiBrightWhite
+highlight! link vimSep MomijiBrightWhite
+highlight! link vimContinue MomijiBrightWhite
 
 " }}}
 " C: {{{
 
-hi! link cOperator MomijiMagenta
-hi! link cStructure MomijiYellow
+highlight! link cOperator MomijiMagenta
+highlight! link cStructure MomijiYellow
 
 " }}}
 " Python: {{{
 
-hi! link pythonBuiltin Type
-hi! link pythonBuiltinObj Type
-hi! link pythonBuiltinFunc MomijiBrightGreen
-hi! link pythonFunction Function
-hi! link pythonDecorator MomijiRed
-hi! link pythonInclude Include
-hi! link pythonImport Include
-hi! link pythonRun MomijiBlue
-hi! link pythonCoding MomijiBlue
-hi! link pythonOperator MomijiRed
-hi! link pythonExceptions MomijiBrightRed
-hi! link pythonBoolean MomijiMagenta
-hi! link pythonDot Text
-hi! link pythonStatement Statement
+highlight! link pythonBuiltin Type
+highlight! link pythonBuiltinObj Type
+highlight! link pythonBuiltinFunc MomijiBrightGreen
+highlight! link pythonFunction Function
+highlight! link pythonDecorator MomijiRed
+highlight! link pythonInclude Include
+highlight! link pythonImport Include
+highlight! link pythonRun MomijiBlue
+highlight! link pythonCoding MomijiBlue
+highlight! link pythonOperator MomijiRed
+highlight! link pythonExceptions MomijiBrightRed
+highlight! link pythonBoolean MomijiMagenta
+highlight! link pythonDot Text
+highlight! link pythonStatement Statement
 
 " }}}
 " CSS: {{{
 
-hi! link cssBraces MomijiBlue
-hi! link cssFunctionName MomijiYellow
-hi! link cssIdentifier MomijiYellow
-hi! link cssClassName MomijiGreen
-hi! link cssColor MomijiBlue
-hi! link cssSelectorOp MomijiBlue
-hi! link cssSelectorOp2 MomijiBlue
-hi! link cssImportant MomijiGreen
+highlight! link cssBraces MomijiBlue
+highlight! link cssFunctionName MomijiYellow
+highlight! link cssIdentifier MomijiYellow
+highlight! link cssClassName MomijiGreen
+highlight! link cssColor MomijiBlue
+highlight! link cssSelectorOp MomijiBlue
+highlight! link cssSelectorOp2 MomijiBlue
+highlight! link cssImportant MomijiGreen
 
-hi! link cssTextProp MomijiCyan
-hi! link cssAnimationProp MomijiCyan
-hi! link cssUIProp MomijiYellow
-hi! link cssTransformProp MomijiCyan
-hi! link cssTransitionProp MomijiCyan
-hi! link cssPrintProp MomijiCyan
-hi! link cssPositioningProp MomijiYellow
-hi! link cssBoxProp MomijiCyan
-hi! link cssFontDescriptorProp MomijiCyan
-hi! link cssFlexibleBoxProp MomijiCyan
-hi! link cssBorderOutlineProp MomijiCyan
-hi! link cssBackgroundProp MomijiCyan
-hi! link cssMarginProp MomijiCyan
-hi! link cssListProp MomijiCyan
-hi! link cssTableProp MomijiCyan
-hi! link cssFontProp MomijiCyan
-hi! link cssPaddingProp MomijiCyan
-hi! link cssDimensionProp MomijiCyan
-hi! link cssRenderProp MomijiCyan
-hi! link cssColorProp MomijiCyan
-hi! link cssGeneratedContentProp MomijiCyan
+highlight! link cssTextProp MomijiCyan
+highlight! link cssAnimationProp MomijiCyan
+highlight! link cssUIProp MomijiYellow
+highlight! link cssTransformProp MomijiCyan
+highlight! link cssTransitionProp MomijiCyan
+highlight! link cssPrintProp MomijiCyan
+highlight! link cssPositioningProp MomijiYellow
+highlight! link cssBoxProp MomijiCyan
+highlight! link cssFontDescriptorProp MomijiCyan
+highlight! link cssFlexibleBoxProp MomijiCyan
+highlight! link cssBorderOutlineProp MomijiCyan
+highlight! link cssBackgroundProp MomijiCyan
+highlight! link cssMarginProp MomijiCyan
+highlight! link cssListProp MomijiCyan
+highlight! link cssTableProp MomijiCyan
+highlight! link cssFontProp MomijiCyan
+highlight! link cssPaddingProp MomijiCyan
+highlight! link cssDimensionProp MomijiCyan
+highlight! link cssRenderProp MomijiCyan
+highlight! link cssColorProp MomijiCyan
+highlight! link cssGeneratedContentProp MomijiCyan
 
 " }}}
 " JavaScript: {{{
 
-hi! link jsRegexpString MomijiMagenta
-hi! link jsArrowFunction Function
-hi! link jsFunction Function
+highlight! link jsRegexpString MomijiMagenta
+highlight! link jsArrowFunction Function
+highlight! link jsFunction Function
 
 " }}}
 " Ruby: {{{
 
-hi! link rubyStringDelimiter MomijiGreen
-hi! link rubyInterpolationDelimiter MomijiCyan
+highlight! link rubyStringDelimiter MomijiGreen
+highlight! link rubyInterpolationDelimiter MomijiCyan
 
 " }}}
 " Go: {{{
 
-hi! link goPackage Keyword
-hi! link goImport Include
-hi! link goFunctionCall MomijiBrightGreen
+highlight! link goPackage Keyword
+highlight! link goImport Include
+highlight! link goFunctionCall MomijiBrightGreen
 
 " }}}
 " Markdown: {{{
 
 call s:HL('markdownItalic', s:bright_white, s:none, s:italic)
 
-hi! link markdownH1 MomijiGreenBold
-hi! link markdownH2 MomijiGreenBold
-hi! link markdownH3 MomijiYellowBold
-hi! link markdownH4 MomijiYellowBold
-hi! link markdownH5 MomijiYellow
-hi! link markdownH6 MomijiYellow
+highlight! link markdownH1 MomijiGreenBold
+highlight! link markdownH2 MomijiGreenBold
+highlight! link markdownH3 MomijiYellowBold
+highlight! link markdownH4 MomijiYellowBold
+highlight! link markdownH5 MomijiYellow
+highlight! link markdownH6 MomijiYellow
 
 call s:HL('markdownCode', s:none, s:grayscale1)
 call s:HL('markdownCodeBlock', s:none, s:grayscale1)
 call s:HL('markdownCodeDelimiter', s:none, s:grayscale1)
 
-hi! link markdownBlockquote MomijiWhite
-hi! link markdownListMarker MomijiBlue
-hi! link markdownOrderedListMarker MomijiBlue
-hi! link markdownRule MomijiWhite
-hi! link markdownHeadingRule MomijiWhite
+highlight! link markdownBlockquote MomijiWhite
+highlight! link markdownListMarker MomijiBlue
+highlight! link markdownOrderedListMarker MomijiBlue
+highlight! link markdownRule MomijiWhite
+highlight! link markdownHeadingRule MomijiWhite
 
-hi! link markdownUrlDelimiter MomijiBrightWhite
-hi! link markdownLinkDelimiter MomijiBrightWhite
-hi! link markdownLinkTextDelimiter MomijiBrightWhite
+highlight! link markdownUrlDelimiter MomijiBrightWhite
+highlight! link markdownLinkDelimiter MomijiBrightWhite
+highlight! link markdownLinkTextDelimiter MomijiBrightWhite
 
-hi! link markdownHeadingDelimiter MomijiYellow
-hi! link markdownUrl MomijiCyan
-hi! link markdownUrlTitleDelimiter MomijiGreen
+highlight! link markdownHeadingDelimiter MomijiYellow
+highlight! link markdownUrl MomijiCyan
+highlight! link markdownUrlTitleDelimiter MomijiGreen
 
 call s:HL('markdownLinkText', s:white, s:none, s:underline)
-hi! link markdownIdDeclaration markdownLinkText
+highlight! link markdownIdDeclaration markdownLinkText
 
 " }}}
 " Json: {{{
 
-hi! link jsonBraces Text
-hi! link jsonKeyword Type
-hi! link jsonString MomijiBrightGreen
-hi! link jsonQuote MomijiBlue
+highlight! link jsonBraces Text
+highlight! link jsonKeyword Type
+highlight! link jsonString MomijiBrightGreen
+highlight! link jsonQuote MomijiBlue
 
 " }}}
 
