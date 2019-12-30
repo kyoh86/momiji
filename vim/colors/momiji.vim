@@ -232,11 +232,11 @@ hi! link NonText MomijiBrightBlack
 hi! link SpecialKey MomijiBrightBlack
 hi! link Whitespace MomijiBrightBlack
 
-call s:HL('Visual',    s:none,  s:black, s:inverse)
+call s:HL('Visual',    s:black, s:yellow)
 hi! link VisualNOS Visual
 
-call s:HL('Search',    s:black, s:yellow)
-call s:HL('IncSearch', s:black, s:yellow)
+call s:HL('Search',    s:black, s:bright_blue)
+call s:HL('IncSearch', s:black, s:bright_blue)
 
 call s:HL('Underlined', s:blue, s:none, s:underline)
 
@@ -286,7 +286,7 @@ call s:HL('FoldColumn', s:white, s:black)
 " Character under cursor
 call s:HL('Cursor', s:none, s:none, s:inverse)
 " Visual mode cursor, selection
-hi! link vCursor Cursor
+call s:HL('vCursor',    s:black, s:bright_yellow)
 " Input moder cursor
 hi! link iCursor Cursor
 " Language mapping cursor
