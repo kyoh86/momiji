@@ -21,3 +21,9 @@ let g:lightline.colorscheme = 'momiji'
 ```
 
 <img alt="lightline" src="./momiji-lightline.png?raw=true" width="600" height="120">
+
+## install (slack)
+
+`#140C0C,#372A2A,#DA5774,#E6E3E3,#348C4E,#E6E3E3,#89B7E1,#A55AAA,#372A2A,#E6E3E3`
+
+Post this line in your message, and click "Switch sidebar theme"
