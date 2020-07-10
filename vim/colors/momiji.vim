@@ -249,7 +249,7 @@ call s:H('FoldColumn', {'fg': s:white, 'bg': s:black})
 " }}}
 " Cursor: {{{
 " Character under cursor
-call s:H('Cursor', {'empha': [s:inverse]})
+call s:H('Cursor', {'fg': s:none, 'bg': s:none, 'empha': [s:inverse]})
 " Visual mode cursor, selection
 call s:H('vCursor', {'fg': s:black, 'bg': s:bright_yellow})
 " Input moder cursor
