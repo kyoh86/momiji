@@ -1,7 +1,7 @@
 " -----------------------------------------------------------------------------
 " File: momiji.vim
 " Description: Momiji colorscheme for Lightline (itchyny/lightline.vim)
-" Author: kyoh86 <master@kyoh86.dev>
+" Author: kyoh86 <me@kyoh86.dev>
 " -----------------------------------------------------------------------------
 
 function! s:getSrcColor(group)
