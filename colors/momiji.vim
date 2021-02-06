@@ -314,9 +314,9 @@ highlight! link Type MomijiMagenta
 " static, register, volatile, etc
 highlight! link StorageClass MomijiMagenta
 " struct, union, enum, etc.
-highlight! link Structure MomijiMagenta
+highlight! link Structure MomijiBrightRed
 " typedef
-highlight! link Typedef MomijiMagenta
+highlight! link Typedef MomijiBrightRed
 " }}}
 " Completion Menu: {{{
 " Popup menu: normal item
