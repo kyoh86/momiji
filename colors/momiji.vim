@@ -168,7 +168,6 @@ let g:terminal_ansi_colors = [
       \ ]
 " }}}
 
-" Vanilla colorscheme ---------------------------------------------------------
 " General UI: {{{
 " Normal text
 call s:H('Normal', {'fg': s:bright_white, 'bg': s:black})
@@ -311,19 +310,19 @@ highlight! link Number MomijiBrightMagenta
 highlight! link Float MomijiBrightMagenta
 
 " Generic type
-highlight! link Type MomijiBrightRed
+highlight! link Type MomijiMagenta
 " static, register, volatile, etc
-highlight! link StorageClass MomijiBrightRed
+highlight! link StorageClass MomijiMagenta
 " struct, union, enum, etc.
-highlight! link Structure MomijiCyan
+highlight! link Structure MomijiMagenta
 " typedef
-highlight! link Typedef MomijiYellow
+highlight! link Typedef MomijiMagenta
 " }}}
 " Completion Menu: {{{
 " Popup menu: normal item
-call s:H('Pmenu', {'fg': s:bright_white, 'bg': s:grayscale1})
+call s:H('Pmenu', {'fg': s:black, 'bg': s:bright_yellow})
 " Popup menu: selected item
-call s:H('PmenuSel', {'fg': s:black, 'bg': s:blue, 'empha': [s:bold]})
+call s:H('PmenuSel', {'fg': s:black, 'bg': s:yellow, 'empha': [s:bold]})
 " Popup menu: scrollbar
 call s:H('PmenuSbar', {'bg': s:black})
 " Popup menu: scrollbar thumb
@@ -331,7 +330,7 @@ call s:H('PmenuThumb', {'bg': s:black})
 " }}}
 " Diffs: {{{
 call s:H('DiffDelete', {'fg': s:bright_red, 'bg': s:black})
-call s:H('DiffAdd', {'fg': s:bright_blue, 'bg': s:black})
+call s:H('DiffAdd', {'fg': s:bright_green, 'bg': s:black})
 call s:H('DiffChange', {'fg': s:cyan, 'bg': s:black})
 call s:H('DiffText', {'fg': s:bright_yellow, 'bg': s:black})
 " }}}
@@ -346,190 +345,6 @@ if has("spell")
   " Rare word
   call s:H('SpellRare', {'empha': [s:undercurl], 'guisp': s:magenta})
 endif
-" }}}
-
-" Plugin specific -------------------------------------------------------------
-" GitGutter: {{{
-highlight! link GitGutterAdd MomijiGreen
-highlight! link GitGutterChange MomijiCyan
-highlight! link GitGutterDelete MomijiBrightRed
-highlight! link GitGutterChangeDelete MomijiCyan
-" }}}
-" GitCommit: "{{{
-highlight! link gitcommitSelectedFile MomijiGreen
-highlight! link gitcommitDiscardedFile MomijiBrightRed
-" }}}
-
-" Filetype specific -----------------------------------------------------------
-" Diff: {{{
-highlight! link diffAdded MomijiBrightGreen
-highlight! link diffRemoved MomijiBrightRed
-highlight! link diffChanged MomijiCyan
-
-highlight! link diffFile MomijiRed
-highlight! link diffNewFile MomijiBlue
-
-highlight! link diffLine MomijiBrightBlack
-" }}}
-" Html: {{{
-highlight! link htmlTag MomijiBlue
-highlight! link htmlEndTag MomijiBlue
-
-highlight! link htmlTagName MomijiCyanBold
-highlight! link htmlArg MomijiCyan
-
-highlight! link htmlScriptTag MomijiMagenta
-highlight! link htmlSpecialTagName MomijiCyanBold
-
-call s:H('htmlLink', {'fg': s:bright_white, 'empha': [s:underline]})
-
-highlight! link htmlSpecialChar MomijiYellow
-
-call s:H('htmlBold', {'fg': s:bright_white, 'bg': s:black, 'empha': [s:bold]})
-call s:H('htmlBoldUnderline', {'fg': s:bright_white, 'bg': s:black, 'empha': [s:bold, s:underline]})
-call s:H('htmlBoldItalic', {'fg': s:bright_white, 'bg': s:black, 'empha': [s:bold, s:italic]})
-call s:H('htmlBoldUnderlineItalic', {'fg': s:bright_white, 'bg': s:black, 'empha': [s:bold, s:underline, s:italic]})
-
-call s:H('htmlUnderline', {'fg': s:bright_white, 'bg': s:black, 'empha': [s:underline]})
-call s:H('htmlUnderlineItalic', {'fg': s:bright_white, 'bg': s:black, 'empha': [s:underline, s:italic]})
-call s:H('htmlItalic', {'fg': s:bright_white, 'bg': s:black, 'empha': [s:italic]})
-" }}}
-" Xml: {{{
-highlight! link xmlTag MomijiBlue
-highlight! link xmlEndTag MomijiBlue
-highlight! link xmlTagName MomijiBlue
-highlight! link xmlEqual MomijiBlue
-highlight! link docbkKeyword MomijiCyanBold
-
-highlight! link xmlDocTypeDecl MomijiWhite
-highlight! link xmlDocTypeKeyword MomijiMagenta
-highlight! link xmlCdataStart MomijiWhite
-highlight! link xmlCdataCdata MomijiMagenta
-highlight! link dtdFunction MomijiWhite
-highlight! link dtdTagName MomijiMagenta
-
-highlight! link xmlAttrib MomijiCyan
-highlight! link xmlProcessingDelim MomijiWhite
-highlight! link dtdParamEntityPunct MomijiWhite
-highlight! link dtdParamEntityDPunct MomijiWhite
-highlight! link xmlAttribPunct MomijiWhite
-
-highlight! link xmlEntity MomijiYellow
-highlight! link xmlEntityPunct MomijiYellow
-" }}}
-" Vim: {{{
-call s:H('vimCommentTitle', {'fg': s:bright_white, 'empha': [s:bold, s:italic]})
-
-highlight! link vimNotation MomijiYellow
-highlight! link vimBracket MomijiYellow
-highlight! link vimMapModKey MomijiYellow
-highlight! link vimFuncSID MomijiBrightWhite
-highlight! link vimSetSep MomijiBrightWhite
-highlight! link vimSep MomijiBrightWhite
-highlight! link vimContinue MomijiBrightWhite
-" }}}
-" C: {{{
-highlight! link cOperator MomijiMagenta
-highlight! link cStructure MomijiYellow
-" }}}
-" Python: {{{
-highlight! link pythonBuiltin Type
-highlight! link pythonBuiltinObj Type
-highlight! link pythonBuiltinFunc MomijiBrightGreen
-highlight! link pythonFunction Function
-highlight! link pythonDecorator MomijiRed
-highlight! link pythonInclude Include
-highlight! link pythonImport Include
-highlight! link pythonRun MomijiBlue
-highlight! link pythonCoding MomijiBlue
-highlight! link pythonOperator MomijiRed
-highlight! link pythonExceptions MomijiBrightRed
-highlight! link pythonBoolean MomijiMagenta
-highlight! link pythonDot Text
-highlight! link pythonStatement Statement
-" }}}
-" CSS: {{{
-highlight! link cssBraces MomijiBlue
-highlight! link cssFunctionName MomijiYellow
-highlight! link cssIdentifier MomijiYellow
-highlight! link cssClassName MomijiGreen
-highlight! link cssColor MomijiBlue
-highlight! link cssSelectorOp MomijiBlue
-highlight! link cssSelectorOp2 MomijiBlue
-highlight! link cssImportant MomijiGreen
-
-highlight! link cssTextProp MomijiCyan
-highlight! link cssAnimationProp MomijiCyan
-highlight! link cssUIProp MomijiYellow
-highlight! link cssTransformProp MomijiCyan
-highlight! link cssTransitionProp MomijiCyan
-highlight! link cssPrintProp MomijiCyan
-highlight! link cssPositioningProp MomijiYellow
-highlight! link cssBoxProp MomijiCyan
-highlight! link cssFontDescriptorProp MomijiCyan
-highlight! link cssFlexibleBoxProp MomijiCyan
-highlight! link cssBorderOutlineProp MomijiCyan
-highlight! link cssBackgroundProp MomijiCyan
-highlight! link cssMarginProp MomijiCyan
-highlight! link cssListProp MomijiCyan
-highlight! link cssTableProp MomijiCyan
-highlight! link cssFontProp MomijiCyan
-highlight! link cssPaddingProp MomijiCyan
-highlight! link cssDimensionProp MomijiCyan
-highlight! link cssRenderProp MomijiCyan
-highlight! link cssColorProp MomijiCyan
-highlight! link cssGeneratedContentProp MomijiCyan
-" }}}
-" JavaScript: {{{
-highlight! link jsRegexpString MomijiMagenta
-highlight! link jsArrowFunction Function
-highlight! link jsFunction Function
-" }}}
-" Ruby: {{{
-highlight! link rubyStringDelimiter MomijiGreen
-highlight! link rubyInterpolationDelimiter MomijiCyan
-" }}}
-" Go: {{{
-highlight! link goPackage Keyword
-highlight! link goImport Include
-highlight! link goFunctionCall MomijiBrightGreen
-" }}}
-" Markdown: {{{
-call s:H('markdownItalic', {'fg': s:bright_white, 'empha': [s:italic]})
-
-highlight! link markdownH1 MomijiGreenBold
-highlight! link markdownH2 MomijiGreenBold
-highlight! link markdownH3 MomijiYellowBold
-highlight! link markdownH4 MomijiYellowBold
-highlight! link markdownH5 MomijiYellow
-highlight! link markdownH6 MomijiYellow
-
-call s:H('markdownCode', {'bg': s:grayscale1})
-call s:H('markdownCodeBlock', {'bg': s:grayscale1})
-call s:H('markdownCodeDelimiter', {'bg': s:grayscale1})
-
-highlight! link markdownBlockquote MomijiWhite
-highlight! link markdownListMarker MomijiBlue
-highlight! link markdownOrderedListMarker MomijiBlue
-highlight! link markdownRule MomijiWhite
-highlight! link markdownHeadingRule MomijiWhite
-
-highlight! link markdownUrlDelimiter MomijiBrightWhite
-highlight! link markdownLinkDelimiter MomijiBrightWhite
-highlight! link markdownLinkTextDelimiter MomijiBrightWhite
-
-highlight! link markdownHeadingDelimiter MomijiYellow
-highlight! link markdownUrl MomijiCyan
-highlight! link markdownUrlTitleDelimiter MomijiGreen
-
-call s:H('markdownLinkText', {'fg': s:white, 'empha': [s:underline]})
-highlight! link markdownIdDeclaration markdownLinkText
-" }}}
-" Json: {{{
-highlight! link jsonBraces Text
-highlight! link jsonKeyword Type
-highlight! link jsonString MomijiBrightGreen
-highlight! link jsonQuote MomijiBlue
 " }}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
