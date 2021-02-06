@@ -288,15 +288,15 @@ highlight! link Identifier MomijiBrightBlue
 highlight! link Function MomijiBlue
 
 " Generic preprocessor
-highlight! link PreProc MomijiCyan
+highlight! link PreProc MomijiMagenta
 " Preprocessor #include
-highlight! link Include MomijiCyan
+highlight! link Include MomijiMagenta
 " Preprocessor #define
-highlight! link Define MomijiCyan
+highlight! link Define MomijiMagenta
 " Same as Define
-highlight! link Macro MomijiCyan
+highlight! link Macro MomijiMagenta
 " Preprocessor #if, #else, #endif, etc.
-highlight! link PreCondit MomijiCyan
+highlight! link PreCondit MomijiMagenta
 
 " Generic constant
 highlight! link Constant MomijiBrightMagenta
@@ -310,9 +310,9 @@ highlight! link Number MomijiBrightMagenta
 highlight! link Float MomijiBrightMagenta
 
 " Generic type
-highlight! link Type MomijiMagenta
+highlight! link Type MomijiCyan
 " static, register, volatile, etc
-highlight! link StorageClass MomijiMagenta
+highlight! link StorageClass MomijiCyan
 " struct, union, enum, etc.
 highlight! link Structure MomijiBrightRed
 " typedef
