@@ -1,15 +1,3 @@
-function momiji#gui(name)
-  return momiji#palette(a:name)[0]
-endfunction
-
-function momiji#cterm(name)
-  return momiji#palette(a:name)[1]
-endfunction
-
-function momiji#palette(name)
-  return get(s:, a:name, [])
-endfunction
-
 let s:black          = ["#140c0c", 0]    " =rgb( 20,  12,  12)  =rgb(  7.8%,   4.7%,   4.7%)
 let s:red            = ["#da5774", 1]    " =rgb(218,  87, 116)  =rgb( 85.5%,  34.1%,  45.5%)
 let s:green          = ["#348c4e", 2]    " =rgb( 52, 140,  78)  =rgb( 20.4%,  54.9%,  30.6%)
@@ -32,3 +20,54 @@ let s:grayscale2     = ['#5a4e4e', 236]  " =rgb( 90,  78,  78)  =rgb( 35.3%,  30
 let s:grayscale3     = ['#7d7373', 237]  " =rgb(125, 115, 115)  =rgb( 49.0%,  45.1%,  45.1%)
 let s:grayscale4     = ['#a09999', 238]  " =rgb(160, 153, 153)  =rgb( 62.7%,  60.0%,  60.0%)
 let s:grayscale5     = ['#c3bebe', 239]  " =rgb(195, 190, 190)  =rgb( 76.5%,  74.5%,  74.5%)
+
+function! momiji#gui(name)
+  return momiji#palette(a:name)[0]
+endfunction
+
+function! momiji#cterm(name)
+  return momiji#palette(a:name)[1]
+endfunction
+
+function! momiji#palette(name)
+  return get(s:, a:name, [])
+endfunction
+
+" Set a highlight group.
+" `params` contains some options like below.
+"   - fg     color
+"   - bg     color
+"   - empha  list<"bold"|"italic"|"inverse">
+"   - guisp  list<"underline"|"undercurl">
+"
+" Which color for fg or bg you can get it from momiji#palette:
+"   call momiji#highlight(Pmenu, {'fg': momiji#palette('red')})
+function! momiji#highlight(group, params)
+  " params: fg, bg, empha, guisp
+  let l:histr = [ 'highlight', a:group ]
+
+  let l:fg = get(a:params, 'fg', get(a:params, 'foreground', []))
+  if len(l:fg) >= 2
+    call extend(l:histr, ['guifg=' . l:fg[0], 'ctermfg=' . l:fg[1]])
+  endif
+
+  let l:bg = get(a:params, 'bg', get(a:params, 'background', []))
+  if len(l:bg) >= 2
+    call extend(l:histr, ['guibg=' . l:bg[0], 'ctermbg=' . l:bg[1]])
+  endif
+
+  let l:empha = get(a:params, 'empha', [])
+  let l:empha = filter(l:empha, {_, v -> v !=# ''})
+
+  if len(l:empha) > 0
+    let l:em = join(l:empha, ',')
+    call extend(l:histr, ['gui=' . l:em, 'cterm=' . l:em])
+  endif
+
+  let l:guisp = get(a:params, 'guisp', [])
+  if len(l:guisp) > 0
+    call add(l:histr, 'guisp=' . l:guisp[0])
+  endif
+
+  execute join(l:histr, ' ')
+endfunction

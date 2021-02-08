@@ -84,33 +84,7 @@ endif
 " }}}
 " Highlighting Function: {{{
 function! s:H(group, params)
-  " params: fg, bg, empha, guisp
-  let l:histr = [ 'highlight', a:group ]
-
-  let l:fg = get(a:params, 'fg', [])
-  if len(l:fg) >= 2
-    call extend(l:histr, ['guifg=' . l:fg[0], 'ctermfg=' . l:fg[1]])
-  endif
-
-  let l:bg = get(a:params, 'bg', [])
-  if len(l:bg) >= 2
-    call extend(l:histr, ['guibg=' . l:bg[0], 'ctermbg=' . l:bg[1]])
-  endif
-
-  let l:empha = get(a:params, 'empha', [])
-  let l:empha = filter(l:empha, {_, v -> v !=# ''})
-
-  if len(l:empha) > 0
-    let l:em = join(l:empha, ',')
-    call extend(l:histr, ['gui=' . l:em, 'cterm=' . l:em])
-  endif
-
-  let l:guisp = get(a:params, 'guisp', [])
-  if len(l:guisp) > 0
-    call add(l:histr, 'guisp=' . l:guisp[0])
-  endif
-
-  execute join(l:histr, ' ')
+  call momiji#highlight(a:group, a:params)
 endfunction
 "}}}
 " Momiji Hi Groups: {{{
