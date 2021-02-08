@@ -22,4 +22,4 @@ let g:momiji_color_grayscale3     = momiji#gui('grayscale3')
 let g:momiji_color_grayscale4     = momiji#gui('grayscale4')
 let g:momiji_color_grayscale5     = momiji#gui('grayscale5')
 
-doautocmd User MomijiLoaded
+silent doautocmd User MomijiLoaded
