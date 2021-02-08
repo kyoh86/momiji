@@ -1,3 +1,4 @@
+let g:momiji_loaded = v:true
 let g:momiji_color_black          = momiji#gui('black')
 let g:momiji_color_red            = momiji#gui('red')
 let g:momiji_color_green          = momiji#gui('green')
@@ -20,3 +21,5 @@ let g:momiji_color_grayscale2     = momiji#gui('grayscale2')
 let g:momiji_color_grayscale3     = momiji#gui('grayscale3')
 let g:momiji_color_grayscale4     = momiji#gui('grayscale4')
 let g:momiji_color_grayscale5     = momiji#gui('grayscale5')
+
+doautocmd User MomijiLoaded
