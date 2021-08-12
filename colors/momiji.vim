@@ -217,6 +217,7 @@ let g:terminal_color_15 = g:momiji_colors.lightwhite
 " General UI: {{{
 " Normal text
 call MomijiHighlight('Normal', {'fg': g:momiji_palette.lightwhite, 'bg': g:momiji_palette.black})
+call MomijiHighlight('NormalFloat', {'fg': g:momiji_palette.lightwhite, 'bg': g:momiji_palette.grayscale2})
 
 " Screen line that the cursor is
 highlight! CursorLine NONE
@@ -324,7 +325,7 @@ highlight! link Label MomijiYellow
 " try, catch, throw
 highlight! link Exception MomijiRed
 " sizeof, "+", "*", etc.
-highlight! link Operator Normal
+highlight! link Operator None
 " Any other keyword
 highlight! link Keyword MomijiRed
 
@@ -366,13 +367,13 @@ highlight! link Typedef MomijiBrightRed
 " }}}
 " Completion Menu: {{{
 " Popup menu: normal item
-call MomijiHighlight('Pmenu', {'fg': g:momiji_palette.black, 'bg': g:momiji_palette.lightyellow})
+call MomijiHighlight('Pmenu', {'bg': g:momiji_palette.grayscale1})
 " Popup menu: selected item
-call MomijiHighlight('PmenuSel', {'fg': g:momiji_palette.black, 'bg': g:momiji_palette.yellow, 'empha': [s:bold]})
+call MomijiHighlight('PmenuSel', {'bg': g:momiji_palette.grayscale2, 'empha': [s:bold]})
 " Popup menu: scrollbar
-call MomijiHighlight('PmenuSbar', {'bg': g:momiji_palette.black})
+call MomijiHighlight('PmenuSbar', {'bg': g:momiji_palette.grayscale2})
 " Popup menu: scrollbar thumb
-call MomijiHighlight('PmenuThumb', {'bg': g:momiji_palette.black})
+call MomijiHighlight('PmenuThumb', {'bg': g:momiji_palette.grayscale2})
 " }}}
 " Diffs: {{{
 call MomijiHighlight('DiffDelete', {'fg': g:momiji_palette.lightred, 'bg': g:momiji_palette.black})
