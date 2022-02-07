@@ -217,7 +217,7 @@ let g:terminal_color_15 = g:momiji_colors.lightwhite
 " General UI: {{{
 " Normal text
 call MomijiHighlight('Normal', {'fg': g:momiji_palette.lightwhite, 'bg': g:momiji_palette.black})
-call MomijiHighlight('NormalFloat', {'fg': g:momiji_palette.lightwhite, 'bg': g:momiji_palette.grayscale2})
+call MomijiHighlight('NormalFloat', {'fg': g:momiji_palette.lightwhite, 'bg': g:momiji_palette.grayscale1})
 
 " Screen line that the cursor is
 highlight! CursorLine NONE
@@ -243,7 +243,7 @@ call MomijiHighlight('Conceal', {'fg': g:momiji_palette.blue})
 
 " Line number of CursorLine
 call MomijiHighlight('CursorLineNr', {'fg': g:momiji_palette.grayscale1, 'bg': g:momiji_palette.blue, 'empha': [s:bold]})
-call MomijiHighlight('CursorLineSign', {'fg': g:momiji_palette.grayscale1, 'bg': g:momiji_palette.blue, 'empha': [s:bold]})
+call MomijiHighlight('CursorLineSign', {'fg': g:momiji_palette.grayscale1, 'empha': [s:bold]})
 
 highlight! link NonText MomijiBrightBlack
 highlight! link SpecialKey MomijiBrightBlack
@@ -285,10 +285,10 @@ highlight! link WarningMsg MomijiRedBold
 " }}}
 " Gutter: {{{
 " Line number for :number and :# commands
-call MomijiHighlight('LineNr', {'fg': g:momiji_palette.white})
+call MomijiHighlight('LineNr', {'fg': g:momiji_palette.white, 'bg': g:momiji_palette.hardblack})
 
 " Column where signs are displayed
-call MomijiHighlight('SignColumn', {'bg': g:momiji_palette.black})
+call MomijiHighlight('SignColumn', {'bg': g:momiji_palette.hardblack})
 
 " Line used for closed folds
 call MomijiHighlight('Folded', {'fg': g:momiji_palette.white, 'bg': g:momiji_palette.black, 'empha': [s:italic]})
