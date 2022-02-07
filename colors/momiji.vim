@@ -221,7 +221,7 @@ call MomijiHighlight('NormalFloat', {'fg': g:momiji_palette.lightwhite, 'bg': g:
 
 " Screen line that the cursor is
 highlight! CursorLine NONE
-call MomijiHighlight('CursorLine', {'empha': [s:underline]})
+call MomijiHighlight('CursorLine', {'bg': g:momiji_palette.grayscale1})
 " Screen column that the cursor is
 call MomijiHighlight('CursorColumn', {'bg': g:momiji_palette.lightblack})
 
@@ -242,7 +242,8 @@ call MomijiHighlight('ColorColumn', {'bg': g:momiji_palette.lightblack})
 call MomijiHighlight('Conceal', {'fg': g:momiji_palette.blue})
 
 " Line number of CursorLine
-call MomijiHighlight('CursorLineNr', {'fg': g:momiji_palette.yellow, 'bg': g:momiji_palette.black, 'empha': [s:bold]})
+call MomijiHighlight('CursorLineNr', {'fg': g:momiji_palette.grayscale1, 'bg': g:momiji_palette.blue, 'empha': [s:bold]})
+call MomijiHighlight('CursorLineSign', {'fg': g:momiji_palette.grayscale1, 'bg': g:momiji_palette.blue, 'empha': [s:bold]})
 
 highlight! link NonText MomijiBrightBlack
 highlight! link SpecialKey MomijiBrightBlack
