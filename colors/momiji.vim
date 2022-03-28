@@ -297,7 +297,7 @@ call MomijiHighlight('FoldColumn', {'fg': g:momiji_palette.white, 'bg': g:momiji
 " }}}
 " Cursor: {{{
 " Character under cursor
-call MomijiHighlight('Cursor', {'fg': s:none, 'bg': s:none, 'empha': [s:inverse]})
+call MomijiHighlight('Cursor', {'fg': g:momiji_palette.black, 'bg': g:momiji_palette.lightyellow})
 " Visual mode cursor, selection
 call MomijiHighlight('vCursor', {'fg': g:momiji_palette.black, 'bg': g:momiji_palette.lightyellow})
 " Input moder cursor
