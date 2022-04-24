@@ -1,0 +1,312 @@
+" 'momiji.vim' -- Vim color scheme.
+" Maintainer:   kyoh86 (me@kyoh86.dev)
+" Description:  Colorscheme that focus ease of use and clearly defined contrasting colors with a slightly earthy tone.
+" Original Source: https://github.com/kyoh86/momiji
+
+highlight clear
+if exists("syntax_on")
+  syntax reset
+endif
+
+let g:colors_name='momiji'
+
+if !has('gui_running') && &t_Co != 256
+  finish
+endif
+
+let g:momiji_colors = {}
+let g:momiji_colors['black'] =        '#{{.Black.HexRGB}}'
+let g:momiji_colors['red'] =          '#{{.Red.HexRGB}}'
+let g:momiji_colors['green'] =        '#{{.Green.HexRGB}}'
+let g:momiji_colors['yellow'] =       '#{{.Yellow.HexRGB}}'
+let g:momiji_colors['blue'] =         '#{{.Blue.HexRGB}}'
+let g:momiji_colors['magenta'] =      '#{{.Magenta.HexRGB}}'
+let g:momiji_colors['cyan'] =         '#{{.Cyan.HexRGB}}'
+let g:momiji_colors['white'] =        '#{{.White.HexRGB}}'
+let g:momiji_colors['lightblack'] =   '#{{.LightBlack.HexRGB}}'
+let g:momiji_colors['lightred'] =     '#{{.LightRed.HexRGB}}'
+let g:momiji_colors['lightgreen'] =   '#{{.LightGreen.HexRGB}}'
+let g:momiji_colors['lightyellow'] =  '#{{.LightYellow.HexRGB}}'
+let g:momiji_colors['lightblue'] =    '#{{.LightBlue.HexRGB}}'
+let g:momiji_colors['lightmagenta'] = '#{{.LightMagenta.HexRGB}}'
+let g:momiji_colors['lightcyan'] =    '#{{.LightCyan.HexRGB}}'
+let g:momiji_colors['lightwhite'] =   '#{{.LightWhite.HexRGB}}'
+let g:momiji_colors['hardblack'] =    '#{{.HardBlack.HexRGB}}'
+let g:momiji_colors['grayscale1'] =   '#{{.GrayScale1.HexRGB}}'
+let g:momiji_colors['grayscale2'] =   '#{{.GrayScale2.HexRGB}}'
+let g:momiji_colors['grayscale3'] =   '#{{.GrayScale3.HexRGB}}'
+let g:momiji_colors['grayscale4'] =   '#{{.GrayScale4.HexRGB}}'
+let g:momiji_colors['grayscale5'] =   '#{{.GrayScale5.HexRGB}}'
+
+let g:momiji_palette = {}
+let g:momiji_palette['black'] =        [g:momiji_colors.black,        {{.Black.Index}}]
+let g:momiji_palette['red'] =          [g:momiji_colors.red,          {{.Red.Index}}]
+let g:momiji_palette['green'] =        [g:momiji_colors.green,        {{.Green.Index}}]
+let g:momiji_palette['yellow'] =       [g:momiji_colors.yellow,       {{.Yellow.Index}}]
+let g:momiji_palette['blue'] =         [g:momiji_colors.blue,         {{.Blue.Index}}]
+let g:momiji_palette['magenta'] =      [g:momiji_colors.magenta,      {{.Magenta.Index}}]
+let g:momiji_palette['cyan'] =         [g:momiji_colors.cyan,         {{.Cyan.Index}}]
+let g:momiji_palette['white'] =        [g:momiji_colors.white,        {{.White.Index}}]
+let g:momiji_palette['lightblack'] =   [g:momiji_colors.lightblack,   {{.LightBlack.Index}}]
+let g:momiji_palette['lightred'] =     [g:momiji_colors.lightred,     {{.LightRed.Index}}]
+let g:momiji_palette['lightgreen'] =   [g:momiji_colors.lightgreen,   {{.LightGreen.Index}}]
+let g:momiji_palette['lightyellow'] =  [g:momiji_colors.lightyellow,  {{.LightYellow.Index}}]
+let g:momiji_palette['lightblue'] =    [g:momiji_colors.lightblue,    {{.LightBlue.Index}}]
+let g:momiji_palette['lightmagenta'] = [g:momiji_colors.lightmagenta, {{.LightMagenta.Index}}]
+let g:momiji_palette['lightcyan'] =    [g:momiji_colors.lightcyan,    {{.LightCyan.Index}}]
+let g:momiji_palette['lightwhite'] =   [g:momiji_colors.lightwhite,   {{.LightWhite.Index}}]
+let g:momiji_palette['hardblack'] =    [g:momiji_colors.hardblack,    {{.HardBlack.Index}}]
+let g:momiji_palette['grayscale1'] =   [g:momiji_colors.grayscale1,   {{.GrayScale1.Index}}]
+let g:momiji_palette['grayscale2'] =   [g:momiji_colors.grayscale2,   {{.GrayScale2.Index}}]
+let g:momiji_palette['grayscale3'] =   [g:momiji_colors.grayscale3,   {{.GrayScale3.Index}}]
+let g:momiji_palette['grayscale4'] =   [g:momiji_colors.grayscale4,   {{.GrayScale4.Index}}]
+let g:momiji_palette['grayscale5'] =   [g:momiji_colors.grayscale5,   {{.GrayScale5.Index}}]
+
+" Set a highlight group.
+" `params` contains some options like below.
+"   - fg     color
+"   - bg     color
+"   - empha  list of bold|italic|inverseg
+"   - guisp  list of underline|undercurlg
+"
+" Which color for fg or bg you can get it from g:momiji_palette e.g.:
+"   call MomijiHighlight(Pmenu, {'fg': g:momiji_palette.red})
+function! MomijiHighlight(group, params)
+  " params: fg, bg, empha, guisp
+  let l:histr = [ 'highlight', a:group ]
+
+  let l:fg = get(a:params, 'fg', get(a:params, 'foreground', []))
+  if len(l:fg) >= 2
+    call extend(l:histr, ['guifg=' . l:fg[0], 'ctermfg=' . l:fg[1]])
+  endif
+
+  let l:bg = get(a:params, 'bg', get(a:params, 'background', []))
+  if len(l:bg) >= 2
+    call extend(l:histr, ['guibg=' . l:bg[0], 'ctermbg=' . l:bg[1]])
+  endif
+
+  let l:empha = get(a:params, 'empha', [])
+  let l:empha = filter(l:empha, {_, v -> v !=# ''})
+
+  if len(l:empha) > 0
+    let l:em = join(l:empha, ',')
+    call extend(l:histr, ['gui=' . l:em, 'cterm=' . l:em])
+  endif
+
+  let l:guisp = get(a:params, 'guisp', [])
+  if len(l:guisp) > 0
+    call add(l:histr, 'guisp=' . l:guisp[0])
+  endif
+
+  execute join(l:histr, ' ')
+endfunction
+
+" Momiji Hi Groups:
+" memoize common hi groups
+highlight MomijiWhite {{Foreground .Black}}
+highlight MomijiRed {{Foreground .Red}}
+highlight MomijiGreen {{Foreground .Green}}
+highlight MomijiYellow {{Foreground .Yellow}}
+highlight MomijiBlue {{Foreground .Blue}}
+highlight MomijiMagenta {{Foreground .Magenta}}
+highlight MomijiCyan {{Foreground .Cyan}}
+highlight MomijiBlack {{Foreground .Black}}
+highlight MomijiRedBold {{Foreground .Red}} {{Emphasis "bold"}}
+highlight MomijiGreenBold {{Foreground .Green}} {{Emphasis "bold"}}
+highlight MomijiYellowBold {{Foreground .Yellow}} {{Emphasis "bold"}}
+highlight MomijiBlueBold {{Foreground .Blue}} {{Emphasis "bold"}}
+highlight MomijiMagentaBold {{Foreground .Magenta}} {{Emphasis "bold"}}
+highlight MomijiCyanBold {{Foreground .Cyan}} {{Emphasis "bold"}}
+
+highlight MomijiBrightRed {{Foreground .LightRed}}
+highlight MomijiBrightGreen {{Foreground .LightGreen}}
+highlight MomijiBrightYellow {{Foreground .LightYellow}}
+highlight MomijiBrightBlue {{Foreground .LightBlue}}
+highlight MomijiBrightMagenta {{Foreground .LightMagenta}}
+highlight MomijiBrightCyan {{Foreground .LightCyan}}
+highlight MomijiBrightBlack {{Foreground .LightBlack}}
+highlight MomijiBrightWhite {{Foreground .LightWhite}}
+
+" special
+highlight MomijiBrightRedBold {{Foreground .LightRed}} {{Emphasis "bold"}}
+highlight MomijiGrayScale1 {{Foreground .GrayScale1}}
+highlight MomijiGrayScale2 {{Foreground .GrayScale2}}
+highlight MomijiGrayScale3 {{Foreground .GrayScale3}}
+highlight MomijiGrayScale4 {{Foreground .GrayScale4}}
+highlight MomijiGrayScale5 {{Foreground .GrayScale5}}
+
+" General UI:
+" Normal text
+highlight Normal {{Foreground .LightWhite}} {{Background .Black}}
+highlight NormalFloat {{Foreground .LightWhite}} {{Background .GrayScale1}}
+
+" Screen line that the cursor is
+highlight! CursorLine NONE
+highlight CursorLine {{Background .GrayScale1}}
+" Screen column that the cursor is
+highlight CursorColumn {{Background .LightBlack}}
+
+" Tab pages line filler
+highlight TabLineFill {{Foreground .Green}} {{Background .Black}}
+" Active tab page label
+highlight TabLineSel {{Foreground .Red}} {{Background .Black}} {{Emphasis "bold"}}
+" Not active tab page label
+highlight! link TabLine TabLineFill
+
+" Match paired bracket under the cursor
+highlight MatchParen {{Foreground .Yellow}} {{Background .LightBlack}} {{Emphasis "bold"}}
+
+" Highlighted screen columns
+highlight ColorColumn {{Background .LightBlack}}
+
+" Concealed element: \lambda → λ
+highlight Conceal {{Foreground .Blue}}
+
+" Line number of CursorLine
+highlight CursorLineNr {{Foreground .GrayScale1}} {{Background .Blue}} {{Emphasis "bold"}}
+highlight CursorLineSign {{Foreground .GrayScale1}} {{Emphasis "bold"}}
+
+highlight! link NonText MomijiBrightBlack
+highlight! link SpecialKey MomijiBrightBlack
+highlight! link Whitespace MomijiBrightBlack
+
+highlight Visual {{Foreground .Black}} {{Background .Yellow}}
+highlight! link VisualNOS Visual
+
+highlight Search {{Foreground .Black}} {{Background .LightBlue}}
+highlight IncSearch {{Foreground .Black}} {{Background .LightBlue}} {{Emphasis "inverse"}}
+
+highlight Underlined {{Foreground .Blue}} {{Emphasis "underline"}}
+
+highlight StatusLine {{Foreground .LightWhite}} {{Background .LightBlack}} {{Emphasis "bold" "inverse"}}
+highlight StatusLineNC {{Foreground .White}} {{Background .Black}} {{Emphasis "underline"}}
+
+" The column separating vertically split windows
+highlight VertSplit {{Foreground .LightWhite}} {{Background .Black}} {{Emphasis "inverse"}}
+
+" Current match in wildmenu completion
+highlight WildMenu {{Foreground .Blue}} {{Background .Black}} {{Emphasis "bold"}}
+
+" Directory names, special names in listing
+highlight! link Directory MomijiGreenBold
+
+" Titles for output from :set all, :autocmd, etc.
+highlight! link Title MomijiGreenBold
+
+" Error messages on the command line
+highlight ErrorMsg {{Foreground .LightWhite}} {{Background .Red}}
+" More prompt: -- More --
+highlight! link MoreMsg MomijiYellowBold
+" Current mode message: -- INSERT --
+highlight! link ModeMsg MomijiYellowBold
+" 'Press enter' prompt and yes/no questions
+highlight! link Question MomijiBrightRedBold
+" Warning messages
+highlight! link WarningMsg MomijiRedBold
+" Gutter:
+" Line number for :number and :# commands
+highlight LineNr {{Foreground .White}} {{Background .HardBlack}}
+
+" Column where signs are displayed
+highlight SignColumn {{Background .HardBlack}}
+
+" Line used for closed folds
+highlight Folded {{Foreground .White}} {{Background .Black}} {{Emphasis "italic"}}
+" Column where folds are displayed
+highlight FoldColumn {{Foreground .White}} {{Background .Black}}
+" Cursor:
+" Character under cursor
+highlight Cursor {{Foreground .Black}} {{Background .LightYellow}}
+" Visual mode cursor, selection
+highlight vCursor {{Foreground .Black}} {{Background .LightYellow}}
+" Input moder cursor
+highlight! link iCursor Cursor
+" Language mapping cursor
+highlight! link lCursor Cursor
+" Syntax Highlighting:
+highlight! link Special MomijiBrightYellow
+
+highlight Comment {{Foreground .White}} {{Emphasis "italic"}}
+highlight Todo {{Foreground .LightWhite}} {{Background .Black}} {{Emphasis "bold" "italic"}}
+highlight Error {{Foreground .LightRed}} {{Background .Black}} {{Emphasis "bold" "inverse"}}
+
+" String constant: "this is a string"
+highlight String {{Foreground .Green}}
+
+" Generic statement
+highlight! link Statement MomijiYellow
+" if, then, else, endif, swicth, etc.
+highlight! link Conditional MomijiYellow
+" for, do, while, etc.
+highlight! link Repeat MomijiYellow
+" case, default, etc.
+highlight! link Label MomijiYellow
+" try, catch, throw
+highlight! link Exception MomijiRed
+" sizeof, "+", "*", etc.
+highlight! link Operator None
+" Any other keyword
+highlight! link Keyword MomijiRed
+
+" Variable name
+highlight! link Identifier MomijiBrightBlue
+" Function name
+highlight! link Function MomijiBlue
+
+" Generic preprocessor
+highlight! link PreProc MomijiMagenta
+" Preprocessor #include
+highlight! link Include MomijiMagenta
+" Preprocessor #define
+highlight! link Define MomijiMagenta
+" Same as Define
+highlight! link Macro MomijiMagenta
+" Preprocessor #if, #else, #endif, etc.
+highlight! link PreCondit MomijiMagenta
+
+" Generic constant
+highlight! link Constant MomijiBrightMagenta
+" Character constant: 'c', '/n'
+highlight! link Character MomijiBrightMagenta
+" Boolean constant: TRUE, false
+highlight! link Boolean MomijiBrightMagenta
+" Number constant: 234, 0xff
+highlight! link Number MomijiBrightMagenta
+" Floating point constant: 2.3e10
+highlight! link Float MomijiBrightMagenta
+
+" Generic type
+highlight! link Type MomijiCyan
+" static, register, volatile, etc
+highlight! link StorageClass MomijiCyan
+" struct, union, enum, etc.
+highlight! link Structure MomijiBrightRed
+" typedef
+highlight! link Typedef MomijiBrightRed
+" Completion Menu:
+" Popup menu: normal item
+highlight Pmenu {{Background .GrayScale1}}
+" Popup menu: selected item
+highlight PmenuSel {{Background .GrayScale2}} {{Emphasis "bold"}}
+" Popup menu: scrollbar
+highlight PmenuSbar {{Background .GrayScale2}}
+" Popup menu: scrollbar thumb
+highlight PmenuThumb {{Background .GrayScale2}}
+" Diffs:
+highlight DiffDelete {{Foreground .LightRed}} {{Background .Black}}
+highlight DiffAdd {{Foreground .LightGreen}} {{Background .Black}}
+highlight DiffChange {{Foreground .Cyan}} {{Background .Black}}
+highlight DiffText {{Foreground .LightYellow}} {{Background .Black}}
+" Spelling:
+if has("spell")
+  " Not capitalised word, or compile warnings
+  highlight SpellCap {{Emphasis "undercurl"}} guisp=#{{.Blue.HexRGB}}
+  " Not recognized word
+  highlight SpellBad {{Emphasis "undercurl"}} guisp=#{{.Blue.HexRGB}}
+  " Wrong spelling for selected region
+  highlight SpellLocal {{Emphasis "undercurl"}} guisp=#{{.Cyan.HexRGB}}
+  " Rare word
+  highlight SpellRare {{Emphasis "undercurl"}} guisp=#{{.Magenta.HexRGB}}
+endif
+
+" vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:

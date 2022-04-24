@@ -14,39 +14,29 @@ if !has('gui_running') && &t_Co != 256
   finish
 endif
 
-" Setup Environments: {{{
-if has('gui_running') || $TERM_ITALICS == 'true'
-  let s:default_momiji_italic=1
-else
-  let s:default_momiji_italic=0
-endif
-" }}}
-" Setup Variables: {{{
-let s:none = ['NONE', 'NONE']
-
 let g:momiji_colors = {}
-let g:momiji_colors['black'] =        '#140c0c'   " =rgb( 20,  12,  12)  =rgb(  7.8%,   4.7%,   4.7%)
-let g:momiji_colors['red'] =          '#da5774'   " =rgb(218,  87, 116)  =rgb( 85.5%,  34.1%,  45.5%)
-let g:momiji_colors['green'] =        '#348c4e'   " =rgb( 52, 140,  78)  =rgb( 20.4%,  54.9%,  30.6%)
-let g:momiji_colors['yellow'] =       '#e7a82b'   " =rgb(231, 168,  43)  =rgb( 90.6%,  65.9%,  16.9%)
-let g:momiji_colors['blue'] =         '#4884d2'   " =rgb( 72, 132, 210)  =rgb( 28.2%,  51.8%,  82.4%)
-let g:momiji_colors['magenta'] =      '#a55aaa'   " =rgb(165,  90, 170)  =rgb( 64.7%,  35.3%,  66.7%)
-let g:momiji_colors['cyan'] =         '#1f90a8'   " =rgb( 31, 144, 168)  =rgb( 12.2%,  56.5%,  65.9%)
-let g:momiji_colors['white'] =        '#a09999'   " =rgb(160, 153, 153)  =rgb( 62.7%,  60.0%,  60.0%)
-let g:momiji_colors['lightblack'] =   '#5a4e4e'   " =rgb( 90,  78,  78)  =rgb( 35.3%,  30.6%,  30.6%)
-let g:momiji_colors['lightred'] =     '#f5875b'   " =rgb(245, 135,  91)  =rgb( 96.1%,  52.9%,  35.7%)
-let g:momiji_colors['lightgreen'] =   '#9abe86'   " =rgb(154, 190, 134)  =rgb( 60.4%,  74.5%,  52.5%)
-let g:momiji_colors['lightyellow'] =  '#ffd791'   " =rgb(255, 215, 145)  =rgb(100.0%,  84.3%,  56.9%)
-let g:momiji_colors['lightblue'] =    '#89b7e1'   " =rgb(137, 183, 225)  =rgb( 53.7%,  71.8%,  88.2%)
-let g:momiji_colors['lightmagenta'] = '#eea1d1'   " =rgb(238, 161, 209)  =rgb( 93.3%,  63.1%,  82.0%)
-let g:momiji_colors['lightcyan'] =    '#69b2ac'   " =rgb(105, 178, 172)  =rgb( 41.2%,  69.8%,  67.5%)
-let g:momiji_colors['lightwhite'] =   '#e6e3e3'   " =rgb(230, 227, 227)  =rgb( 90.2%,  89.0%,  89.0%)
-let g:momiji_colors['hardblack'] =    '#080808'   " =rgb(  8,   8,   8)  =rgb(  3.1%,   3.1%,   3.1%)
-let g:momiji_colors['grayscale1'] =   '#372a2a'   " =rgb( 55,  42,  42)  =rgb( 21.6%,  16.5%,  16.5%)
-let g:momiji_colors['grayscale2'] =   '#5a4e4e'   " =rgb( 90,  78,  78)  =rgb( 35.3%,  30.6%,  30.6%)
-let g:momiji_colors['grayscale3'] =   '#7d7373'   " =rgb(125, 115, 115)  =rgb( 49.0%,  45.1%,  45.1%)
-let g:momiji_colors['grayscale4'] =   '#a09999'   " =rgb(160, 153, 153)  =rgb( 62.7%,  60.0%,  60.0%)
-let g:momiji_colors['grayscale5'] =   '#c3bebe'   " =rgb(195, 190, 190)  =rgb( 76.5%,  74.5%,  74.5%)
+let g:momiji_colors['black'] =        '#140c0c'
+let g:momiji_colors['red'] =          '#da5774'
+let g:momiji_colors['green'] =        '#348c4e'
+let g:momiji_colors['yellow'] =       '#e7a82b'
+let g:momiji_colors['blue'] =         '#4884d2'
+let g:momiji_colors['magenta'] =      '#a55aaa'
+let g:momiji_colors['cyan'] =         '#1f90a8'
+let g:momiji_colors['white'] =        '#a09999'
+let g:momiji_colors['lightblack'] =   '#5a4e4e'
+let g:momiji_colors['lightred'] =     '#f5875b'
+let g:momiji_colors['lightgreen'] =   '#9abe86'
+let g:momiji_colors['lightyellow'] =  '#ffd791'
+let g:momiji_colors['lightblue'] =    '#89b7e1'
+let g:momiji_colors['lightmagenta'] = '#eea1d1'
+let g:momiji_colors['lightcyan'] =    '#69b2ac'
+let g:momiji_colors['lightwhite'] =   '#e6e3e3'
+let g:momiji_colors['hardblack'] =    '#080808'
+let g:momiji_colors['grayscale1'] =   '#372a2a'
+let g:momiji_colors['grayscale2'] =   '#5a4e4e'
+let g:momiji_colors['grayscale3'] =   '#7d7373'
+let g:momiji_colors['grayscale4'] =   '#a09999'
+let g:momiji_colors['grayscale5'] =   '#c3bebe'
 
 let g:momiji_palette = {}
 let g:momiji_palette['black'] =        [g:momiji_colors.black,        0]
@@ -76,8 +66,8 @@ let g:momiji_palette['grayscale5'] =   [g:momiji_colors.grayscale5,   239]
 " `params` contains some options like below.
 "   - fg     color
 "   - bg     color
-"   - empha  list<"bold"|"italic"|"inverse">
-"   - guisp  list<"underline"|"undercurl">
+"   - empha  list of bold|italic|inverseg
+"   - guisp  list of underline|undercurlg
 "
 " Which color for fg or bg you can get it from g:momiji_palette e.g.:
 "   call MomijiHighlight(Pmenu, {'fg': g:momiji_palette.red})
@@ -111,160 +101,91 @@ function! MomijiHighlight(group, params)
   execute join(l:histr, ' ')
 endfunction
 
-let g:momiji_bold = get(g:, 'momiji_bold', 1)
-let g:momiji_italic = get(g:, 'momiji_italic', s:default_momiji_italic)
-let g:momiji_undercurl = get(g:, 'momiji_undercurl', 1)
-let g:momiji_underline = get(g:, 'momiji_underline', 1)
-let g:momiji_inverse = get(g:, 'momiji_inverse', 1)
-" }}}
-" Setup Emphasis: {{{
-let s:bold = 'bold'
-if g:momiji_bold == 0
-  let s:bold = ''
-endif
-
-let s:italic = 'italic'
-if g:momiji_italic == 0
-  let s:italic = ''
-endif
-
-let s:underline = 'underline'
-if g:momiji_underline == 0
-  let s:underline = ''
-endif
-
-let s:undercurl = 'undercurl'
-if g:momiji_undercurl == 0
-  let s:undercurl = ''
-endif
-
-let s:inverse = 'inverse'
-if g:momiji_inverse == 0
-  let s:inverse = ''
-endif
-" }}}
-" Momiji Hi Groups: {{{
+" Momiji Hi Groups:
 " memoize common hi groups
-call MomijiHighlight('MomijiWhite', {'fg': g:momiji_palette.white})
-call MomijiHighlight('MomijiRed', {'fg': g:momiji_palette.red})
-call MomijiHighlight('MomijiGreen', {'fg': g:momiji_palette.green})
-call MomijiHighlight('MomijiYellow', {'fg': g:momiji_palette.yellow})
-call MomijiHighlight('MomijiBlue', {'fg': g:momiji_palette.blue})
-call MomijiHighlight('MomijiMagenta', {'fg': g:momiji_palette.magenta})
-call MomijiHighlight('MomijiCyan', {'fg': g:momiji_palette.cyan})
-call MomijiHighlight('MomijiBlack', {'fg': g:momiji_palette.black})
-call MomijiHighlight('MomijiRedBold', {'fg': g:momiji_palette.red, 'empha': [s:bold]})
-call MomijiHighlight('MomijiGreenBold', {'fg': g:momiji_palette.green, 'empha': [s:bold]})
-call MomijiHighlight('MomijiYellowBold', {'fg': g:momiji_palette.yellow, 'empha': [s:bold]})
-call MomijiHighlight('MomijiBlueBold', {'fg': g:momiji_palette.blue, 'empha': [s:bold]})
-call MomijiHighlight('MomijiMagentaBold', {'fg': g:momiji_palette.magenta, 'empha': [s:bold]})
-call MomijiHighlight('MomijiCyanBold', {'fg': g:momiji_palette.cyan, 'empha': [s:bold]})
+highlight MomijiWhite guifg=#140c0c ctermfg=0
+highlight MomijiRed guifg=#da5774 ctermfg=1
+highlight MomijiGreen guifg=#348c4e ctermfg=2
+highlight MomijiYellow guifg=#e7a82b ctermfg=3
+highlight MomijiBlue guifg=#4884d2 ctermfg=4
+highlight MomijiMagenta guifg=#a55aaa ctermfg=5
+highlight MomijiCyan guifg=#1f90a8 ctermfg=6
+highlight MomijiBlack guifg=#140c0c ctermfg=0
+highlight MomijiRedBold guifg=#da5774 ctermfg=1 gui=bold cterm=bold
+highlight MomijiGreenBold guifg=#348c4e ctermfg=2 gui=bold cterm=bold
+highlight MomijiYellowBold guifg=#e7a82b ctermfg=3 gui=bold cterm=bold
+highlight MomijiBlueBold guifg=#4884d2 ctermfg=4 gui=bold cterm=bold
+highlight MomijiMagentaBold guifg=#a55aaa ctermfg=5 gui=bold cterm=bold
+highlight MomijiCyanBold guifg=#1f90a8 ctermfg=6 gui=bold cterm=bold
 
-call MomijiHighlight('MomijiBrightRed', {'fg': g:momiji_palette.lightred})
-call MomijiHighlight('MomijiBrightGreen', {'fg': g:momiji_palette.lightgreen})
-call MomijiHighlight('MomijiBrightYellow', {'fg': g:momiji_palette.lightyellow})
-call MomijiHighlight('MomijiBrightBlue', {'fg': g:momiji_palette.lightblue})
-call MomijiHighlight('MomijiBrightMagenta', {'fg': g:momiji_palette.lightmagenta})
-call MomijiHighlight('MomijiBrightCyan', {'fg': g:momiji_palette.lightcyan})
-call MomijiHighlight('MomijiBrightBlack', {'fg': g:momiji_palette.lightblack})
-call MomijiHighlight('MomijiBrightWhite', {'fg': g:momiji_palette.lightwhite})
+highlight MomijiBrightRed guifg=#f5875b ctermfg=9
+highlight MomijiBrightGreen guifg=#9abe86 ctermfg=10
+highlight MomijiBrightYellow guifg=#ffd791 ctermfg=11
+highlight MomijiBrightBlue guifg=#89b7e1 ctermfg=12
+highlight MomijiBrightMagenta guifg=#eea1d1 ctermfg=13
+highlight MomijiBrightCyan guifg=#69b2ac ctermfg=14
+highlight MomijiBrightBlack guifg=#5a4e4e ctermfg=8
+highlight MomijiBrightWhite guifg=#e6e3e3 ctermfg=15
 
 " special
-call MomijiHighlight('MomijiBrightRedBold', {'fg': g:momiji_palette.lightred, 'empha': [s:bold]})
-call MomijiHighlight('MomijiGrayscale1', {'fg': g:momiji_palette.grayscale1})
-call MomijiHighlight('MomijiGrayscale2', {'fg': g:momiji_palette.grayscale2})
-call MomijiHighlight('MomijiGrayscale3', {'fg': g:momiji_palette.grayscale3})
-call MomijiHighlight('MomijiGrayscale4', {'fg': g:momiji_palette.grayscale4})
-call MomijiHighlight('MomijiGrayscale5', {'fg': g:momiji_palette.grayscale5})
-" }}}
-" Terminal Ansi Colors: {{{
-let g:terminal_ansi_colors = [
-      \ g:momiji_colors.black,
-      \ g:momiji_colors.red,
-      \ g:momiji_colors.green,
-      \ g:momiji_colors.yellow,
-      \ g:momiji_colors.blue,
-      \ g:momiji_colors.magenta,
-      \ g:momiji_colors.cyan,
-      \ g:momiji_colors.white,
-      \ g:momiji_colors.lightblack,
-      \ g:momiji_colors.lightred,
-      \ g:momiji_colors.lightgreen,
-      \ g:momiji_colors.lightyellow,
-      \ g:momiji_colors.lightblue,
-      \ g:momiji_colors.lightmagenta,
-      \ g:momiji_colors.lightcyan,
-      \ g:momiji_colors.lightwhite,
-      \ ]
-let g:terminal_color_0  = g:momiji_colors.black
-let g:terminal_color_1  = g:momiji_colors.red
-let g:terminal_color_2  = g:momiji_colors.green
-let g:terminal_color_3  = g:momiji_colors.yellow
-let g:terminal_color_4  = g:momiji_colors.blue
-let g:terminal_color_5  = g:momiji_colors.magenta
-let g:terminal_color_6  = g:momiji_colors.cyan
-let g:terminal_color_7  = g:momiji_colors.white
-let g:terminal_color_8  = g:momiji_colors.lightblack
-let g:terminal_color_9  = g:momiji_colors.lightred
-let g:terminal_color_10 = g:momiji_colors.lightgreen
-let g:terminal_color_11 = g:momiji_colors.lightyellow
-let g:terminal_color_12 = g:momiji_colors.lightblue
-let g:terminal_color_13 = g:momiji_colors.lightmagenta
-let g:terminal_color_14 = g:momiji_colors.lightcyan
-let g:terminal_color_15 = g:momiji_colors.lightwhite
-" }}}
+highlight MomijiBrightRedBold guifg=#f5875b ctermfg=9 gui=bold cterm=bold
+highlight MomijiGrayScale1 guifg=#372a2a ctermfg=235
+highlight MomijiGrayScale2 guifg=#5a4e4e ctermfg=236
+highlight MomijiGrayScale3 guifg=#7d7373 ctermfg=237
+highlight MomijiGrayScale4 guifg=#a09999 ctermfg=238
+highlight MomijiGrayScale5 guifg=#c3bebe ctermfg=239
 
-" General UI: {{{
+" General UI:
 " Normal text
-call MomijiHighlight('Normal', {'fg': g:momiji_palette.lightwhite, 'bg': g:momiji_palette.black})
-call MomijiHighlight('NormalFloat', {'fg': g:momiji_palette.lightwhite, 'bg': g:momiji_palette.grayscale1})
+highlight Normal guifg=#e6e3e3 ctermfg=15 guibg=#140c0c ctermbg=0
+highlight NormalFloat guifg=#e6e3e3 ctermfg=15 guibg=#372a2a ctermbg=235
 
 " Screen line that the cursor is
 highlight! CursorLine NONE
-call MomijiHighlight('CursorLine', {'bg': g:momiji_palette.grayscale1})
+highlight CursorLine guibg=#372a2a ctermbg=235
 " Screen column that the cursor is
-call MomijiHighlight('CursorColumn', {'bg': g:momiji_palette.lightblack})
+highlight CursorColumn guibg=#5a4e4e ctermbg=8
 
 " Tab pages line filler
-call MomijiHighlight('TabLineFill', {'fg': g:momiji_palette.green, 'bg': g:momiji_palette.black})
+highlight TabLineFill guifg=#348c4e ctermfg=2 guibg=#140c0c ctermbg=0
 " Active tab page label
-call MomijiHighlight('TabLineSel', {'fg': g:momiji_palette.red, 'bg': g:momiji_palette.black, 'empha': [s:bold]})
+highlight TabLineSel guifg=#da5774 ctermfg=1 guibg=#140c0c ctermbg=0 gui=bold cterm=bold
 " Not active tab page label
 highlight! link TabLine TabLineFill
 
 " Match paired bracket under the cursor
-call MomijiHighlight('MatchParen', {'fg': g:momiji_palette.yellow, 'bg': g:momiji_palette.lightblack, 'empha': [s:bold]})
+highlight MatchParen guifg=#e7a82b ctermfg=3 guibg=#5a4e4e ctermbg=8 gui=bold cterm=bold
 
 " Highlighted screen columns
-call MomijiHighlight('ColorColumn', {'bg': g:momiji_palette.lightblack})
+highlight ColorColumn guibg=#5a4e4e ctermbg=8
 
 " Concealed element: \lambda → λ
-call MomijiHighlight('Conceal', {'fg': g:momiji_palette.blue})
+highlight Conceal guifg=#4884d2 ctermfg=4
 
 " Line number of CursorLine
-call MomijiHighlight('CursorLineNr', {'fg': g:momiji_palette.grayscale1, 'bg': g:momiji_palette.blue, 'empha': [s:bold]})
-call MomijiHighlight('CursorLineSign', {'fg': g:momiji_palette.grayscale1, 'empha': [s:bold]})
+highlight CursorLineNr guifg=#372a2a ctermfg=235 guibg=#4884d2 ctermbg=4 gui=bold cterm=bold
+highlight CursorLineSign guifg=#372a2a ctermfg=235 gui=bold cterm=bold
 
 highlight! link NonText MomijiBrightBlack
 highlight! link SpecialKey MomijiBrightBlack
 highlight! link Whitespace MomijiBrightBlack
 
-call MomijiHighlight('Visual', {'fg': g:momiji_palette.black, 'bg': g:momiji_palette.yellow})
+highlight Visual guifg=#140c0c ctermfg=0 guibg=#e7a82b ctermbg=3
 highlight! link VisualNOS Visual
 
-call MomijiHighlight('Search', {'fg': g:momiji_palette.black, 'bg': g:momiji_palette.lightblue})
-call MomijiHighlight('IncSearch', {'fg': g:momiji_palette.black, 'bg': g:momiji_palette.lightblue, 'empha': [s:inverse]})
+highlight Search guifg=#140c0c ctermfg=0 guibg=#89b7e1 ctermbg=12
+highlight IncSearch guifg=#140c0c ctermfg=0 guibg=#89b7e1 ctermbg=12 gui=inverse cterm=inverse
 
-call MomijiHighlight('Underlined', {'fg': g:momiji_palette.blue, 'empha': [s:underline]})
+highlight Underlined guifg=#4884d2 ctermfg=4 gui=underline cterm=underline
 
-call MomijiHighlight('StatusLine', {'fg': g:momiji_palette.lightwhite, 'bg': g:momiji_palette.lightblack, 'empha': [s:bold, s:inverse]})
-call MomijiHighlight('StatusLineNC', {'fg': g:momiji_palette.white, 'bg': g:momiji_palette.black, 'empha': [s:underline]})
+highlight StatusLine guifg=#e6e3e3 ctermfg=15 guibg=#5a4e4e ctermbg=8 gui=bold,inverse cterm=bold,inverse
+highlight StatusLineNC guifg=#a09999 ctermfg=7 guibg=#140c0c ctermbg=0 gui=underline cterm=underline
 
 " The column separating vertically split windows
-call MomijiHighlight('VertSplit', {'fg': g:momiji_palette.lightwhite, 'bg': g:momiji_palette.black, 'empha': [s:inverse]})
+highlight VertSplit guifg=#e6e3e3 ctermfg=15 guibg=#140c0c ctermbg=0 gui=inverse cterm=inverse
 
 " Current match in wildmenu completion
-call MomijiHighlight('WildMenu', {'fg': g:momiji_palette.blue, 'bg': g:momiji_palette.black, 'empha': [s:bold]})
+highlight WildMenu guifg=#4884d2 ctermfg=4 guibg=#140c0c ctermbg=0 gui=bold cterm=bold
 
 " Directory names, special names in listing
 highlight! link Directory MomijiGreenBold
@@ -273,7 +194,7 @@ highlight! link Directory MomijiGreenBold
 highlight! link Title MomijiGreenBold
 
 " Error messages on the command line
-call MomijiHighlight('ErrorMsg', {'fg': g:momiji_palette.lightwhite, 'bg': g:momiji_palette.red})
+highlight ErrorMsg guifg=#e6e3e3 ctermfg=15 guibg=#da5774 ctermbg=1
 " More prompt: -- More --
 highlight! link MoreMsg MomijiYellowBold
 " Current mode message: -- INSERT --
@@ -282,38 +203,35 @@ highlight! link ModeMsg MomijiYellowBold
 highlight! link Question MomijiBrightRedBold
 " Warning messages
 highlight! link WarningMsg MomijiRedBold
-" }}}
-" Gutter: {{{
+" Gutter:
 " Line number for :number and :# commands
-call MomijiHighlight('LineNr', {'fg': g:momiji_palette.white, 'bg': g:momiji_palette.hardblack})
+highlight LineNr guifg=#a09999 ctermfg=7 guibg=#080808 ctermbg=232
 
 " Column where signs are displayed
-call MomijiHighlight('SignColumn', {'bg': g:momiji_palette.hardblack})
+highlight SignColumn guibg=#080808 ctermbg=232
 
 " Line used for closed folds
-call MomijiHighlight('Folded', {'fg': g:momiji_palette.white, 'bg': g:momiji_palette.black, 'empha': [s:italic]})
+highlight Folded guifg=#a09999 ctermfg=7 guibg=#140c0c ctermbg=0 gui=italic cterm=italic
 " Column where folds are displayed
-call MomijiHighlight('FoldColumn', {'fg': g:momiji_palette.white, 'bg': g:momiji_palette.black})
-" }}}
-" Cursor: {{{
+highlight FoldColumn guifg=#a09999 ctermfg=7 guibg=#140c0c ctermbg=0
+" Cursor:
 " Character under cursor
-call MomijiHighlight('Cursor', {'fg': g:momiji_palette.black, 'bg': g:momiji_palette.lightyellow})
+highlight Cursor guifg=#140c0c ctermfg=0 guibg=#ffd791 ctermbg=11
 " Visual mode cursor, selection
-call MomijiHighlight('vCursor', {'fg': g:momiji_palette.black, 'bg': g:momiji_palette.lightyellow})
+highlight vCursor guifg=#140c0c ctermfg=0 guibg=#ffd791 ctermbg=11
 " Input moder cursor
 highlight! link iCursor Cursor
 " Language mapping cursor
 highlight! link lCursor Cursor
-" }}}
-" Syntax Highlighting: {{{
+" Syntax Highlighting:
 highlight! link Special MomijiBrightYellow
 
-call MomijiHighlight('Comment', {'fg': g:momiji_palette.white, 'empha': [s:italic]})
-call MomijiHighlight('Todo', {'fg': g:momiji_palette.lightwhite, 'bg': g:momiji_palette.black, 'empha': [s:bold, s:italic]})
-call MomijiHighlight('Error', {'fg': g:momiji_palette.lightred, 'bg': g:momiji_palette.black, 'empha': [s:bold, s:inverse]})
+highlight Comment guifg=#a09999 ctermfg=7 gui=italic cterm=italic
+highlight Todo guifg=#e6e3e3 ctermfg=15 guibg=#140c0c ctermbg=0 gui=bold,italic cterm=bold,italic
+highlight Error guifg=#f5875b ctermfg=9 guibg=#140c0c ctermbg=0 gui=bold,inverse cterm=bold,inverse
 
 " String constant: "this is a string"
-call MomijiHighlight('String', {'fg': g:momiji_palette.green})
+highlight String guifg=#348c4e ctermfg=2
 
 " Generic statement
 highlight! link Statement MomijiYellow
@@ -365,34 +283,30 @@ highlight! link StorageClass MomijiCyan
 highlight! link Structure MomijiBrightRed
 " typedef
 highlight! link Typedef MomijiBrightRed
-" }}}
-" Completion Menu: {{{
+" Completion Menu:
 " Popup menu: normal item
-call MomijiHighlight('Pmenu', {'bg': g:momiji_palette.grayscale1})
+highlight Pmenu guibg=#372a2a ctermbg=235
 " Popup menu: selected item
-call MomijiHighlight('PmenuSel', {'bg': g:momiji_palette.grayscale2, 'empha': [s:bold]})
+highlight PmenuSel guibg=#5a4e4e ctermbg=236 gui=bold cterm=bold
 " Popup menu: scrollbar
-call MomijiHighlight('PmenuSbar', {'bg': g:momiji_palette.grayscale2})
+highlight PmenuSbar guibg=#5a4e4e ctermbg=236
 " Popup menu: scrollbar thumb
-call MomijiHighlight('PmenuThumb', {'bg': g:momiji_palette.grayscale2})
-" }}}
-" Diffs: {{{
-call MomijiHighlight('DiffDelete', {'fg': g:momiji_palette.lightred, 'bg': g:momiji_palette.black})
-call MomijiHighlight('DiffAdd', {'fg': g:momiji_palette.lightgreen, 'bg': g:momiji_palette.black})
-call MomijiHighlight('DiffChange', {'fg': g:momiji_palette.cyan, 'bg': g:momiji_palette.black})
-call MomijiHighlight('DiffText', {'fg': g:momiji_palette.lightyellow, 'bg': g:momiji_palette.black})
-" }}}
-" Spelling: {{{
+highlight PmenuThumb guibg=#5a4e4e ctermbg=236
+" Diffs:
+highlight DiffDelete guifg=#f5875b ctermfg=9 guibg=#140c0c ctermbg=0
+highlight DiffAdd guifg=#9abe86 ctermfg=10 guibg=#140c0c ctermbg=0
+highlight DiffChange guifg=#1f90a8 ctermfg=6 guibg=#140c0c ctermbg=0
+highlight DiffText guifg=#ffd791 ctermfg=11 guibg=#140c0c ctermbg=0
+" Spelling:
 if has("spell")
   " Not capitalised word, or compile warnings
-  call MomijiHighlight('SpellCap', {'empha': [s:underline, s:italic]})
+  highlight SpellCap gui=undercurl cterm=undercurl guisp=#4884d2
   " Not recognized word
-  call MomijiHighlight('SpellBad', {'empha': [s:undercurl], 'guisp': g:momiji_palette.blue})
+  highlight SpellBad gui=undercurl cterm=undercurl guisp=#4884d2
   " Wrong spelling for selected region
-  call MomijiHighlight('SpellLocal', {'empha': [s:undercurl], 'guisp': g:momiji_palette.cyan})
+  highlight SpellLocal gui=undercurl cterm=undercurl guisp=#1f90a8
   " Rare word
-  call MomijiHighlight('SpellRare', {'empha': [s:undercurl], 'guisp': g:momiji_palette.magenta})
+  highlight SpellRare gui=undercurl cterm=undercurl guisp=#a55aaa
 endif
-" }}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
