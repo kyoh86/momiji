@@ -178,7 +178,7 @@ highlight IncSearch guifg=#140c0c ctermfg=0 guibg=#89b7e1 ctermbg=12 gui=inverse
 
 highlight Underlined guifg=#4884d2 ctermfg=4 gui=underline cterm=underline
 
-highlight StatusLine guifg=#e6e3e3 ctermfg=15 guibg=#5a4e4e ctermbg=236 gui=bold,inverse cterm=bold,inverse
+highlight StatusLine guifg=#a09999 ctermfg=7 guibg=#5a4e4e ctermbg=236 gui=bold cterm=bold
 highlight StatusLineNC guifg=#a09999 ctermfg=7 guibg=#140c0c ctermbg=0 gui=underline cterm=underline
 
 " The column separating vertically split windows
