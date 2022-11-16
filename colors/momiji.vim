@@ -174,7 +174,7 @@ highlight Visual guifg=#140c0c ctermfg=0 guibg=#e7a82b ctermbg=3
 highlight! link VisualNOS Visual
 
 highlight Search guifg=#140c0c ctermfg=0 guibg=#89b7e1 ctermbg=12
-highlight IncSearch guifg=#140c0c ctermfg=0 guibg=#89b7e1 ctermbg=12 gui=inverse cterm=inverse
+highlight IncSearch guifg=#140c0c ctermfg=0 guibg=#eea1d1 ctermbg=13
 
 highlight Underlined guifg=#4884d2 ctermfg=4 gui=underline cterm=underline
 
