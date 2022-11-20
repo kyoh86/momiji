@@ -162,10 +162,6 @@ highlight ColorColumn guibg=#5a4e4e ctermbg=8
 " Concealed element: \lambda → λ
 highlight Conceal guifg=#4884d2 ctermfg=4
 
-" Line number of CursorLine
-highlight CursorLineNr guifg=#372a2a ctermfg=235 guibg=#4884d2 ctermbg=4 gui=bold cterm=bold
-highlight CursorLineSign guifg=#372a2a ctermfg=235 gui=bold cterm=bold
-
 highlight! link NonText MomijiBrightBlack
 highlight! link SpecialKey MomijiBrightBlack
 highlight! link Whitespace MomijiBrightBlack
@@ -175,7 +171,9 @@ highlight! link VisualNOS Visual
 
 highlight Search guifg=#140c0c ctermfg=0 guibg=#89b7e1 ctermbg=12
 highlight IncSearch None
-highlight IncSearch guifg=#140c0c ctermfg=0 guibg=#eea1d1 ctermbg=13
+highlight IncSearch guifg=#140c0c ctermfg=0 guibg=#9abe86 ctermbg=10
+highlight Substitute None
+highlight Substitute guifg=#140c0c ctermfg=0 guibg=#eea1d1 ctermbg=13
 
 highlight Underlined guifg=#4884d2 ctermfg=4 gui=underline cterm=underline
 
@@ -207,6 +205,15 @@ highlight! link WarningMsg MomijiRedBold
 " Gutter:
 " Line number for :number and :# commands
 highlight LineNr guifg=#a09999 ctermfg=7 guibg=#080808 ctermbg=232
+
+" Line number of CursorLine
+highlight CursorLineNr guifg=#372a2a ctermfg=235 guibg=#4884d2 ctermbg=4 gui=bold cterm=bold
+highlight CursorLineSign guifg=#372a2a ctermfg=235 gui=bold cterm=bold
+
+if hlexists('LineNrAbove')
+  highlight LineNrAbove guifg=#eea1d1 ctermfg=13 guibg=#080808 ctermbg=232
+  highlight LineNrBelow guifg=#9abe86 ctermfg=10 guibg=#080808 ctermbg=232
+endif
 
 " Column where signs are displayed
 highlight SignColumn guibg=#080808 ctermbg=232
@@ -308,6 +315,13 @@ if has("spell")
   highlight SpellLocal gui=undercurl cterm=undercurl guisp=#1f90a8
   " Rare word
   highlight SpellRare gui=undercurl cterm=undercurl guisp=#a55aaa
+endif
+
+if hlexists('FloatBorder') then
+  highlight FloatBorder None
+  highlight FloatBorder guifg=#a09999 ctermfg=238 guibg=#5a4e4e ctermbg=236 gui=bold cterm=bold
+  highlight FloatShadow None
+  highlight FloatShadow guibg=#372a2a ctermbg=235
 endif
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:

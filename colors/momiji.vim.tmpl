@@ -162,10 +162,6 @@ highlight ColorColumn {{Background .LightBlack}}
 " Concealed element: \lambda → λ
 highlight Conceal {{Foreground .Blue}}
 
-" Line number of CursorLine
-highlight CursorLineNr {{Foreground .GrayScale1}} {{Background .Blue}} {{Emphasis "bold"}}
-highlight CursorLineSign {{Foreground .GrayScale1}} {{Emphasis "bold"}}
-
 highlight! link NonText MomijiBrightBlack
 highlight! link SpecialKey MomijiBrightBlack
 highlight! link Whitespace MomijiBrightBlack
@@ -175,7 +171,9 @@ highlight! link VisualNOS Visual
 
 highlight Search {{Foreground .Black}} {{Background .LightBlue}}
 highlight IncSearch None
-highlight IncSearch {{Foreground .Black}} {{Background .LightMagenta}}
+highlight IncSearch {{Foreground .Black}} {{Background .LightGreen}}
+highlight Substitute None
+highlight Substitute {{Foreground .Black}} {{Background .LightMagenta}}
 
 highlight Underlined {{Foreground .Blue}} {{Emphasis "underline"}}
 
@@ -207,6 +205,15 @@ highlight! link WarningMsg MomijiRedBold
 " Gutter:
 " Line number for :number and :# commands
 highlight LineNr {{Foreground .White}} {{Background .HardBlack}}
+
+" Line number of CursorLine
+highlight CursorLineNr {{Foreground .GrayScale1}} {{Background .Blue}} {{Emphasis "bold"}}
+highlight CursorLineSign {{Foreground .GrayScale1}} {{Emphasis "bold"}}
+
+if hlexists('LineNrAbove')
+  highlight LineNrAbove {{Foreground .LightMagenta}} {{Background .HardBlack}}
+  highlight LineNrBelow {{Foreground .LightGreen}} {{Background .HardBlack}}
+endif
 
 " Column where signs are displayed
 highlight SignColumn {{Background .HardBlack}}
@@ -308,6 +315,13 @@ if has("spell")
   highlight SpellLocal {{Emphasis "undercurl"}} guisp=#{{.Cyan.HexRGB}}
   " Rare word
   highlight SpellRare {{Emphasis "undercurl"}} guisp=#{{.Magenta.HexRGB}}
+endif
+
+if hlexists('FloatBorder') then
+  highlight FloatBorder None
+  highlight FloatBorder {{Foreground .GrayScale4}} {{Background .GrayScale2}} {{Emphasis "bold"}}
+  highlight FloatShadow None
+  highlight FloatShadow {{Background .GrayScale1}}
 endif
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
