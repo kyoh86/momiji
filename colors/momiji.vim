@@ -317,7 +317,7 @@ if has("spell")
   highlight SpellRare gui=undercurl cterm=undercurl guisp=#a55aaa
 endif
 
-if hlexists('FloatBorder') then
+if hlexists('FloatBorder')
   highlight FloatBorder None
   highlight FloatBorder guifg=#a09999 ctermfg=238 guibg=#5a4e4e ctermbg=236 gui=bold cterm=bold
   highlight FloatShadow None
