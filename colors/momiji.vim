@@ -181,7 +181,7 @@ highlight StatusLine guifg=#a09999 ctermfg=7 guibg=#5a4e4e ctermbg=236 gui=bold 
 highlight StatusLineNC guifg=#a09999 ctermfg=7 guibg=#140c0c ctermbg=0 gui=underline cterm=underline
 
 " The column separating vertically split windows
-highlight VertSplit guifg=#5a4e4e ctermfg=236 guibg=#5a4e4e ctermbg=236
+highlight VertSplit guifg=#a09999 ctermfg=238 gui=bold cterm=bold
 
 " Current match in wildmenu completion
 highlight WildMenu guifg=#4884d2 ctermfg=4 guibg=#140c0c ctermbg=0 gui=bold cterm=bold
