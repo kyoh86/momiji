@@ -190,7 +190,7 @@ highlight WildMenu guifg=#4884d2 ctermfg=4 guibg=#140c0c ctermbg=0 gui=bold cter
 highlight! link Directory MomijiGreenBold
 
 " Titles for output from :set all, :autocmd, etc.
-highlight! link Title MomijiGreenBold
+highlight! link Title MomijiBlueBold
 
 " Error messages on the command line
 highlight ErrorMsg guifg=#e6e3e3 ctermfg=15 guibg=#da5774 ctermbg=1
