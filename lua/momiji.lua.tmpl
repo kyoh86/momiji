@@ -1,0 +1,155 @@
+local M = {}
+
+---@class MomijiHighlightColors
+---@field black string RGB(#rrggbb) color
+---@field red string RGB(#rrggbb) color
+---@field green string RGB(#rrggbb) color
+---@field yellow string RGB(#rrggbb) color
+---@field blue string RGB(#rrggbb) color
+---@field magenta string RGB(#rrggbb) color
+---@field cyan string RGB(#rrggbb) color
+---@field white string RGB(#rrggbb) color
+---@field lightblack string RGB(#rrggbb) color
+---@field lightred string RGB(#rrggbb) color
+---@field lightgreen string RGB(#rrggbb) color
+---@field lightyellow string RGB(#rrggbb) color
+---@field lightblue string RGB(#rrggbb) color
+---@field lightmagenta string RGB(#rrggbb) color
+---@field lightcyan string RGB(#rrggbb) color
+---@field lightwhite string RGB(#rrggbb) color
+---@field hardblack string RGB(#rrggbb) color
+---@field grayscale1 string RGB(#rrggbb) color
+---@field grayscale2 string RGB(#rrggbb) color
+---@field grayscale3 string RGB(#rrggbb) color
+---@field grayscale4 string RGB(#rrggbb) color
+---@field grayscale5 string RGB(#rrggbb) color
+
+---@type MomijiHighlightColors
+M.colors = {
+  black = "#{{.Black.HexRGB}}",
+  red = "#{{.Red.HexRGB}}",
+  green = "#{{.Green.HexRGB}}",
+  yellow = "#{{.Yellow.HexRGB}}",
+  blue = "#{{.Blue.HexRGB}}",
+  magenta = "#{{.Magenta.HexRGB}}",
+  cyan = "#{{.Cyan.HexRGB}}",
+  white = "#{{.White.HexRGB}}",
+  lightblack = "#{{.LightBlack.HexRGB}}",
+  lightred = "#{{.LightRed.HexRGB}}",
+  lightgreen = "#{{.LightGreen.HexRGB}}",
+  lightyellow = "#{{.LightYellow.HexRGB}}",
+  lightblue = "#{{.LightBlue.HexRGB}}",
+  lightmagenta = "#{{.LightMagenta.HexRGB}}",
+  lightcyan = "#{{.LightCyan.HexRGB}}",
+  lightwhite = "#{{.LightWhite.HexRGB}}",
+  hardblack = "#{{.HardBlack.HexRGB}}",
+  grayscale1 = "#{{.GrayScale1.HexRGB}}",
+  grayscale2 = "#{{.GrayScale2.HexRGB}}",
+  grayscale3 = "#{{.GrayScale3.HexRGB}}",
+  grayscale4 = "#{{.GrayScale4.HexRGB}}",
+  grayscale5 = "#{{.GrayScale5.HexRGB}}",
+}
+
+---@class MomijiHighlightColor
+---@field gui string    Color for guibg/guifg
+---@field cterm integer  Color index for ctermfg/ctermbg
+
+---@class MomijiHighlightPalette
+---@field black MomijiHighlightColor
+---@field red MomijiHighlightColor
+---@field green MomijiHighlightColor
+---@field yellow MomijiHighlightColor
+---@field blue MomijiHighlightColor
+---@field magenta MomijiHighlightColor
+---@field cyan MomijiHighlightColor
+---@field white MomijiHighlightColor
+---@field lightblack MomijiHighlightColor
+---@field lightred MomijiHighlightColor
+---@field lightgreen MomijiHighlightColor
+---@field lightyellow MomijiHighlightColor
+---@field lightblue MomijiHighlightColor
+---@field lightmagenta MomijiHighlightColor
+---@field lightcyan MomijiHighlightColor
+---@field lightwhite MomijiHighlightColor
+---@field hardblack MomijiHighlightColor
+---@field grayscale1 MomijiHighlightColor
+---@field grayscale2 MomijiHighlightColor
+---@field grayscale3 MomijiHighlightColor
+---@field grayscale4 MomijiHighlightColor
+---@field grayscale5 MomijiHighlightColor
+
+---@type MomijiHighlightPalette
+M.palette = {
+  black = { gui = "#{{.Black.HexRGB}}", cterm = {{.Black.Index}} },
+  red = { gui = "#{{.Red.HexRGB}}", cterm = {{.Red.Index}} },
+  green = { gui = "#{{.Green.HexRGB}}", cterm = {{.Green.Index}} },
+  yellow = { gui = "#{{.Yellow.HexRGB}}", cterm = {{.Yellow.Index}} },
+  blue = { gui = "#{{.Blue.HexRGB}}", cterm = {{.Blue.Index}} },
+  magenta = { gui = "#{{.Magenta.HexRGB}}", cterm = {{.Magenta.Index}} },
+  cyan = { gui = "#{{.Cyan.HexRGB}}", cterm = {{.Cyan.Index}} },
+  white = { gui = "#{{.White.HexRGB}}", cterm = {{.White.Index}} },
+  lightblack = { gui = "#{{.LightBlack.HexRGB}}", cterm = {{.LightBlack.Index}} },
+  lightred = { gui = "#{{.LightRed.HexRGB}}", cterm = {{.LightRed.Index}} },
+  lightgreen = { gui = "#{{.LightGreen.HexRGB}}", cterm = {{.LightGreen.Index}} },
+  lightyellow = { gui = "#{{.LightYellow.HexRGB}}", cterm = {{.LightYellow.Index}} },
+  lightblue = { gui = "#{{.LightBlue.HexRGB}}", cterm = {{.LightBlue.Index}} },
+  lightmagenta = { gui = "#{{.LightMagenta.HexRGB}}", cterm = {{.LightMagenta.Index}} },
+  lightcyan = { gui = "#{{.LightCyan.HexRGB}}", cterm = {{.LightCyan.Index}} },
+  lightwhite = { gui = "#{{.LightWhite.HexRGB}}", cterm = {{.LightWhite.Index}} },
+  hardblack = { gui = "#{{.HardBlack.HexRGB}}", cterm = {{.HardBlack.Index}} },
+  grayscale1 = { gui = "#{{.GrayScale1.HexRGB}}", cterm = {{.GrayScale1.Index}} },
+  grayscale2 = { gui = "#{{.GrayScale2.HexRGB}}", cterm = {{.GrayScale2.Index}} },
+  grayscale3 = { gui = "#{{.GrayScale3.HexRGB}}", cterm = {{.GrayScale3.Index}} },
+  grayscale4 = { gui = "#{{.GrayScale4.HexRGB}}", cterm = {{.GrayScale4.Index}} },
+  grayscale5 = { gui = "#{{.GrayScale5.HexRGB}}", cterm = {{.GrayScale5.Index}} },
+}
+
+---@alias MomijiHighlightEmpha "bold"|"underline"|"undercurl"|"underdouble"|"underdotted"|"underdashed"|"strikethrough"|"reverse"|"inverse"|"italic"|"standout"|"altfont"|"nocombine"|"NONE"
+
+---@class MomijiHighlightParam
+---@field fg     MomijiHighlightColor    Foreground color
+---@field bg     MomijiHighlightColor    Background color
+---@field empha  MomijiHighlightEmpha[]  Special highlight for emphasis text.
+---@field guisp  MomijiHighlightColor    Color for various underlines
+---@field blend  integer                 Blend level for a highlight group
+
+---Set a highlight group.
+---Which color for "fg" or "bg", you can get it from "palette".
+---e.g.: require"momiji.colors".highlight("Pmenu", { fg = require"momiji.colors".palette.red })
+---@param group string    Target highlight group name.
+---@param params MomijiHighlightParam
+function M.highlight(group, params)
+  vim.validate({
+    group = { group, "string" },
+    params = { params, "table" },
+  })
+  local histr = { "highlight", group }
+
+  local fg = vim.tbl_get(params, "fg", "foreground") or {}
+  if #fg >= 2 then
+    vim.list_extend(histr, { "guifg=" .. fg.gui, "ctermfg=" .. fg.cterm })
+  end
+
+  local bg = vim.tbl_get(params, "bg", "background") or {}
+  if #bg >= 2 then
+    vim.list_extend(histr, { "guibg=" .. bg.gui, "ctermbg=" .. bg.cterm })
+  end
+
+  local empha = vim.tbl_filter(function(v)
+    return v ~= ""
+  end, params.empha or {})
+
+  if #empha > 0 then
+    local em = table.concat(empha, ",")
+    vim.list_extend(histr, { "gui=" .. em, "cterm=" .. em })
+  end
+
+  local guisp = params.guisp or {}
+  if #guisp > 0 then
+    table.insert(histr, "guisp=" .. guisp.gui)
+  end
+
+  vim.cmd.execute(table.concat(histr, " "))
+end
+
+return M
