@@ -1,4 +1,5 @@
 <img alt="" src="./momiji.png?raw=true">
+Momiji branding image by Kakeru Kuroda All Rights Reserved.
 
 # 🍁 momiji
 
