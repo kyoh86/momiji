@@ -1,3 +1,5 @@
+<img alt="" src="./momiji.png?raw=true" width="1280" height="640">
+
 # 🍁 momiji
 
 My color scheme for vim/iTerm2, "momiji" that means Japanese "autumn leaves"🍂.
