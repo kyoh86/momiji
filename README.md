@@ -1,4 +1,4 @@
-<img alt="" src="./momiji.png?raw=true" width="1280" height="640">
+<img alt="" src="./momiji.png?raw=true">
 
 # 🍁 momiji
 
