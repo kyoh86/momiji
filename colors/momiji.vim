@@ -171,7 +171,7 @@ highlight! link VisualNOS Visual
 
 highlight Search guifg=#140c0c ctermfg=0 guibg=#89b7e1 ctermbg=12
 highlight IncSearch None
-highlight IncSearch guifg=#140c0c ctermfg=0 guibg=#9abe86 ctermbg=10
+highlight IncSearch guifg=#140c0c ctermfg=0 guibg=#eea1d1 ctermbg=13
 highlight Substitute None
 highlight Substitute guifg=#140c0c ctermfg=0 guibg=#eea1d1 ctermbg=13
 
