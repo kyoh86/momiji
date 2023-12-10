@@ -172,6 +172,8 @@ highlight! link VisualNOS Visual
 highlight Search guifg=#140c0c ctermfg=0 guibg=#89b7e1 ctermbg=12
 highlight IncSearch None
 highlight IncSearch guifg=#140c0c ctermfg=0 guibg=#eea1d1 ctermbg=13
+highlight CurSearch None
+highlight CurSearch guifg=#140c0c ctermfg=0 guibg=#9abe86 ctermbg=10
 highlight Substitute None
 highlight Substitute guifg=#140c0c ctermfg=0 guibg=#eea1d1 ctermbg=13
 
@@ -225,8 +227,10 @@ highlight FoldColumn guifg=#a09999 ctermfg=7 guibg=#140c0c ctermbg=0
 " Cursor:
 " Character under cursor
 highlight Cursor guifg=#140c0c ctermfg=0 guibg=#ffd791 ctermbg=11
+" Character under cursor
+highlight link TermCursor Cursor
 " Visual mode cursor, selection
-highlight vCursor guifg=#140c0c ctermfg=0 guibg=#ffd791 ctermbg=11
+highlight link vCursor Cursor
 " Input moder cursor
 highlight! link iCursor Cursor
 " Language mapping cursor
@@ -322,6 +326,20 @@ if hlexists('FloatBorder')
   highlight FloatBorder guifg=#a09999 ctermfg=238 gui=bold cterm=bold
   highlight FloatShadow None
   highlight FloatShadow guibg=#372a2a ctermbg=235
+endif
+
+if hlexists('DiagnosticInfo')
+  highlight DiagnosticDeprecated cterm=strikethrough gui=strikethrough guisp=Red
+  highlight DiagnosticOk    guifg=#9abe86 ctermfg=10
+  highlight DiagnosticHint  guifg=#7d7373 ctermfg=237
+  highlight DiagnosticInfo  guifg=#89b7e1 ctermfg=12
+  highlight DiagnosticWarn  guifg=#f5875b ctermfg=9
+  highlight DiagnosticError guifg=#da5774 ctermfg=1
+  highlight DiagnosticUnderlineOk gui=underline cterm=underline guisp=#9abe86
+  highlight DiagnosticUnderlineHint gui=underline cterm=underline guisp=#7d7373
+  highlight DiagnosticUnderlineInfo gui=underline cterm=underline guisp=#89b7e1
+  highlight DiagnosticUnderlineWarn gui=underline cterm=underline guisp=#f5875b
+  highlight DiagnosticUnderlineError gui=underline cterm=underline guisp=#da5774
 endif
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:

@@ -172,6 +172,8 @@ highlight! link VisualNOS Visual
 highlight Search {{Foreground .Black}} {{Background .LightBlue}}
 highlight IncSearch None
 highlight IncSearch {{Foreground .Black}} {{Background .LightMagenta}}
+highlight CurSearch None
+highlight CurSearch {{Foreground .Black}} {{Background .LightGreen}}
 highlight Substitute None
 highlight Substitute {{Foreground .Black}} {{Background .LightMagenta}}
 
@@ -225,8 +227,12 @@ highlight FoldColumn {{Foreground .White}} {{Background .Black}}
 " Cursor:
 " Character under cursor
 highlight Cursor {{Foreground .Black}} {{Background .LightYellow}}
+" Character under cursor in a focused terminal
+highlight link TermCursor Cursor
+" Cursor in an unfocused terminal
+highlight link TermCursorNC Cursor
 " Visual mode cursor, selection
-highlight vCursor {{Foreground .Black}} {{Background .LightYellow}}
+highlight link vCursor Cursor
 " Input moder cursor
 highlight! link iCursor Cursor
 " Language mapping cursor
@@ -322,6 +328,20 @@ if hlexists('FloatBorder')
   highlight FloatBorder {{Foreground .GrayScale4}} {{Emphasis "bold"}}
   highlight FloatShadow None
   highlight FloatShadow {{Background .GrayScale1}}
+endif
+
+if hlexists('DiagnosticInfo')
+  highlight DiagnosticDeprecated cterm=strikethrough gui=strikethrough guisp=Red
+  highlight DiagnosticOk    {{Foreground .LightGreen}}
+  highlight DiagnosticHint  {{Foreground .GrayScale3}}
+  highlight DiagnosticInfo  {{Foreground .LightBlue}}
+  highlight DiagnosticWarn  {{Foreground .LightRed}}
+  highlight DiagnosticError {{Foreground .Red}}
+  highlight DiagnosticUnderlineOk {{Emphasis "underline"}} guisp=#{{.LightGreen.HexRGB}}
+  highlight DiagnosticUnderlineHint {{Emphasis "underline"}} guisp=#{{.GrayScale3.HexRGB}}
+  highlight DiagnosticUnderlineInfo {{Emphasis "underline"}} guisp=#{{.LightBlue.HexRGB}}
+  highlight DiagnosticUnderlineWarn {{Emphasis "underline"}} guisp=#{{.LightRed.HexRGB}}
+  highlight DiagnosticUnderlineError {{Emphasis "underline"}} guisp=#{{.Red.HexRGB}}
 endif
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
