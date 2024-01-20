@@ -210,7 +210,6 @@ highlight LineNr guifg=#a09999 ctermfg=7 guibg=#080808 ctermbg=232
 
 " Line number of CursorLine
 highlight CursorLineNr guifg=#372a2a ctermfg=235 guibg=#4884d2 ctermbg=4 gui=bold cterm=bold
-highlight CursorLineSign guifg=#372a2a ctermfg=235 gui=bold cterm=bold
 
 if hlexists('LineNrAbove')
   highlight LineNrAbove guifg=#eea1d1 ctermfg=13 guibg=#080808 ctermbg=232
