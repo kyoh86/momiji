@@ -9,14 +9,14 @@ local M = {}
 ---@field magenta string RGB(#rrggbb) color
 ---@field cyan string RGB(#rrggbb) color
 ---@field white string RGB(#rrggbb) color
----@field lightblack string RGB(#rrggbb) color
----@field lightred string RGB(#rrggbb) color
----@field lightgreen string RGB(#rrggbb) color
----@field lightyellow string RGB(#rrggbb) color
----@field lightblue string RGB(#rrggbb) color
----@field lightmagenta string RGB(#rrggbb) color
----@field lightcyan string RGB(#rrggbb) color
----@field lightwhite string RGB(#rrggbb) color
+---@field brightblack string RGB(#rrggbb) color
+---@field brightred string RGB(#rrggbb) color
+---@field brightgreen string RGB(#rrggbb) color
+---@field brightyellow string RGB(#rrggbb) color
+---@field brightblue string RGB(#rrggbb) color
+---@field brightmagenta string RGB(#rrggbb) color
+---@field brightcyan string RGB(#rrggbb) color
+---@field brightwhite string RGB(#rrggbb) color
 ---@field hardblack string RGB(#rrggbb) color
 ---@field grayscale1 string RGB(#rrggbb) color
 ---@field grayscale2 string RGB(#rrggbb) color
@@ -34,14 +34,14 @@ M.colors = {
   magenta = "#a55aaa",
   cyan = "#1f90a8",
   white = "#a09999",
-  lightblack = "#5a4e4e",
-  lightred = "#f5875b",
-  lightgreen = "#9abe86",
-  lightyellow = "#ffd791",
-  lightblue = "#89b7e1",
-  lightmagenta = "#69b2ac",
-  lightcyan = "#000000",
-  lightwhite = "#e6e3e3",
+  brightblack = "#5a4e4e",
+  brightred = "#f5875b",
+  brightgreen = "#9abe86",
+  brightyellow = "#ffd791",
+  brightblue = "#89b7e1",
+  brightmagenta = "#eea1d1",
+  brightcyan = "#69b2ac",
+  brightwhite = "#e6e3e3",
   hardblack = "#080808",
   grayscale1 = "#372a2a",
   grayscale2 = "#5a4e4e",
@@ -63,14 +63,14 @@ M.colors = {
 ---@field magenta MomijiHighlightColor
 ---@field cyan MomijiHighlightColor
 ---@field white MomijiHighlightColor
----@field lightblack MomijiHighlightColor
----@field lightred MomijiHighlightColor
----@field lightgreen MomijiHighlightColor
----@field lightyellow MomijiHighlightColor
----@field lightblue MomijiHighlightColor
----@field lightmagenta MomijiHighlightColor
----@field lightcyan MomijiHighlightColor
----@field lightwhite MomijiHighlightColor
+---@field brightblack MomijiHighlightColor
+---@field brightred MomijiHighlightColor
+---@field brightgreen MomijiHighlightColor
+---@field brightyellow MomijiHighlightColor
+---@field brightblue MomijiHighlightColor
+---@field brightmagenta MomijiHighlightColor
+---@field brightcyan MomijiHighlightColor
+---@field brightwhite MomijiHighlightColor
 ---@field hardblack MomijiHighlightColor
 ---@field grayscale1 MomijiHighlightColor
 ---@field grayscale2 MomijiHighlightColor
@@ -88,14 +88,14 @@ M.palette = {
   magenta = { gui = "#a55aaa", cterm = 5 },
   cyan = { gui = "#1f90a8", cterm = 6 },
   white = { gui = "#a09999", cterm = 7 },
-  lightblack = { gui = "#5a4e4e", cterm = 8 },
-  lightred = { gui = "#f5875b", cterm = 9 },
-  lightgreen = { gui = "#9abe86", cterm = 10 },
-  lightyellow = { gui = "#ffd791", cterm = 11 },
-  lightblue = { gui = "#89b7e1", cterm = 12 },
-  lightmagenta = { gui = "#69b2ac", cterm = 14 },
-  lightcyan = { gui = "#000000", cterm = 0 },
-  lightwhite = { gui = "#e6e3e3", cterm = 15 },
+  brightblack = { gui = "#5a4e4e", cterm = 8 },
+  brightred = { gui = "#f5875b", cterm = 9 },
+  brightgreen = { gui = "#9abe86", cterm = 10 },
+  brightyellow = { gui = "#ffd791", cterm = 11 },
+  brightblue = { gui = "#89b7e1", cterm = 12 },
+  brightmagenta = { gui = "#eea1d1", cterm = 13 },
+  brightcyan = { gui = "#69b2ac", cterm = 14 },
+  brightwhite = { gui = "#e6e3e3", cterm = 15 },
   hardblack = { gui = "#080808", cterm = 232 },
   grayscale1 = { gui = "#372a2a", cterm = 235 },
   grayscale2 = { gui = "#5a4e4e", cterm = 236 },
