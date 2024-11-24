@@ -9,14 +9,14 @@ local M = {}
 ---@field magenta string RGB(#rrggbb) color
 ---@field cyan string RGB(#rrggbb) color
 ---@field white string RGB(#rrggbb) color
----@field lightblack string RGB(#rrggbb) color
----@field lightred string RGB(#rrggbb) color
----@field lightgreen string RGB(#rrggbb) color
----@field lightyellow string RGB(#rrggbb) color
----@field lightblue string RGB(#rrggbb) color
----@field lightmagenta string RGB(#rrggbb) color
----@field lightcyan string RGB(#rrggbb) color
----@field lightwhite string RGB(#rrggbb) color
+---@field brightblack string RGB(#rrggbb) color
+---@field brightred string RGB(#rrggbb) color
+---@field brightgreen string RGB(#rrggbb) color
+---@field brightyellow string RGB(#rrggbb) color
+---@field brightblue string RGB(#rrggbb) color
+---@field brightmagenta string RGB(#rrggbb) color
+---@field brightcyan string RGB(#rrggbb) color
+---@field brightwhite string RGB(#rrggbb) color
 ---@field hardblack string RGB(#rrggbb) color
 ---@field grayscale1 string RGB(#rrggbb) color
 ---@field grayscale2 string RGB(#rrggbb) color
@@ -34,14 +34,14 @@ M.colors = {
   magenta = "#{{.Magenta.ToHex}}",
   cyan = "#{{.Cyan.ToHex}}",
   white = "#{{.White.ToHex}}",
-  lightblack = "#{{.BrightBlack.ToHex}}",
-  lightred = "#{{.BrightRed.ToHex}}",
-  lightgreen = "#{{.BrightGreen.ToHex}}",
-  lightyellow = "#{{.BrightYellow.ToHex}}",
-  lightblue = "#{{.BrightBlue.ToHex}}",
-  lightmagenta = "#{{.BrightMagenta.ToHex}}",
-  lightcyan = "#{{.BrightCyan.ToHex}}",
-  lightwhite = "#{{.BrightWhite.ToHex}}",
+  brightblack = "#{{.BrightBlack.ToHex}}",
+  brightred = "#{{.BrightRed.ToHex}}",
+  brightgreen = "#{{.BrightGreen.ToHex}}",
+  brightyellow = "#{{.BrightYellow.ToHex}}",
+  brightblue = "#{{.BrightBlue.ToHex}}",
+  brightmagenta = "#{{.BrightMagenta.ToHex}}",
+  brightcyan = "#{{.BrightCyan.ToHex}}",
+  brightwhite = "#{{.BrightWhite.ToHex}}",
   hardblack = "#{{.HardBlack.ToHex}}",
   grayscale1 = "#{{.GrayScale1.ToHex}}",
   grayscale2 = "#{{.GrayScale2.ToHex}}",
@@ -63,14 +63,14 @@ M.colors = {
 ---@field magenta MomijiHighlightColor
 ---@field cyan MomijiHighlightColor
 ---@field white MomijiHighlightColor
----@field lightblack MomijiHighlightColor
----@field lightred MomijiHighlightColor
----@field lightgreen MomijiHighlightColor
----@field lightyellow MomijiHighlightColor
----@field lightblue MomijiHighlightColor
----@field lightmagenta MomijiHighlightColor
----@field lightcyan MomijiHighlightColor
----@field lightwhite MomijiHighlightColor
+---@field brightblack MomijiHighlightColor
+---@field brightred MomijiHighlightColor
+---@field brightgreen MomijiHighlightColor
+---@field brightyellow MomijiHighlightColor
+---@field brightblue MomijiHighlightColor
+---@field brightmagenta MomijiHighlightColor
+---@field brightcyan MomijiHighlightColor
+---@field brightwhite MomijiHighlightColor
 ---@field hardblack MomijiHighlightColor
 ---@field grayscale1 MomijiHighlightColor
 ---@field grayscale2 MomijiHighlightColor
@@ -88,14 +88,14 @@ M.palette = {
   magenta = { gui = "#{{.Magenta.ToHex}}", cterm = {{.Magenta.Index}} },
   cyan = { gui = "#{{.Cyan.ToHex}}", cterm = {{.Cyan.Index}} },
   white = { gui = "#{{.White.ToHex}}", cterm = {{.White.Index}} },
-  lightblack = { gui = "#{{.BrightBlack.ToHex}}", cterm = {{.BrightBlack.Index}} },
-  lightred = { gui = "#{{.BrightRed.ToHex}}", cterm = {{.BrightRed.Index}} },
-  lightgreen = { gui = "#{{.BrightGreen.ToHex}}", cterm = {{.BrightGreen.Index}} },
-  lightyellow = { gui = "#{{.BrightYellow.ToHex}}", cterm = {{.BrightYellow.Index}} },
-  lightblue = { gui = "#{{.BrightBlue.ToHex}}", cterm = {{.BrightBlue.Index}} },
-  lightmagenta = { gui = "#{{.BrightMagenta.ToHex}}", cterm = {{.BrightMagenta.Index}} },
-  lightcyan = { gui = "#{{.BrightCyan.ToHex}}", cterm = {{.BrightCyan.Index}} },
-  lightwhite = { gui = "#{{.BrightWhite.ToHex}}", cterm = {{.BrightWhite.Index}} },
+  brightblack = { gui = "#{{.BrightBlack.ToHex}}", cterm = {{.BrightBlack.Index}} },
+  brightred = { gui = "#{{.BrightRed.ToHex}}", cterm = {{.BrightRed.Index}} },
+  brightgreen = { gui = "#{{.BrightGreen.ToHex}}", cterm = {{.BrightGreen.Index}} },
+  brightyellow = { gui = "#{{.BrightYellow.ToHex}}", cterm = {{.BrightYellow.Index}} },
+  brightblue = { gui = "#{{.BrightBlue.ToHex}}", cterm = {{.BrightBlue.Index}} },
+  brightmagenta = { gui = "#{{.BrightMagenta.ToHex}}", cterm = {{.BrightMagenta.Index}} },
+  brightcyan = { gui = "#{{.BrightCyan.ToHex}}", cterm = {{.BrightCyan.Index}} },
+  brightwhite = { gui = "#{{.BrightWhite.ToHex}}", cterm = {{.BrightWhite.Index}} },
   hardblack = { gui = "#{{.HardBlack.ToHex}}", cterm = {{.HardBlack.Index}} },
   grayscale1 = { gui = "#{{.GrayScale1.ToHex}}", cterm = {{.GrayScale1.Index}} },
   grayscale2 = { gui = "#{{.GrayScale2.ToHex}}", cterm = {{.GrayScale2.Index}} },
