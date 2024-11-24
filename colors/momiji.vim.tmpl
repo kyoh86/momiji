@@ -9,7 +9,6 @@ if exists("syntax_on")
 endif
 
 let g:colors_name='momiji'
-set background=dark
 
 if !has('gui_running') && &t_Co != 256
   finish
