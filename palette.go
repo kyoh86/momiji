@@ -17,12 +17,27 @@ type ColorPalette struct {
 	BrightMagenta Color
 	BrightCyan    Color
 	BrightWhite   Color
-	HardBlack     Color
 	Gradation1    Color
 	Gradation2    Color
 	Gradation3    Color
 	Gradation4    Color
 	Gradation5    Color
+
+	Background Color
+	Foreground Color
+
+	WeakRed       Color
+	WeakGreen     Color
+	WeakYellow    Color
+	WeakBlue      Color
+	WeakMagenta   Color
+	WeakCyan      Color
+	StrongRed     Color
+	StrongGreen   Color
+	StrongYellow  Color
+	StrongBlue    Color
+	StrongMagenta Color
+	StrongCyan    Color
 }
 
 var Palette = ColorPalette{
@@ -55,11 +70,11 @@ var Palette = ColorPalette{
 		Index: 6,
 	},
 	White: Color{
-		RGBA:  FromHex("a09999"),
+		RGBA:  FromHex("a09999"), // Gradation4
 		Index: 7,
 	},
 	BrightBlack: Color{
-		RGBA:  FromHex("5a4e4e"),
+		RGBA:  FromHex("5a4e4e"), // Gradation2
 		Index: 8,
 	},
 	BrightRed: Color{
@@ -90,10 +105,6 @@ var Palette = ColorPalette{
 		RGBA:  FromHex("e6e3e3"),
 		Index: 15,
 	},
-	HardBlack: Color{
-		RGBA:  FromHex("080808"),
-		Index: 232,
-	},
 	Gradation1: Color{
 		RGBA:  FromHex("372a2a"),
 		Index: 235,
@@ -114,4 +125,23 @@ var Palette = ColorPalette{
 		RGBA:  FromHex("c3bebe"),
 		Index: 239,
 	},
+}
+
+func init() {
+	Palette.Background = Palette.Black
+	Palette.Foreground = Palette.BrightWhite
+
+	Palette.WeakRed = Palette.Red
+	Palette.WeakGreen = Palette.Green
+	Palette.WeakYellow = Palette.Yellow
+	Palette.WeakBlue = Palette.Blue
+	Palette.WeakMagenta = Palette.Magenta
+	Palette.WeakCyan = Palette.Cyan
+
+	Palette.StrongRed = Palette.BrightRed
+	Palette.StrongGreen = Palette.BrightGreen
+	Palette.StrongYellow = Palette.BrightYellow
+	Palette.StrongBlue = Palette.BrightBlue
+	Palette.StrongMagenta = Palette.BrightMagenta
+	Palette.StrongCyan = Palette.BrightCyan
 }

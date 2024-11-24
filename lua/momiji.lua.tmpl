@@ -17,7 +17,6 @@ local M = {}
 ---@field brightmagenta string RGB(#rrggbb) color
 ---@field brightcyan string RGB(#rrggbb) color
 ---@field brightwhite string RGB(#rrggbb) color
----@field hardblack string RGB(#rrggbb) color
 ---@field gradation1 string RGB(#rrggbb) color
 ---@field gradation2 string RGB(#rrggbb) color
 ---@field gradation3 string RGB(#rrggbb) color
@@ -42,7 +41,6 @@ M.colors = {
   brightmagenta = "#{{.BrightMagenta.ToHex}}",
   brightcyan = "#{{.BrightCyan.ToHex}}",
   brightwhite = "#{{.BrightWhite.ToHex}}",
-  hardblack = "#{{.HardBlack.ToHex}}",
   gradation1 = "#{{.Gradation1.ToHex}}",
   gradation2 = "#{{.Gradation2.ToHex}}",
   gradation3 = "#{{.Gradation3.ToHex}}",
@@ -71,7 +69,6 @@ M.colors = {
 ---@field brightmagenta MomijiHighlightColor
 ---@field brightcyan MomijiHighlightColor
 ---@field brightwhite MomijiHighlightColor
----@field hardblack MomijiHighlightColor
 ---@field gradation1 MomijiHighlightColor
 ---@field gradation2 MomijiHighlightColor
 ---@field gradation3 MomijiHighlightColor
@@ -96,7 +93,6 @@ M.palette = {
   brightmagenta = { gui = "#{{.BrightMagenta.ToHex}}", cterm = {{.BrightMagenta.Index}} },
   brightcyan = { gui = "#{{.BrightCyan.ToHex}}", cterm = {{.BrightCyan.Index}} },
   brightwhite = { gui = "#{{.BrightWhite.ToHex}}", cterm = {{.BrightWhite.Index}} },
-  hardblack = { gui = "#{{.HardBlack.ToHex}}", cterm = {{.HardBlack.Index}} },
   gradation1 = { gui = "#{{.Gradation1.ToHex}}", cterm = {{.Gradation1.Index}} },
   gradation2 = { gui = "#{{.Gradation2.ToHex}}", cterm = {{.Gradation2.Index}} },
   gradation3 = { gui = "#{{.Gradation3.ToHex}}", cterm = {{.Gradation3.Index}} },

@@ -9,20 +9,21 @@ if exists("syntax_on")
 endif
 
 let g:colors_name='momiji'
+set background=dark
 
 if !has('gui_running') && &t_Co != 256
   finish
 endif
 
 let g:momiji_colors = {}
-let g:momiji_colors['black'] =        '#{{.Black.ToHex}}'
-let g:momiji_colors['red'] =          '#{{.Red.ToHex}}'
-let g:momiji_colors['green'] =        '#{{.Green.ToHex}}'
-let g:momiji_colors['yellow'] =       '#{{.Yellow.ToHex}}'
-let g:momiji_colors['blue'] =         '#{{.Blue.ToHex}}'
-let g:momiji_colors['magenta'] =      '#{{.Magenta.ToHex}}'
-let g:momiji_colors['cyan'] =         '#{{.Cyan.ToHex}}'
-let g:momiji_colors['white'] =        '#{{.White.ToHex}}'
+let g:momiji_colors['black'] =         '#{{.Black.ToHex}}'
+let g:momiji_colors['red'] =           '#{{.Red.ToHex}}'
+let g:momiji_colors['green'] =         '#{{.Green.ToHex}}'
+let g:momiji_colors['yellow'] =        '#{{.Yellow.ToHex}}'
+let g:momiji_colors['blue'] =          '#{{.Blue.ToHex}}'
+let g:momiji_colors['magenta'] =       '#{{.Magenta.ToHex}}'
+let g:momiji_colors['cyan'] =          '#{{.Cyan.ToHex}}'
+let g:momiji_colors['white'] =         '#{{.White.ToHex}}'
 let g:momiji_colors['brightblack'] =   '#{{.BrightBlack.ToHex}}'
 let g:momiji_colors['brightred'] =     '#{{.BrightRed.ToHex}}'
 let g:momiji_colors['brightgreen'] =   '#{{.BrightGreen.ToHex}}'
@@ -31,12 +32,11 @@ let g:momiji_colors['brightblue'] =    '#{{.BrightBlue.ToHex}}'
 let g:momiji_colors['brightmagenta'] = '#{{.BrightMagenta.ToHex}}'
 let g:momiji_colors['brightcyan'] =    '#{{.BrightCyan.ToHex}}'
 let g:momiji_colors['brightwhite'] =   '#{{.BrightWhite.ToHex}}'
-let g:momiji_colors['hardblack'] =    '#{{.HardBlack.ToHex}}'
-let g:momiji_colors['gradation1'] =   '#{{.Gradation1.ToHex}}'
-let g:momiji_colors['gradation2'] =   '#{{.Gradation2.ToHex}}'
-let g:momiji_colors['gradation3'] =   '#{{.Gradation3.ToHex}}'
-let g:momiji_colors['gradation4'] =   '#{{.Gradation4.ToHex}}'
-let g:momiji_colors['gradation5'] =   '#{{.Gradation5.ToHex}}'
+let g:momiji_colors['gradation1'] =    '#{{.Gradation1.ToHex}}'
+let g:momiji_colors['gradation2'] =    '#{{.Gradation2.ToHex}}'
+let g:momiji_colors['gradation3'] =    '#{{.Gradation3.ToHex}}'
+let g:momiji_colors['gradation4'] =    '#{{.Gradation4.ToHex}}'
+let g:momiji_colors['gradation5'] =    '#{{.Gradation5.ToHex}}'
 
 let g:momiji_palette = {}
 let g:momiji_palette['black'] =        [g:momiji_colors.black,        {{.Black.Index}}]
@@ -55,7 +55,6 @@ let g:momiji_palette['brightblue'] =    [g:momiji_colors.brightblue,    {{.Brigh
 let g:momiji_palette['brightmagenta'] = [g:momiji_colors.brightmagenta, {{.BrightMagenta.Index}}]
 let g:momiji_palette['brightcyan'] =    [g:momiji_colors.brightcyan,    {{.BrightCyan.Index}}]
 let g:momiji_palette['brightwhite'] =   [g:momiji_colors.brightwhite,   {{.BrightWhite.Index}}]
-let g:momiji_palette['hardblack'] =    [g:momiji_colors.hardblack,    {{.HardBlack.Index}}]
 let g:momiji_palette['gradation1'] =   [g:momiji_colors.gradation1,   {{.Gradation1.Index}}]
 let g:momiji_palette['gradation2'] =   [g:momiji_colors.gradation2,   {{.Gradation2.Index}}]
 let g:momiji_palette['gradation3'] =   [g:momiji_colors.gradation3,   {{.Gradation3.Index}}]
@@ -64,7 +63,7 @@ let g:momiji_palette['gradation5'] =   [g:momiji_colors.gradation5,   {{.Gradati
 
 " Momiji Hi Groups:
 " memoize common hi groups
-highlight MomijiWhite {{Foreground .Black}}
+highlight MomijiWhite {{Foreground .White}}
 highlight MomijiRed {{Foreground .Red}}
 highlight MomijiGreen {{Foreground .Green}}
 highlight MomijiYellow {{Foreground .Yellow}}
@@ -98,97 +97,97 @@ highlight MomijiGradation5 {{Foreground .Gradation5}}
 
 " General UI:
 " Normal text
-highlight Normal {{Foreground .BrightWhite}} {{Background .Black}}
-highlight NormalFloat {{Foreground .BrightWhite}} {{Background .Gradation1}}
+highlight Normal {{Foreground .Foreground}} {{Background .Background}}
+highlight NormalFloat {{Foreground .Foreground}} {{Background .Gradation1}}
 
 " Screen line that the cursor is
 highlight! CursorLine NONE
 highlight CursorLine {{Background .Gradation1}}
 " Screen column that the cursor is
-highlight CursorColumn {{Background .BrightBlack}}
+highlight CursorColumn {{Background .Gradation2}}
 
 " Tab pages line filler
-highlight TabLineFill {{Foreground .Green}} {{Background .Black}}
+highlight TabLineFill {{Foreground .Green}} {{Background .Background}}
 " Active tab page label
-highlight TabLineSel {{Foreground .Red}} {{Background .Black}} {{Emphasis "bold"}}
+highlight TabLineSel {{Foreground .Red}} {{Background .Background}} {{Emphasis "bold"}}
 " Not active tab page label
 highlight! link TabLine TabLineFill
 
 " Match paired bracket under the cursor
-highlight MatchParen {{Foreground .Yellow}} {{Background .BrightBlack}} {{Emphasis "bold"}}
+highlight MatchParen {{Foreground .Yellow}} {{Background .BrightRed}} {{Emphasis "bold"}}
 
 " Highlighted screen columns
-highlight ColorColumn {{Background .BrightBlack}}
+highlight ColorColumn {{Background .Gradation2}}
 
 " Concealed element: \lambda → λ
 highlight Conceal {{Foreground .Blue}}
 
-highlight! link Delimiter MomijiBlack
+highlight! Delimiter {{Foreground .Foreground}}
 
-highlight! link NonText MomijiBrightBlack
-highlight! link SpecialKey MomijiBrightBlack
-highlight! link Whitespace MomijiBrightBlack
+highlight! NonText {{Foreground .Gradation2}}
+highlight! SpecialKey {{Foreground .Gradation2}}
+highlight! Whitespace {{Foreground .Gradation2}}
 
-highlight Visual {{Foreground .Black}} {{Background .Yellow}}
+highlight Visual {{Foreground .Background}} {{Background .Yellow}}
 highlight! link VisualNOS Visual
 
-highlight Search {{Foreground .Black}} {{Background .BrightBlue}}
+highlight Search {{Foreground .Background}} {{Background .BrightBlue}}
 highlight IncSearch None
-highlight IncSearch {{Foreground .Black}} {{Background .BrightMagenta}}
+highlight IncSearch {{Foreground .Background}} {{Background .BrightMagenta}}
 highlight CurSearch None
-highlight CurSearch {{Foreground .Black}} {{Background .BrightGreen}}
+highlight CurSearch {{Foreground .Background}} {{Background .BrightGreen}}
 highlight Substitute None
-highlight Substitute {{Foreground .Black}} {{Background .BrightMagenta}}
+highlight Substitute {{Foreground .Background}} {{Background .BrightMagenta}}
 
 highlight Underlined {{Foreground .Blue}} {{Emphasis "underline"}}
 
-highlight StatusLine {{Foreground .White}} {{Background .Gradation2}} {{Emphasis "bold"}}
-highlight StatusLineNC {{Foreground .White}} {{Background .Black}} {{Emphasis "underline"}}
+highlight StatusLine {{Foreground .Foreground}} {{Background .Gradation2}} {{Emphasis "bold"}}
+highlight StatusLineNC {{Foreground .Foreground}} {{Background .Gradation1}} {{Emphasis "underline"}}
 
 " The column separating vertically split windows
 highlight VertSplit {{Foreground .Gradation4}} {{Emphasis "bold"}}
 
 " Current match in wildmenu completion
-highlight WildMenu {{Foreground .Blue}} {{Background .Black}} {{Emphasis "bold"}}
+highlight WildMenu {{Foreground .Blue}} {{Background .Background}} {{Emphasis "bold"}}
 
 " Directory names, special names in listing
-highlight! link Directory MomijiGreenBold
+highlight! Directory {{Foreground .Green}} {{Emphasis "bold"}}
 
 " Titles for output from :set all, :autocmd, etc.
-highlight! link Title MomijiYellowBold
+highlight! Title {{Foreground .Yellow}} {{Emphasis "bold"}}
 
 " Error messages on the command line
-highlight ErrorMsg {{Foreground .BrightWhite}} {{Background .Red}}
+highlight ErrorMsg {{Foreground .Foreground}} {{Background .Red}}
 " More prompt: -- More --
-highlight! link MoreMsg MomijiYellowBold
+highlight! MoreMsg {{Foreground .Yellow}} {{Emphasis "bold"}}
 " Current mode message: -- INSERT --
-highlight! link ModeMsg MomijiYellowBold
+highlight! ModeMsg {{Foreground .Yellow}} {{Emphasis "bold"}}
 " 'Press enter' prompt and yes/no questions
-highlight! link Question MomijiBrightRedBold
+highlight! Question {{Foreground .BrightRed}} {{Emphasis "bold"}}
 " Warning messages
-highlight! link WarningMsg MomijiRedBold
+highlight! WarningMsg {{Foreground .Red}} {{Emphasis "bold"}}
 " Gutter:
 " Line number for :number and :# commands
-highlight LineNr {{Foreground .White}} {{Background .HardBlack}}
+highlight LineNr {{Foreground .Gradation4}} {{Background .Gradation1}}
 
 " Line number of CursorLine
-highlight CursorLineNr {{Foreground .Gradation1}} {{Background .Blue}} {{Emphasis "bold"}}
+highlight CursorLineNr {{Foreground .Background}} {{Background .Blue}} {{Emphasis "bold"}}
 
 if hlexists('LineNrAbove')
-  highlight LineNrAbove {{Foreground .BrightMagenta}} {{Background .HardBlack}}
-  highlight LineNrBelow {{Foreground .BrightGreen}} {{Background .HardBlack}}
+  highlight LineNrAbove {{Foreground .StrongMagenta}} {{Background .Gradation1}}
+  highlight LineNrBelow {{Foreground .StrongGreen}} {{Background .Gradation1}}
 endif
 
 " Column where signs are displayed
-highlight SignColumn {{Background .HardBlack}}
+highlight SignColumn {{Background .Gradation1}}
 
 " Line used for closed folds
-highlight Folded {{Foreground .White}} {{Background .Black}} {{Emphasis "italic"}}
+highlight Folded {{Foreground .Gradation4}} {{Emphasis "italic"}}
 " Column where folds are displayed
-highlight FoldColumn {{Foreground .White}} {{Background .Black}}
+highlight FoldColumn {{Foreground .Gradation4}} {{Background .Background}}
 " Cursor:
 " Character under cursor
-highlight Cursor {{Foreground .Black}} {{Background .BrightYellow}}
+highlight Cursor {{Foreground .Background}} {{Background .StrongYellow}}
 " Character under cursor in a focused terminal
 highlight link TermCursor Cursor
 " Cursor in an unfocused terminal
@@ -200,65 +199,65 @@ highlight! link iCursor Cursor
 " Language mapping cursor
 highlight! link lCursor Cursor
 " Syntax Highlighting:
-highlight! link Special MomijiBrightYellow
+highlight! Special {{Foreground .StrongYellow}} {{Emphasis "bold"}}
 
-highlight Comment {{Foreground .White}} {{Emphasis "italic"}}
-highlight Todo {{Foreground .BrightWhite}} {{Background .Black}} {{Emphasis "bold" "italic"}}
-highlight Error {{Foreground .BrightRed}} {{Background .Black}} {{Emphasis "bold" "inverse"}}
+highlight Comment {{Foreground .Gradation3}} {{Emphasis "italic"}}
+highlight Todo {{Foreground .Foreground}} {{Emphasis "bold" "italic"}}
+highlight Error {{Foreground .StrongRed}} {{Emphasis "bold" "inverse"}}
 
 " String constant: "this is a string"
 highlight String {{Foreground .Green}}
 
 " Generic statement
-highlight! link Statement MomijiYellow
+highlight! Statement {{Foreground .Yellow}}
 " if, then, else, endif, swicth, etc.
-highlight! link Conditional MomijiYellow
+highlight! Conditional {{Foreground .Yellow}}
 " for, do, while, etc.
-highlight! link Repeat MomijiYellow
+highlight! Repeat {{Foreground .Yellow}}
 " case, default, etc.
-highlight! link Label MomijiYellow
+highlight! Label {{Foreground .Yellow}}
 " try, catch, throw
-highlight! link Exception MomijiRed
+highlight! Exception {{Foreground .Red}}
 " sizeof, "+", "*", etc.
 highlight! link Operator None
 " Any other keyword
-highlight! link Keyword MomijiRed
+highlight! Keyword {{Foreground .Red}}
 
 " Variable name
-highlight! link Identifier MomijiBrightBlue
+highlight! Identifier {{Foreground .StrongBlue}}
 " Function name
-highlight! link Function MomijiBlue
+highlight! Function {{Foreground .Blue}}
 
 " Generic preprocessor
-highlight! link PreProc MomijiMagenta
+highlight! PreProc {{Foreground .Magenta}}
 " Preprocessor #include
-highlight! link Include MomijiMagenta
+highlight! Include {{Foreground .Magenta}}
 " Preprocessor #define
-highlight! link Define MomijiMagenta
+highlight! Define {{Foreground .Magenta}}
 " Same as Define
-highlight! link Macro MomijiMagenta
+highlight! Macro {{Foreground .Magenta}}
 " Preprocessor #if, #else, #endif, etc.
-highlight! link PreCondit MomijiMagenta
+highlight! PreCondit {{Foreground .Magenta}}
 
 " Generic constant
-highlight! link Constant MomijiBrightMagenta
+highlight! Constant {{Foreground .StrongMagenta}}
 " Character constant: 'c', '/n'
-highlight! link Character MomijiBrightMagenta
+highlight! Character {{Foreground .StrongMagenta}}
 " Boolean constant: TRUE, false
-highlight! link Boolean MomijiBrightMagenta
+highlight! Boolean {{Foreground .StrongMagenta}}
 " Number constant: 234, 0xff
-highlight! link Number MomijiBrightMagenta
+highlight! Number {{Foreground .StrongMagenta}}
 " Floating point constant: 2.3e10
-highlight! link Float MomijiBrightMagenta
+highlight! Float {{Foreground .StrongMagenta}}
 
 " Generic type
-highlight! link Type MomijiCyan
+highlight! Type {{Foreground .Cyan}}
 " static, register, volatile, etc
-highlight! link StorageClass MomijiCyan
+highlight! StorageClass {{Foreground .Cyan}}
 " struct, union, enum, etc.
-highlight! link Structure MomijiBrightRed
+highlight! Structure {{Foreground .StrongRed}}
 " typedef
-highlight! link Typedef MomijiBrightRed
+highlight! Typedef {{Foreground .StrongRed}}
 " Completion Menu:
 " Popup menu: normal item
 highlight Pmenu {{Background .Gradation1}}
@@ -268,11 +267,16 @@ highlight PmenuSel {{Background .Gradation2}} {{Emphasis "bold"}}
 highlight PmenuSbar {{Background .Gradation2}}
 " Popup menu: scrollbar thumb
 highlight PmenuThumb {{Background .Gradation2}}
+" Quickfix
+highlight QuickFixLine {{Foreground .Cyan}} {{Emphasis "bold"}}
 " Diffs:
-highlight DiffDelete {{Foreground .BrightRed}} {{Background .Black}}
-highlight DiffAdd {{Foreground .BrightGreen}} {{Background .Black}}
-highlight DiffChange {{Foreground .Cyan}} {{Background .Black}}
-highlight DiffText {{Foreground .BrightYellow}} {{Background .Black}}
+highlight DiffDelete {{Foreground .StrongRed}} {{Background .Background}}
+highlight DiffAdd {{Foreground .StrongGreen}} {{Background .Background}}
+highlight DiffChange {{Foreground .Cyan}} {{Background .Background}}
+highlight DiffText {{Foreground .StrongYellow}} {{Background .Background}}
+highlight! link Added DiffAdd
+highlight! link Changed DiffChange
+highlight! link Removed DiffDelete
 " Spelling:
 if has("spell")
   " Not capitalised word, or compile warnings
@@ -294,15 +298,15 @@ endif
 
 if hlexists('DiagnosticInfo')
   highlight DiagnosticDeprecated cterm=strikethrough gui=strikethrough guisp=Red
-  highlight DiagnosticOk    {{Foreground .BrightGreen}}
+  highlight DiagnosticOk    {{Foreground .StrongGreen}}
   highlight DiagnosticHint  {{Foreground .Gradation3}}
-  highlight DiagnosticInfo  {{Foreground .BrightBlue}}
-  highlight DiagnosticWarn  {{Foreground .BrightRed}}
+  highlight DiagnosticInfo  {{Foreground .StrongBlue}}
+  highlight DiagnosticWarn  {{Foreground .StrongRed}}
   highlight DiagnosticError {{Foreground .Red}}
-  highlight DiagnosticUnderlineOk {{Emphasis "underline"}} guisp=#{{.BrightGreen.ToHex}}
+  highlight DiagnosticUnderlineOk {{Emphasis "underline"}} guisp=#{{.StrongGreen.ToHex}}
   highlight DiagnosticUnderlineHint {{Emphasis "underline"}} guisp=#{{.Gradation3.ToHex}}
-  highlight DiagnosticUnderlineInfo {{Emphasis "underline"}} guisp=#{{.BrightBlue.ToHex}}
-  highlight DiagnosticUnderlineWarn {{Emphasis "underline"}} guisp=#{{.BrightRed.ToHex}}
+  highlight DiagnosticUnderlineInfo {{Emphasis "underline"}} guisp=#{{.StrongBlue.ToHex}}
+  highlight DiagnosticUnderlineWarn {{Emphasis "underline"}} guisp=#{{.StrongRed.ToHex}}
   highlight DiagnosticUnderlineError {{Emphasis "underline"}} guisp=#{{.Red.ToHex}}
 endif
 
