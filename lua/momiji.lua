@@ -22,6 +22,8 @@ local M = {}
 ---@field gradation3 string RGB(#rrggbb) color
 ---@field gradation4 string RGB(#rrggbb) color
 ---@field gradation5 string RGB(#rrggbb) color
+---@field background string RGB(#rrggbb) color
+---@field foreground string RGB(#rrggbb) color
 
 ---@type MomijiHighlightColors
 M.colors = {
@@ -46,6 +48,8 @@ M.colors = {
   gradation3 = "#7d7373",
   gradation4 = "#a09999",
   gradation5 = "#c3bebe",
+  background = "#140c0c",
+  foreground = "#e6e3e3",
 }
 
 ---@class MomijiHighlightColor
@@ -74,6 +78,8 @@ M.colors = {
 ---@field gradation3 MomijiHighlightColor
 ---@field gradation4 MomijiHighlightColor
 ---@field gradation5 MomijiHighlightColor
+---@field background MomijiHighlightColor
+---@field foreground MomijiHighlightColor
 
 ---@type MomijiHighlightPalette
 M.palette = {
@@ -98,6 +104,8 @@ M.palette = {
   gradation3 = { gui = "#7d7373", cterm = 237 },
   gradation4 = { gui = "#a09999", cterm = 238 },
   gradation5 = { gui = "#c3bebe", cterm = 239 },
+  background = { gui = "#140c0c", cterm = 0 },
+  foreground = { gui = "#e6e3e3", cterm = 15 },
 }
 
 ---@alias MomijiHighlightEmpha "bold"|"underline"|"undercurl"|"underdouble"|"underdotted"|"underdashed"|"strikethrough"|"reverse"|"inverse"|"italic"|"standout"|"altfont"|"nocombine"|"NONE"
