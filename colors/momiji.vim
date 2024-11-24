@@ -62,45 +62,6 @@ let g:momiji_palette['gradation3'] =   [g:momiji_colors.gradation3,   237]
 let g:momiji_palette['gradation4'] =   [g:momiji_colors.gradation4,   238]
 let g:momiji_palette['gradation5'] =   [g:momiji_colors.gradation5,   239]
 
-" Set a highlight group.
-" `params` contains some options like below.
-"   - fg     color
-"   - bg     color
-"   - empha  list of bold|italic|inverseg|underline|undercurlg
-"   - guisp  a color for various underlines
-"
-" Which color for fg or bg you can get it from g:momiji_palette e.g.:
-"   call MomijiHighlight(Pmenu, {'fg': g:momiji_palette.red})
-function! MomijiHighlight(group, params)
-  " params: fg, bg, empha, guisp
-  let l:histr = [ 'highlight', a:group ]
-
-  let l:fg = get(a:params, 'fg', get(a:params, 'foreground', []))
-  if len(l:fg) >= 2
-    call extend(l:histr, ['guifg=' . l:fg[0], 'ctermfg=' . l:fg[1]])
-  endif
-
-  let l:bg = get(a:params, 'bg', get(a:params, 'background', []))
-  if len(l:bg) >= 2
-    call extend(l:histr, ['guibg=' . l:bg[0], 'ctermbg=' . l:bg[1]])
-  endif
-
-  let l:empha = get(a:params, 'empha', [])
-  let l:empha = filter(l:empha, {_, v -> v !=# ''})
-
-  if len(l:empha) > 0
-    let l:em = join(l:empha, ',')
-    call extend(l:histr, ['gui=' . l:em, 'cterm=' . l:em])
-  endif
-
-  let l:guisp = get(a:params, 'guisp', [])
-  if len(l:guisp) > 0
-    call add(l:histr, 'guisp=' . l:guisp[0])
-  endif
-
-  execute join(l:histr, ' ')
-endfunction
-
 " Momiji Hi Groups:
 " memoize common hi groups
 highlight MomijiWhite guifg=#140c0c ctermfg=0
