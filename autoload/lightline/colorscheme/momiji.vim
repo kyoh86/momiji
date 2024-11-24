@@ -27,11 +27,11 @@ if exists('g:lightline')
   let s:brightmagenta   = g:momiji_palette.brightmagenta
   let s:green          = g:momiji_palette.green
   let s:brightgreen     = g:momiji_palette.brightgreen
-  let s:grayscale1     = g:momiji_palette.grayscale1
-  let s:grayscale2     = g:momiji_palette.grayscale2
-  let s:grayscale3     = g:momiji_palette.grayscale3
-  let s:grayscale4     = g:momiji_palette.grayscale4
-  let s:grayscale5     = g:momiji_palette.grayscale5
+  let s:gradation1     = g:momiji_palette.gradation1
+  let s:gradation2     = g:momiji_palette.gradation2
+  let s:gradation3     = g:momiji_palette.gradation3
+  let s:gradation4     = g:momiji_palette.gradation4
+  let s:gradation5     = g:momiji_palette.gradation5
 
   let s:p                 = {'normal':{}, 'inactive':{}, 'insert':{}, 'replace':{}, 'visual':{}, 'tabline':{}}
   let s:p.normal.left     = [ [ s:black, s:green ], [ s:black, s:brightgreen ] ]
@@ -40,7 +40,7 @@ if exists('g:lightline')
 
   let s:p.inactive.right  = [ [ s:white, s:brightblack ], [ s:white, s:brightblack ] ]
   let s:p.inactive.left   = [ [ s:white, s:brightblack ], [ s:white, s:brightblack ] ]
-  let s:p.inactive.middle = [ [ s:grayscale5, s:brightblack ] ]
+  let s:p.inactive.middle = [ [ s:gradation5, s:brightblack ] ]
 
   let s:p.insert.left     = [ [ s:black, s:blue ], [ s:black, s:brightblue ] ]
   let s:p.insert.right    = [ [ s:black, s:blue ], [ s:black, s:brightblue ] ]

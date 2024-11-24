@@ -32,11 +32,11 @@ let g:momiji_colors['brightmagenta'] = '#{{.BrightMagenta.ToHex}}'
 let g:momiji_colors['brightcyan'] =    '#{{.BrightCyan.ToHex}}'
 let g:momiji_colors['brightwhite'] =   '#{{.BrightWhite.ToHex}}'
 let g:momiji_colors['hardblack'] =    '#{{.HardBlack.ToHex}}'
-let g:momiji_colors['grayscale1'] =   '#{{.GrayScale1.ToHex}}'
-let g:momiji_colors['grayscale2'] =   '#{{.GrayScale2.ToHex}}'
-let g:momiji_colors['grayscale3'] =   '#{{.GrayScale3.ToHex}}'
-let g:momiji_colors['grayscale4'] =   '#{{.GrayScale4.ToHex}}'
-let g:momiji_colors['grayscale5'] =   '#{{.GrayScale5.ToHex}}'
+let g:momiji_colors['gradation1'] =   '#{{.Gradation1.ToHex}}'
+let g:momiji_colors['gradation2'] =   '#{{.Gradation2.ToHex}}'
+let g:momiji_colors['gradation3'] =   '#{{.Gradation3.ToHex}}'
+let g:momiji_colors['gradation4'] =   '#{{.Gradation4.ToHex}}'
+let g:momiji_colors['gradation5'] =   '#{{.Gradation5.ToHex}}'
 
 let g:momiji_palette = {}
 let g:momiji_palette['black'] =        [g:momiji_colors.black,        {{.Black.Index}}]
@@ -56,11 +56,11 @@ let g:momiji_palette['brightmagenta'] = [g:momiji_colors.brightmagenta, {{.Brigh
 let g:momiji_palette['brightcyan'] =    [g:momiji_colors.brightcyan,    {{.BrightCyan.Index}}]
 let g:momiji_palette['brightwhite'] =   [g:momiji_colors.brightwhite,   {{.BrightWhite.Index}}]
 let g:momiji_palette['hardblack'] =    [g:momiji_colors.hardblack,    {{.HardBlack.Index}}]
-let g:momiji_palette['grayscale1'] =   [g:momiji_colors.grayscale1,   {{.GrayScale1.Index}}]
-let g:momiji_palette['grayscale2'] =   [g:momiji_colors.grayscale2,   {{.GrayScale2.Index}}]
-let g:momiji_palette['grayscale3'] =   [g:momiji_colors.grayscale3,   {{.GrayScale3.Index}}]
-let g:momiji_palette['grayscale4'] =   [g:momiji_colors.grayscale4,   {{.GrayScale4.Index}}]
-let g:momiji_palette['grayscale5'] =   [g:momiji_colors.grayscale5,   {{.GrayScale5.Index}}]
+let g:momiji_palette['gradation1'] =   [g:momiji_colors.gradation1,   {{.Gradation1.Index}}]
+let g:momiji_palette['gradation2'] =   [g:momiji_colors.gradation2,   {{.Gradation2.Index}}]
+let g:momiji_palette['gradation3'] =   [g:momiji_colors.gradation3,   {{.Gradation3.Index}}]
+let g:momiji_palette['gradation4'] =   [g:momiji_colors.gradation4,   {{.Gradation4.Index}}]
+let g:momiji_palette['gradation5'] =   [g:momiji_colors.gradation5,   {{.Gradation5.Index}}]
 
 " Set a highlight group.
 " `params` contains some options like below.
@@ -129,20 +129,20 @@ highlight MomijiBrightWhite {{Foreground .BrightWhite}}
 
 " special
 highlight MomijiBrightRedBold {{Foreground .BrightRed}} {{Emphasis "bold"}}
-highlight MomijiGrayScale1 {{Foreground .GrayScale1}}
-highlight MomijiGrayScale2 {{Foreground .GrayScale2}}
-highlight MomijiGrayScale3 {{Foreground .GrayScale3}}
-highlight MomijiGrayScale4 {{Foreground .GrayScale4}}
-highlight MomijiGrayScale5 {{Foreground .GrayScale5}}
+highlight MomijiGradation1 {{Foreground .Gradation1}}
+highlight MomijiGradation2 {{Foreground .Gradation2}}
+highlight MomijiGradation3 {{Foreground .Gradation3}}
+highlight MomijiGradation4 {{Foreground .Gradation4}}
+highlight MomijiGradation5 {{Foreground .Gradation5}}
 
 " General UI:
 " Normal text
 highlight Normal {{Foreground .BrightWhite}} {{Background .Black}}
-highlight NormalFloat {{Foreground .BrightWhite}} {{Background .GrayScale1}}
+highlight NormalFloat {{Foreground .BrightWhite}} {{Background .Gradation1}}
 
 " Screen line that the cursor is
 highlight! CursorLine NONE
-highlight CursorLine {{Background .GrayScale1}}
+highlight CursorLine {{Background .Gradation1}}
 " Screen column that the cursor is
 highlight CursorColumn {{Background .BrightBlack}}
 
@@ -179,11 +179,11 @@ highlight Substitute {{Foreground .Black}} {{Background .BrightMagenta}}
 
 highlight Underlined {{Foreground .Blue}} {{Emphasis "underline"}}
 
-highlight StatusLine {{Foreground .White}} {{Background .GrayScale2}} {{Emphasis "bold"}}
+highlight StatusLine {{Foreground .White}} {{Background .Gradation2}} {{Emphasis "bold"}}
 highlight StatusLineNC {{Foreground .White}} {{Background .Black}} {{Emphasis "underline"}}
 
 " The column separating vertically split windows
-highlight VertSplit {{Foreground .GrayScale4}} {{Emphasis "bold"}}
+highlight VertSplit {{Foreground .Gradation4}} {{Emphasis "bold"}}
 
 " Current match in wildmenu completion
 highlight WildMenu {{Foreground .Blue}} {{Background .Black}} {{Emphasis "bold"}}
@@ -209,7 +209,7 @@ highlight! link WarningMsg MomijiRedBold
 highlight LineNr {{Foreground .White}} {{Background .HardBlack}}
 
 " Line number of CursorLine
-highlight CursorLineNr {{Foreground .GrayScale1}} {{Background .Blue}} {{Emphasis "bold"}}
+highlight CursorLineNr {{Foreground .Gradation1}} {{Background .Blue}} {{Emphasis "bold"}}
 
 if hlexists('LineNrAbove')
   highlight LineNrAbove {{Foreground .BrightMagenta}} {{Background .HardBlack}}
@@ -298,13 +298,13 @@ highlight! link Structure MomijiBrightRed
 highlight! link Typedef MomijiBrightRed
 " Completion Menu:
 " Popup menu: normal item
-highlight Pmenu {{Background .GrayScale1}}
+highlight Pmenu {{Background .Gradation1}}
 " Popup menu: selected item
-highlight PmenuSel {{Background .GrayScale2}} {{Emphasis "bold"}}
+highlight PmenuSel {{Background .Gradation2}} {{Emphasis "bold"}}
 " Popup menu: scrollbar
-highlight PmenuSbar {{Background .GrayScale2}}
+highlight PmenuSbar {{Background .Gradation2}}
 " Popup menu: scrollbar thumb
-highlight PmenuThumb {{Background .GrayScale2}}
+highlight PmenuThumb {{Background .Gradation2}}
 " Diffs:
 highlight DiffDelete {{Foreground .BrightRed}} {{Background .Black}}
 highlight DiffAdd {{Foreground .BrightGreen}} {{Background .Black}}
@@ -324,20 +324,20 @@ endif
 
 if hlexists('FloatBorder')
   highlight FloatBorder None
-  highlight FloatBorder {{Foreground .GrayScale4}} {{Emphasis "bold"}}
+  highlight FloatBorder {{Foreground .Gradation4}} {{Emphasis "bold"}}
   highlight FloatShadow None
-  highlight FloatShadow {{Background .GrayScale1}}
+  highlight FloatShadow {{Background .Gradation1}}
 endif
 
 if hlexists('DiagnosticInfo')
   highlight DiagnosticDeprecated cterm=strikethrough gui=strikethrough guisp=Red
   highlight DiagnosticOk    {{Foreground .BrightGreen}}
-  highlight DiagnosticHint  {{Foreground .GrayScale3}}
+  highlight DiagnosticHint  {{Foreground .Gradation3}}
   highlight DiagnosticInfo  {{Foreground .BrightBlue}}
   highlight DiagnosticWarn  {{Foreground .BrightRed}}
   highlight DiagnosticError {{Foreground .Red}}
   highlight DiagnosticUnderlineOk {{Emphasis "underline"}} guisp=#{{.BrightGreen.ToHex}}
-  highlight DiagnosticUnderlineHint {{Emphasis "underline"}} guisp=#{{.GrayScale3.ToHex}}
+  highlight DiagnosticUnderlineHint {{Emphasis "underline"}} guisp=#{{.Gradation3.ToHex}}
   highlight DiagnosticUnderlineInfo {{Emphasis "underline"}} guisp=#{{.BrightBlue.ToHex}}
   highlight DiagnosticUnderlineWarn {{Emphasis "underline"}} guisp=#{{.BrightRed.ToHex}}
   highlight DiagnosticUnderlineError {{Emphasis "underline"}} guisp=#{{.Red.ToHex}}

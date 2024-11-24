@@ -32,11 +32,11 @@ let g:momiji_colors['brightmagenta'] = '#eea1d1'
 let g:momiji_colors['brightcyan'] =    '#69b2ac'
 let g:momiji_colors['brightwhite'] =   '#e6e3e3'
 let g:momiji_colors['hardblack'] =    '#080808'
-let g:momiji_colors['grayscale1'] =   '#372a2a'
-let g:momiji_colors['grayscale2'] =   '#5a4e4e'
-let g:momiji_colors['grayscale3'] =   '#7d7373'
-let g:momiji_colors['grayscale4'] =   '#a09999'
-let g:momiji_colors['grayscale5'] =   '#c3bebe'
+let g:momiji_colors['gradation1'] =   '#372a2a'
+let g:momiji_colors['gradation2'] =   '#5a4e4e'
+let g:momiji_colors['gradation3'] =   '#7d7373'
+let g:momiji_colors['gradation4'] =   '#a09999'
+let g:momiji_colors['gradation5'] =   '#c3bebe'
 
 let g:momiji_palette = {}
 let g:momiji_palette['black'] =        [g:momiji_colors.black,        0]
@@ -56,11 +56,11 @@ let g:momiji_palette['brightmagenta'] = [g:momiji_colors.brightmagenta, 13]
 let g:momiji_palette['brightcyan'] =    [g:momiji_colors.brightcyan,    14]
 let g:momiji_palette['brightwhite'] =   [g:momiji_colors.brightwhite,   15]
 let g:momiji_palette['hardblack'] =    [g:momiji_colors.hardblack,    232]
-let g:momiji_palette['grayscale1'] =   [g:momiji_colors.grayscale1,   235]
-let g:momiji_palette['grayscale2'] =   [g:momiji_colors.grayscale2,   236]
-let g:momiji_palette['grayscale3'] =   [g:momiji_colors.grayscale3,   237]
-let g:momiji_palette['grayscale4'] =   [g:momiji_colors.grayscale4,   238]
-let g:momiji_palette['grayscale5'] =   [g:momiji_colors.grayscale5,   239]
+let g:momiji_palette['gradation1'] =   [g:momiji_colors.gradation1,   235]
+let g:momiji_palette['gradation2'] =   [g:momiji_colors.gradation2,   236]
+let g:momiji_palette['gradation3'] =   [g:momiji_colors.gradation3,   237]
+let g:momiji_palette['gradation4'] =   [g:momiji_colors.gradation4,   238]
+let g:momiji_palette['gradation5'] =   [g:momiji_colors.gradation5,   239]
 
 " Set a highlight group.
 " `params` contains some options like below.
@@ -129,11 +129,11 @@ highlight MomijiBrightWhite guifg=#e6e3e3 ctermfg=15
 
 " special
 highlight MomijiBrightRedBold guifg=#f5875b ctermfg=9 gui=bold cterm=bold
-highlight MomijiGrayScale1 guifg=#372a2a ctermfg=235
-highlight MomijiGrayScale2 guifg=#5a4e4e ctermfg=236
-highlight MomijiGrayScale3 guifg=#7d7373 ctermfg=237
-highlight MomijiGrayScale4 guifg=#a09999 ctermfg=238
-highlight MomijiGrayScale5 guifg=#c3bebe ctermfg=239
+highlight MomijiGradation1 guifg=#372a2a ctermfg=235
+highlight MomijiGradation2 guifg=#5a4e4e ctermfg=236
+highlight MomijiGradation3 guifg=#7d7373 ctermfg=237
+highlight MomijiGradation4 guifg=#a09999 ctermfg=238
+highlight MomijiGradation5 guifg=#c3bebe ctermfg=239
 
 " General UI:
 " Normal text

@@ -18,11 +18,11 @@ local M = {}
 ---@field brightcyan string RGB(#rrggbb) color
 ---@field brightwhite string RGB(#rrggbb) color
 ---@field hardblack string RGB(#rrggbb) color
----@field grayscale1 string RGB(#rrggbb) color
----@field grayscale2 string RGB(#rrggbb) color
----@field grayscale3 string RGB(#rrggbb) color
----@field grayscale4 string RGB(#rrggbb) color
----@field grayscale5 string RGB(#rrggbb) color
+---@field gradation1 string RGB(#rrggbb) color
+---@field gradation2 string RGB(#rrggbb) color
+---@field gradation3 string RGB(#rrggbb) color
+---@field gradation4 string RGB(#rrggbb) color
+---@field gradation5 string RGB(#rrggbb) color
 
 ---@type MomijiHighlightColors
 M.colors = {
@@ -43,11 +43,11 @@ M.colors = {
   brightcyan = "#69b2ac",
   brightwhite = "#e6e3e3",
   hardblack = "#080808",
-  grayscale1 = "#372a2a",
-  grayscale2 = "#5a4e4e",
-  grayscale3 = "#7d7373",
-  grayscale4 = "#a09999",
-  grayscale5 = "#c3bebe",
+  gradation1 = "#372a2a",
+  gradation2 = "#5a4e4e",
+  gradation3 = "#7d7373",
+  gradation4 = "#a09999",
+  gradation5 = "#c3bebe",
 }
 
 ---@class MomijiHighlightColor
@@ -72,11 +72,11 @@ M.colors = {
 ---@field brightcyan MomijiHighlightColor
 ---@field brightwhite MomijiHighlightColor
 ---@field hardblack MomijiHighlightColor
----@field grayscale1 MomijiHighlightColor
----@field grayscale2 MomijiHighlightColor
----@field grayscale3 MomijiHighlightColor
----@field grayscale4 MomijiHighlightColor
----@field grayscale5 MomijiHighlightColor
+---@field gradation1 MomijiHighlightColor
+---@field gradation2 MomijiHighlightColor
+---@field gradation3 MomijiHighlightColor
+---@field gradation4 MomijiHighlightColor
+---@field gradation5 MomijiHighlightColor
 
 ---@type MomijiHighlightPalette
 M.palette = {
@@ -97,11 +97,11 @@ M.palette = {
   brightcyan = { gui = "#69b2ac", cterm = 14 },
   brightwhite = { gui = "#e6e3e3", cterm = 15 },
   hardblack = { gui = "#080808", cterm = 232 },
-  grayscale1 = { gui = "#372a2a", cterm = 235 },
-  grayscale2 = { gui = "#5a4e4e", cterm = 236 },
-  grayscale3 = { gui = "#7d7373", cterm = 237 },
-  grayscale4 = { gui = "#a09999", cterm = 238 },
-  grayscale5 = { gui = "#c3bebe", cterm = 239 },
+  gradation1 = { gui = "#372a2a", cterm = 235 },
+  gradation2 = { gui = "#5a4e4e", cterm = 236 },
+  gradation3 = { gui = "#7d7373", cterm = 237 },
+  gradation4 = { gui = "#a09999", cterm = 238 },
+  gradation5 = { gui = "#c3bebe", cterm = 239 },
 }
 
 ---@alias MomijiHighlightEmpha "bold"|"underline"|"undercurl"|"underdouble"|"underdotted"|"underdashed"|"strikethrough"|"reverse"|"inverse"|"italic"|"standout"|"altfont"|"nocombine"|"NONE"

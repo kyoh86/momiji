@@ -18,11 +18,11 @@ local M = {}
 ---@field brightcyan string RGB(#rrggbb) color
 ---@field brightwhite string RGB(#rrggbb) color
 ---@field hardblack string RGB(#rrggbb) color
----@field grayscale1 string RGB(#rrggbb) color
----@field grayscale2 string RGB(#rrggbb) color
----@field grayscale3 string RGB(#rrggbb) color
----@field grayscale4 string RGB(#rrggbb) color
----@field grayscale5 string RGB(#rrggbb) color
+---@field gradation1 string RGB(#rrggbb) color
+---@field gradation2 string RGB(#rrggbb) color
+---@field gradation3 string RGB(#rrggbb) color
+---@field gradation4 string RGB(#rrggbb) color
+---@field gradation5 string RGB(#rrggbb) color
 
 ---@type MomijiHighlightColors
 M.colors = {
@@ -43,11 +43,11 @@ M.colors = {
   brightcyan = "#{{.BrightCyan.ToHex}}",
   brightwhite = "#{{.BrightWhite.ToHex}}",
   hardblack = "#{{.HardBlack.ToHex}}",
-  grayscale1 = "#{{.GrayScale1.ToHex}}",
-  grayscale2 = "#{{.GrayScale2.ToHex}}",
-  grayscale3 = "#{{.GrayScale3.ToHex}}",
-  grayscale4 = "#{{.GrayScale4.ToHex}}",
-  grayscale5 = "#{{.GrayScale5.ToHex}}",
+  gradation1 = "#{{.Gradation1.ToHex}}",
+  gradation2 = "#{{.Gradation2.ToHex}}",
+  gradation3 = "#{{.Gradation3.ToHex}}",
+  gradation4 = "#{{.Gradation4.ToHex}}",
+  gradation5 = "#{{.Gradation5.ToHex}}",
 }
 
 ---@class MomijiHighlightColor
@@ -72,11 +72,11 @@ M.colors = {
 ---@field brightcyan MomijiHighlightColor
 ---@field brightwhite MomijiHighlightColor
 ---@field hardblack MomijiHighlightColor
----@field grayscale1 MomijiHighlightColor
----@field grayscale2 MomijiHighlightColor
----@field grayscale3 MomijiHighlightColor
----@field grayscale4 MomijiHighlightColor
----@field grayscale5 MomijiHighlightColor
+---@field gradation1 MomijiHighlightColor
+---@field gradation2 MomijiHighlightColor
+---@field gradation3 MomijiHighlightColor
+---@field gradation4 MomijiHighlightColor
+---@field gradation5 MomijiHighlightColor
 
 ---@type MomijiHighlightPalette
 M.palette = {
@@ -97,11 +97,11 @@ M.palette = {
   brightcyan = { gui = "#{{.BrightCyan.ToHex}}", cterm = {{.BrightCyan.Index}} },
   brightwhite = { gui = "#{{.BrightWhite.ToHex}}", cterm = {{.BrightWhite.Index}} },
   hardblack = { gui = "#{{.HardBlack.ToHex}}", cterm = {{.HardBlack.Index}} },
-  grayscale1 = { gui = "#{{.GrayScale1.ToHex}}", cterm = {{.GrayScale1.Index}} },
-  grayscale2 = { gui = "#{{.GrayScale2.ToHex}}", cterm = {{.GrayScale2.Index}} },
-  grayscale3 = { gui = "#{{.GrayScale3.ToHex}}", cterm = {{.GrayScale3.Index}} },
-  grayscale4 = { gui = "#{{.GrayScale4.ToHex}}", cterm = {{.GrayScale4.Index}} },
-  grayscale5 = { gui = "#{{.GrayScale5.ToHex}}", cterm = {{.GrayScale5.Index}} },
+  gradation1 = { gui = "#{{.Gradation1.ToHex}}", cterm = {{.Gradation1.Index}} },
+  gradation2 = { gui = "#{{.Gradation2.ToHex}}", cterm = {{.Gradation2.Index}} },
+  gradation3 = { gui = "#{{.Gradation3.ToHex}}", cterm = {{.Gradation3.Index}} },
+  gradation4 = { gui = "#{{.Gradation4.ToHex}}", cterm = {{.Gradation4.Index}} },
+  gradation5 = { gui = "#{{.Gradation5.ToHex}}", cterm = {{.Gradation5.Index}} },
 }
 
 ---@alias MomijiHighlightEmpha "bold"|"underline"|"undercurl"|"underdouble"|"underdotted"|"underdashed"|"strikethrough"|"reverse"|"inverse"|"italic"|"standout"|"altfont"|"nocombine"|"NONE"
