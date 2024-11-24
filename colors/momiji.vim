@@ -28,8 +28,8 @@ let g:momiji_colors['lightred'] =     '#f5875b'
 let g:momiji_colors['lightgreen'] =   '#9abe86'
 let g:momiji_colors['lightyellow'] =  '#ffd791'
 let g:momiji_colors['lightblue'] =    '#89b7e1'
-let g:momiji_colors['lightmagenta'] = '#eea1d1'
-let g:momiji_colors['lightcyan'] =    '#69b2ac'
+let g:momiji_colors['lightmagenta'] = '#69b2ac'
+let g:momiji_colors['lightcyan'] =    '#000000'
 let g:momiji_colors['lightwhite'] =   '#e6e3e3'
 let g:momiji_colors['hardblack'] =    '#080808'
 let g:momiji_colors['grayscale1'] =   '#372a2a'
@@ -52,8 +52,8 @@ let g:momiji_palette['lightred'] =     [g:momiji_colors.lightred,     9]
 let g:momiji_palette['lightgreen'] =   [g:momiji_colors.lightgreen,   10]
 let g:momiji_palette['lightyellow'] =  [g:momiji_colors.lightyellow,  11]
 let g:momiji_palette['lightblue'] =    [g:momiji_colors.lightblue,    12]
-let g:momiji_palette['lightmagenta'] = [g:momiji_colors.lightmagenta, 13]
-let g:momiji_palette['lightcyan'] =    [g:momiji_colors.lightcyan,    14]
+let g:momiji_palette['lightmagenta'] = [g:momiji_colors.lightmagenta, 14]
+let g:momiji_palette['lightcyan'] =    [g:momiji_colors.lightcyan,    0]
 let g:momiji_palette['lightwhite'] =   [g:momiji_colors.lightwhite,   15]
 let g:momiji_palette['hardblack'] =    [g:momiji_colors.hardblack,    232]
 let g:momiji_palette['grayscale1'] =   [g:momiji_colors.grayscale1,   235]
@@ -122,8 +122,8 @@ highlight MomijiBrightRed guifg=#f5875b ctermfg=9
 highlight MomijiBrightGreen guifg=#9abe86 ctermfg=10
 highlight MomijiBrightYellow guifg=#ffd791 ctermfg=11
 highlight MomijiBrightBlue guifg=#89b7e1 ctermfg=12
-highlight MomijiBrightMagenta guifg=#eea1d1 ctermfg=13
-highlight MomijiBrightCyan guifg=#69b2ac ctermfg=14
+highlight MomijiBrightMagenta guifg=#69b2ac ctermfg=14
+highlight MomijiBrightCyan guifg=#000000 ctermfg=0
 highlight MomijiBrightBlack guifg=#5a4e4e ctermfg=8
 highlight MomijiBrightWhite guifg=#e6e3e3 ctermfg=15
 
@@ -171,11 +171,11 @@ highlight! link VisualNOS Visual
 
 highlight Search guifg=#140c0c ctermfg=0 guibg=#89b7e1 ctermbg=12
 highlight IncSearch None
-highlight IncSearch guifg=#140c0c ctermfg=0 guibg=#eea1d1 ctermbg=13
+highlight IncSearch guifg=#140c0c ctermfg=0 guibg=#69b2ac ctermbg=14
 highlight CurSearch None
 highlight CurSearch guifg=#140c0c ctermfg=0 guibg=#9abe86 ctermbg=10
 highlight Substitute None
-highlight Substitute guifg=#140c0c ctermfg=0 guibg=#eea1d1 ctermbg=13
+highlight Substitute guifg=#140c0c ctermfg=0 guibg=#69b2ac ctermbg=14
 
 highlight Underlined guifg=#4884d2 ctermfg=4 gui=underline cterm=underline
 
@@ -212,7 +212,7 @@ highlight LineNr guifg=#a09999 ctermfg=7 guibg=#080808 ctermbg=232
 highlight CursorLineNr guifg=#372a2a ctermfg=235 guibg=#4884d2 ctermbg=4 gui=bold cterm=bold
 
 if hlexists('LineNrAbove')
-  highlight LineNrAbove guifg=#eea1d1 ctermfg=13 guibg=#080808 ctermbg=232
+  highlight LineNrAbove guifg=#69b2ac ctermfg=14 guibg=#080808 ctermbg=232
   highlight LineNrBelow guifg=#9abe86 ctermfg=10 guibg=#080808 ctermbg=232
 endif
 
@@ -226,8 +226,10 @@ highlight FoldColumn guifg=#a09999 ctermfg=7 guibg=#140c0c ctermbg=0
 " Cursor:
 " Character under cursor
 highlight Cursor guifg=#140c0c ctermfg=0 guibg=#ffd791 ctermbg=11
-" Character under cursor
+" Character under cursor in a focused terminal
 highlight link TermCursor Cursor
+" Cursor in an unfocused terminal
+highlight link TermCursorNC Cursor
 " Visual mode cursor, selection
 highlight link vCursor Cursor
 " Input moder cursor

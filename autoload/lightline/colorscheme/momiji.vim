@@ -1,6 +1,6 @@
 " -----------------------------------------------------------------------------
 " File: momiji.vim
-" Description: Momiji colorscheme for Lightline (itchyny/lightline.vim)
+" Description: Momiji colorscheme for Brightline (itchyny/lightline.vim)
 " Author: kyoh86 <me@kyoh86.dev>
 " -----------------------------------------------------------------------------
 
