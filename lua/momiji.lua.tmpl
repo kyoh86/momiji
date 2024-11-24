@@ -22,6 +22,8 @@ local M = {}
 ---@field gradation3 string RGB(#rrggbb) color
 ---@field gradation4 string RGB(#rrggbb) color
 ---@field gradation5 string RGB(#rrggbb) color
+---@field background string RGB(#rrggbb) color
+---@field foreground string RGB(#rrggbb) color
 
 ---@type MomijiHighlightColors
 M.colors = {
@@ -46,6 +48,8 @@ M.colors = {
   gradation3 = "#{{.Gradation3.ToHex}}",
   gradation4 = "#{{.Gradation4.ToHex}}",
   gradation5 = "#{{.Gradation5.ToHex}}",
+  background = "#{{.Background.ToHex}}",
+  foreground = "#{{.Foreground.ToHex}}",
 }
 
 ---@class MomijiHighlightColor
@@ -74,6 +78,8 @@ M.colors = {
 ---@field gradation3 MomijiHighlightColor
 ---@field gradation4 MomijiHighlightColor
 ---@field gradation5 MomijiHighlightColor
+---@field background MomijiHighlightColor
+---@field foreground MomijiHighlightColor
 
 ---@type MomijiHighlightPalette
 M.palette = {
@@ -98,6 +104,8 @@ M.palette = {
   gradation3 = { gui = "#{{.Gradation3.ToHex}}", cterm = {{.Gradation3.Index}} },
   gradation4 = { gui = "#{{.Gradation4.ToHex}}", cterm = {{.Gradation4.Index}} },
   gradation5 = { gui = "#{{.Gradation5.ToHex}}", cterm = {{.Gradation5.Index}} },
+  background = { gui = "#{{.Background.ToHex}}", cterm = {{.Background.Index}} },
+  foreground = { gui = "#{{.Foreground.ToHex}}", cterm = {{.Foreground.Index}} },
 }
 
 ---@alias MomijiHighlightEmpha "bold"|"underline"|"undercurl"|"underdouble"|"underdotted"|"underdashed"|"strikethrough"|"reverse"|"inverse"|"italic"|"standout"|"altfont"|"nocombine"|"NONE"
