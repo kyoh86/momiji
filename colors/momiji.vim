@@ -113,7 +113,7 @@ highlight TabLineSel guifg=#da5774 ctermfg=1 guibg=#140c0c ctermbg=0 gui=bold ct
 highlight! link TabLine TabLineFill
 
 " Match paired bracket under the cursor
-highlight MatchParen guifg=#e7a82b ctermfg=3 guibg=#f5875b ctermbg=9 gui=bold cterm=bold
+highlight MatchParen guifg=#140c0c ctermfg=0 guibg=#f5875b ctermbg=9 gui=bold cterm=bold
 
 " Highlighted screen columns
 highlight ColorColumn guibg=#5a4e4e ctermbg=236
