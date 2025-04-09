@@ -123,10 +123,8 @@ M.palette = {
 ---@param group string    Target highlight group name.
 ---@param params MomijiHighlightParam
 function M.highlight(group, params)
-  vim.validate({
-    group = { group, "string" },
-    params = { params, "table" },
-  })
+  vim.validate("group", group, "string")
+  vim.validate("params", params, "table")
   local histr = { "highlight", group }
 
   local fg = vim.tbl_get(params, "fg", "foreground") or {}
