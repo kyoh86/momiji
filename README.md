@@ -5,6 +5,8 @@ Momiji branding image by Kakeru Kuroda. All Rights for the image is Reserved.
 
 My color scheme for vim/iTerm2, "momiji" that means Japanese "autumn leaves"🍂.
 
+<img alt="" src="./momiji-screenshot.png?raw=true" width="952" height="472">
+
 <img alt="ANSI Colors" src="./momiji-colors.png?raw=true" width="675" height="526">
 
 ## install (vim)
