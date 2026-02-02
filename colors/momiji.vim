@@ -290,7 +290,7 @@ endif
 
 if hlexists('FloatBorder')
   highlight FloatBorder None
-  highlight FloatBorder guifg=#a09999 ctermfg=238 gui=bold cterm=bold
+  highlight FloatBorder guifg=#e6e3e3 ctermfg=15 guibg=#372a2a ctermbg=235 gui=bold cterm=bold
   highlight FloatShadow None
   highlight FloatShadow guibg=#372a2a ctermbg=235
 endif
