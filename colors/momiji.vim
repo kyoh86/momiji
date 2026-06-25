@@ -115,7 +115,7 @@ highlight TabLineFill guifg=#348c4e ctermfg=2 guibg=#140c0c ctermbg=0
 highlight! TabLineSel NONE
 highlight TabLineSel guifg=#da5774 ctermfg=1 guibg=#140c0c ctermbg=0 gui=bold cterm=bold
 " Not active tab page label
-highlight! link NONE
+highlight! TabLine NONE
 highlight! link TabLine TabLineFill
 
 " Match paired bracket under the cursor
@@ -142,7 +142,7 @@ highlight! Whitespace guifg=#5a4e4e ctermfg=236
 
 highlight! Visual NONE
 highlight Visual guifg=#140c0c ctermfg=0 guibg=#e7a82b ctermbg=3
-highlight! link NONE
+highlight! VisualNOS NONE
 highlight! link VisualNOS Visual
 
 highlight! Search NONE
@@ -230,19 +230,19 @@ highlight FoldColumn guifg=#a09999 ctermfg=238 guibg=#140c0c ctermbg=0
 highlight! Cursor NONE
 highlight Cursor guifg=#140c0c ctermfg=0 guibg=#ffd791 ctermbg=11
 " Character under cursor in a focused terminal
-highlight! link NONE
+highlight! TermCursor NONE
 highlight link TermCursor Cursor
 " Cursor in an unfocused terminal
-highlight! link NONE
+highlight! TermCursorNC NONE
 highlight link TermCursorNC Cursor
 " Visual mode cursor, selection
-highlight! link NONE
+highlight! vCursor NONE
 highlight link vCursor Cursor
 " Input moder cursor
-highlight! link NONE
+highlight! iCursor NONE
 highlight! link iCursor Cursor
 " Language mapping cursor
-highlight! link NONE
+highlight! lCursor NONE
 highlight! link lCursor Cursor
 " Syntax Highlighting:
 highlight! Special NONE
@@ -275,7 +275,7 @@ highlight! Label guifg=#e7a82b ctermfg=3
 highlight! Exception NONE
 highlight! Exception guifg=#da5774 ctermfg=1
 " sizeof, "+", "*", etc.
-highlight! link NONE
+highlight! Operator NONE
 highlight! link Operator None
 " Any other keyword
 highlight! Keyword NONE
@@ -357,11 +357,11 @@ highlight! DiffChange NONE
 highlight DiffChange guifg=#1f90a8 ctermfg=6 guibg=#140c0c ctermbg=0
 highlight! DiffText NONE
 highlight DiffText guifg=#ffd791 ctermfg=11 guibg=#140c0c ctermbg=0
-highlight! link NONE
+highlight! Added NONE
 highlight! link Added DiffAdd
-highlight! link NONE
+highlight! Changed NONE
 highlight! link Changed DiffChange
-highlight! link NONE
+highlight! Removed NONE
 highlight! link Removed DiffDelete
 " Spelling:
 if has("spell")
