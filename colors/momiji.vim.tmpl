@@ -96,216 +96,322 @@ highlight MomijiGradation5 {{Foreground .Gradation5}}
 
 " General UI:
 " Normal text
+highlight! Normal NONE
 highlight Normal {{Foreground .Foreground}} {{Background .Background}}
+highlight! NormalFloat NONE
 highlight NormalFloat {{Foreground .Foreground}} {{Background .Gradation1}}
 
 " Screen line that the cursor is
 highlight! CursorLine NONE
 highlight CursorLine {{Background .Gradation1}}
 " Screen column that the cursor is
+highlight! CursorColumn NONE
 highlight CursorColumn {{Background .Gradation2}}
 
 " Tab pages line filler
+highlight! TabLineFill NONE
 highlight TabLineFill {{Foreground .Green}} {{Background .Background}}
 " Active tab page label
+highlight! TabLineSel NONE
 highlight TabLineSel {{Foreground .Red}} {{Background .Background}} {{Emphasis "bold"}}
 " Not active tab page label
+highlight! link NONE
 highlight! link TabLine TabLineFill
 
 " Match paired bracket under the cursor
+highlight! MatchParen NONE
 highlight MatchParen {{Foreground .Black}} {{Background .BrightBlue}} {{Emphasis "bold"}}
 
 " Highlighted screen columns
+highlight! ColorColumn NONE
 highlight ColorColumn {{Background .Gradation2}}
 
 " Concealed element: \lambda → λ
+highlight! Conceal NONE
 highlight Conceal {{Foreground .Blue}}
 
+highlight! Delimiter NONE
 highlight! Delimiter {{Foreground .Foreground}}
 
+highlight! NonText NONE
 highlight! NonText {{Foreground .Gradation2}}
+highlight! SpecialKey NONE
 highlight! SpecialKey {{Foreground .Gradation2}}
+highlight! Whitespace NONE
 highlight! Whitespace {{Foreground .Gradation2}}
 
+highlight! Visual NONE
 highlight Visual {{Foreground .Background}} {{Background .Yellow}}
+highlight! link NONE
 highlight! link VisualNOS Visual
 
+highlight! Search NONE
 highlight Search {{Foreground .Background}} {{Background .BrightBlue}}
+highlight! IncSearch NONE
 highlight IncSearch None
+highlight! IncSearch NONE
 highlight IncSearch {{Foreground .Background}} {{Background .BrightMagenta}}
+highlight! CurSearch NONE
 highlight CurSearch None
+highlight! CurSearch NONE
 highlight CurSearch {{Foreground .Background}} {{Background .BrightGreen}}
+highlight! Substitute NONE
 highlight Substitute None
+highlight! Substitute NONE
 highlight Substitute {{Foreground .Background}} {{Background .BrightMagenta}}
 
+highlight! Underlined NONE
 highlight Underlined {{Foreground .Blue}} {{Emphasis "underline"}}
 
+highlight! StatusLine NONE
 highlight StatusLine {{Foreground .Foreground}} {{Background .Gradation2}} {{Emphasis "bold"}}
+highlight! StatusLineNC NONE
 highlight StatusLineNC {{Foreground .Foreground}} {{Background .Gradation1}} {{Emphasis "underline"}}
 
 " The column separating vertically split windows
+highlight! VertSplit NONE
 highlight VertSplit {{Foreground .Gradation4}} {{Emphasis "bold"}}
 
 " Current match in wildmenu completion
+highlight! WildMenu NONE
 highlight WildMenu {{Foreground .Blue}} {{Background .Background}} {{Emphasis "bold"}}
 
 " Directory names, special names in listing
+highlight! Directory NONE
 highlight! Directory {{Foreground .Green}} {{Emphasis "bold"}}
 
 " Titles for output from :set all, :autocmd, etc.
+highlight! Title NONE
 highlight! Title {{Foreground .Yellow}} {{Emphasis "bold"}}
 
 " Error messages on the command line
+highlight! ErrorMsg NONE
 highlight ErrorMsg {{Foreground .Foreground}} {{Background .Red}}
 " More prompt: -- More --
+highlight! MoreMsg NONE
 highlight! MoreMsg {{Foreground .Yellow}} {{Emphasis "bold"}}
 " Current mode message: -- INSERT --
+highlight! ModeMsg NONE
 highlight! ModeMsg {{Foreground .Yellow}} {{Emphasis "bold"}}
 " 'Press enter' prompt and yes/no questions
+highlight! Question NONE
 highlight! Question {{Foreground .BrightRed}} {{Emphasis "bold"}}
 " Warning messages
+highlight! WarningMsg NONE
 highlight! WarningMsg {{Foreground .Red}} {{Emphasis "bold"}}
 " Gutter:
 " Line number for :number and :# commands
+highlight! LineNr NONE
 highlight LineNr {{Foreground .Gradation4}} {{Background .Gradation1}}
 
 " Line number of CursorLine
+highlight! CursorLineNr NONE
 highlight CursorLineNr {{Foreground .Background}} {{Background .Blue}} {{Emphasis "bold"}}
 
 if hlexists('LineNrAbove')
+  highlight! LineNrAbove NONE
   highlight LineNrAbove {{Foreground .StrongMagenta}} {{Background .Gradation1}}
+  highlight! LineNrBelow NONE
   highlight LineNrBelow {{Foreground .StrongGreen}} {{Background .Gradation1}}
 endif
 
 " Column where signs are displayed
+highlight! SignColumn NONE
 highlight SignColumn {{Background .Gradation1}}
 
 " Line used for closed folds
+highlight! Folded NONE
 highlight Folded {{Foreground .Gradation4}} {{Emphasis "italic"}}
 " Column where folds are displayed
+highlight! FoldColumn NONE
 highlight FoldColumn {{Foreground .Gradation4}} {{Background .Background}}
 " Cursor:
 " Character under cursor
+highlight! Cursor NONE
 highlight Cursor {{Foreground .Background}} {{Background .StrongYellow}}
 " Character under cursor in a focused terminal
+highlight! link NONE
 highlight link TermCursor Cursor
 " Cursor in an unfocused terminal
+highlight! link NONE
 highlight link TermCursorNC Cursor
 " Visual mode cursor, selection
+highlight! link NONE
 highlight link vCursor Cursor
 " Input moder cursor
+highlight! link NONE
 highlight! link iCursor Cursor
 " Language mapping cursor
+highlight! link NONE
 highlight! link lCursor Cursor
 " Syntax Highlighting:
+highlight! Special NONE
 highlight! Special {{Foreground .StrongYellow}} {{Emphasis "bold"}}
 
+highlight! Comment NONE
 highlight Comment {{Foreground .Gradation3}} {{Emphasis "italic"}}
+highlight! Todo NONE
 highlight Todo {{Foreground .Foreground}} {{Emphasis "bold" "italic"}}
+highlight! Error NONE
 highlight Error {{Foreground .StrongRed}} {{Emphasis "bold" "inverse"}}
 
 " String constant: "this is a string"
+highlight! String NONE
 highlight String {{Foreground .Green}}
 
 " Generic statement
+highlight! Statement NONE
 highlight! Statement {{Foreground .Yellow}}
 " if, then, else, endif, swicth, etc.
+highlight! Conditional NONE
 highlight! Conditional {{Foreground .Yellow}}
 " for, do, while, etc.
+highlight! Repeat NONE
 highlight! Repeat {{Foreground .Yellow}}
 " case, default, etc.
+highlight! Label NONE
 highlight! Label {{Foreground .Yellow}}
 " try, catch, throw
+highlight! Exception NONE
 highlight! Exception {{Foreground .Red}}
 " sizeof, "+", "*", etc.
+highlight! link NONE
 highlight! link Operator None
 " Any other keyword
+highlight! Keyword NONE
 highlight! Keyword {{Foreground .Red}}
 
 " Variable name
+highlight! Identifier NONE
 highlight! Identifier {{Foreground .StrongBlue}}
 " Function name
+highlight! Function NONE
 highlight! Function {{Foreground .Blue}}
 
 " Generic preprocessor
+highlight! PreProc NONE
 highlight! PreProc {{Foreground .Magenta}}
 " Preprocessor #include
+highlight! Include NONE
 highlight! Include {{Foreground .Magenta}}
 " Preprocessor #define
+highlight! Define NONE
 highlight! Define {{Foreground .Magenta}}
 " Same as Define
+highlight! Macro NONE
 highlight! Macro {{Foreground .Magenta}}
 " Preprocessor #if, #else, #endif, etc.
+highlight! PreCondit NONE
 highlight! PreCondit {{Foreground .Magenta}}
 
 " Generic constant
+highlight! Constant NONE
 highlight! Constant {{Foreground .StrongMagenta}}
 " Character constant: 'c', '/n'
+highlight! Character NONE
 highlight! Character {{Foreground .StrongMagenta}}
 " Boolean constant: TRUE, false
+highlight! Boolean NONE
 highlight! Boolean {{Foreground .StrongMagenta}}
 " Number constant: 234, 0xff
+highlight! Number NONE
 highlight! Number {{Foreground .StrongMagenta}}
 " Floating point constant: 2.3e10
+highlight! Float NONE
 highlight! Float {{Foreground .StrongMagenta}}
 
 " Generic type
+highlight! Type NONE
 highlight! Type {{Foreground .Cyan}}
 " static, register, volatile, etc
+highlight! StorageClass NONE
 highlight! StorageClass {{Foreground .Cyan}}
 " struct, union, enum, etc.
+highlight! Structure NONE
 highlight! Structure {{Foreground .StrongRed}}
 " typedef
+highlight! Typedef NONE
 highlight! Typedef {{Foreground .StrongRed}}
 " Completion Menu:
 " Popup menu: normal item
+highlight! Pmenu NONE
 highlight Pmenu {{Background .Gradation1}}
 " Popup menu: selected item
+highlight! PmenuSel NONE
 highlight PmenuSel {{Background .Gradation2}} {{Emphasis "bold"}}
 " Popup menu: scrollbar
+highlight! PmenuSbar NONE
 highlight PmenuSbar {{Background .Gradation2}}
 " Popup menu: scrollbar thumb
+highlight! PmenuThumb NONE
 highlight PmenuThumb {{Background .Gradation2}}
 " Quickfix
+highlight! QuickFixLine NONE
 highlight QuickFixLine {{Foreground .Cyan}} {{Emphasis "bold"}}
 " Diffs:
+highlight! DiffDelete NONE
 highlight DiffDelete {{Foreground .StrongRed}} {{Background .Background}}
+highlight! DiffAdd NONE
 highlight DiffAdd {{Foreground .StrongGreen}} {{Background .Background}}
+highlight! DiffChange NONE
 highlight DiffChange {{Foreground .Cyan}} {{Background .Background}}
+highlight! DiffText NONE
 highlight DiffText {{Foreground .StrongYellow}} {{Background .Background}}
+highlight! link NONE
 highlight! link Added DiffAdd
+highlight! link NONE
 highlight! link Changed DiffChange
+highlight! link NONE
 highlight! link Removed DiffDelete
 " Spelling:
 if has("spell")
   " Not capitalised word, or compile warnings
+  highlight! SpellCap NONE
   highlight SpellCap {{Emphasis "undercurl"}} guisp=#{{.Blue.ToHex}}
   " Not recognized word
+  highlight! SpellBad NONE
   highlight SpellBad {{Emphasis "undercurl"}} guisp=#{{.Blue.ToHex}}
   " Wrong spelling for selected region
+  highlight! SpellLocal NONE
   highlight SpellLocal {{Emphasis "undercurl"}} guisp=#{{.Cyan.ToHex}}
   " Rare word
+  highlight! SpellRare NONE
   highlight SpellRare {{Emphasis "undercurl"}} guisp=#{{.Magenta.ToHex}}
 endif
 
 if hlexists('FloatBorder')
+  highlight! FloatBorder NONE
   highlight FloatBorder None
+  highlight! FloatBorder NONE
   highlight FloatBorder {{Foreground .Foreground}} {{Background .Gradation1}} {{Emphasis "bold"}}
+  highlight! FloatShadow NONE
   highlight FloatShadow None
+  highlight! FloatShadow NONE
   highlight FloatShadow {{Background .Gradation1}}
 endif
 
 if hlexists('DiagnosticInfo')
+  highlight! DiagnosticDeprecated NONE
   highlight DiagnosticDeprecated cterm=strikethrough gui=strikethrough guisp=Red
+  highlight! DiagnosticOk NONE
   highlight DiagnosticOk    {{Foreground .StrongGreen}}
+  highlight! DiagnosticHint NONE
   highlight DiagnosticHint  {{Foreground .Gradation3}}
+  highlight! DiagnosticInfo NONE
   highlight DiagnosticInfo  {{Foreground .StrongBlue}}
+  highlight! DiagnosticWarn NONE
   highlight DiagnosticWarn  {{Foreground .StrongRed}}
+  highlight! DiagnosticError NONE
   highlight DiagnosticError {{Foreground .Red}}
+  highlight! DiagnosticUnderlineOk NONE
   highlight DiagnosticUnderlineOk {{Emphasis "underline"}} guisp=#{{.StrongGreen.ToHex}}
+  highlight! DiagnosticUnderlineHint NONE
   highlight DiagnosticUnderlineHint {{Emphasis "underline"}} guisp=#{{.Gradation3.ToHex}}
+  highlight! DiagnosticUnderlineInfo NONE
   highlight DiagnosticUnderlineInfo {{Emphasis "underline"}} guisp=#{{.StrongBlue.ToHex}}
+  highlight! DiagnosticUnderlineWarn NONE
   highlight DiagnosticUnderlineWarn {{Emphasis "underline"}} guisp=#{{.StrongRed.ToHex}}
+  highlight! DiagnosticUnderlineError NONE
   highlight DiagnosticUnderlineError {{Emphasis "underline"}} guisp=#{{.Red.ToHex}}
 endif
 
